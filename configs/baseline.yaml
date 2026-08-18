@@ -1,0 +1,6 @@
+model_name: Qwen/Qwen3-VL-4B-Instruct
+max_new_tokens: 384
+image_patch_size: 16
+min_pixels: 50176
+max_pixels: 1003520
+video_fps: 1.0

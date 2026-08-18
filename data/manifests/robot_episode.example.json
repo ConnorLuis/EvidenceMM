@@ -1,0 +1,14 @@
+{
+  "episode_id": "robot_episode_001",
+  "task": "pick object and place into target area",
+  "wrist_video": "data/raw/robot/robot_episode_001/wrist.mp4",
+  "front_video": "data/raw/robot/robot_episode_001/front.mp4",
+  "state_file": "data/raw/robot/robot_episode_001/state.parquet",
+  "action_file": "data/raw/robot/robot_episode_001/action.parquet",
+  "success": null,
+  "failure_type": null,
+  "metadata": {
+    "robot": "SO-ARM101",
+    "time_unit": "second"
+  }
+}

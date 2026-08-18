@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "evidencemm"
+version = "0.1.0"
+description = "Traceable multimodal RAG for complex documents and robot-operation video"
+requires-python = ">=3.10"
+dependencies = [
+  "torch",
+  "torchvision",
+  "transformers>=4.57.0",
+  "accelerate>=1.0.0",
+  "qwen-vl-utils==0.0.14",
+  "pydantic>=2.7.0",
+  "PyYAML>=6.0",
+  "Pillow>=10.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

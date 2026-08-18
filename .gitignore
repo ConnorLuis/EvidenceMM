@@ -1,0 +1,24 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+.env
+
+# local datasets / media
+data/raw/**
+!data/raw/.gitkeep
+
+# local model caches
+models/
+
+# runtime outputs
+reports/**
+!reports/.gitkeep
+
+# editor / OS
+.vscode/
+.idea/
+.DS_Store
+
+# Python packaging artifacts
+*.egg-info/
