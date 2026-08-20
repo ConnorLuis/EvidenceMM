@@ -1,0 +1,9 @@
+top_k: 5
+rrf_k: 60
+text_weight: 1.0
+vision_weight: 1.0
+text_config: configs/text_retrieval.yaml
+visual_config: configs/visual_retrieval.yaml
+text_corpus: data/processed/text/sts3215_pages.jsonl
+visual_index: data/processed/vision/sts3215_colqwen2_5_v0_2.pt
+report_file: reports/day5_hybrid_retrieval.json
