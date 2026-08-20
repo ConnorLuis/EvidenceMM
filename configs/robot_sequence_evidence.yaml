@@ -1,0 +1,8 @@
+cameras:
+  - front
+  - wrist
+timestamp_source: samples_csv.elapsed_ns
+processed_root: data/processed/robot_sequence
+manifest_root: data/manifests/robot_episodes
+
+slice_duration_sec: 2.0
