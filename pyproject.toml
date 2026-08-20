@@ -17,6 +17,7 @@ dependencies = [
   "PyYAML>=6.0",
   "Pillow>=10.0",
   "PyMuPDF>=1.24",
+  "colpali-engine @ git+https://github.com/illuin-tech/colpali.git@c23838d920a7c426ee297034211cff2f55da65dc",
 ]
 
 [project.optional-dependencies]

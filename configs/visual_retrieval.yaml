@@ -1,0 +1,9 @@
+model_name: vidore/colqwen2.5-v0.2
+render_dpi: 144
+max_num_visual_tokens: 768
+torch_dtype: bfloat16
+page_dir: data/processed/vision/sts3215_pages
+page_manifest: data/processed/vision/sts3215_pages.jsonl
+top_k: 5
+index_file: data/processed/vision/sts3215_colqwen2_5_v0_2.pt
+report_file: reports/day4_visual_retrieval.json
