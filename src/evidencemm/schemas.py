@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from datetime import datetime
 from enum import Enum
 from typing import Any, Literal
 
@@ -30,22 +31,55 @@ class NormalizedBBox(BaseModel):
 class EvidenceRef(BaseModel):
     source_id: str
     source_type: SourceType
+
     page_number: int | None = Field(default=None, ge=1)
+
     time_start_sec: float | None = Field(default=None, ge=0.0)
     time_end_sec: float | None = Field(default=None, ge=0.0)
     frame_index: int | None = Field(default=None, ge=0)
     camera: Literal["wrist", "front"] | None = None
+
     bbox: NormalizedBBox | None = None
     note: str | None = None
 
     @model_validator(mode="after")
-    def validate_time_range(self) -> "EvidenceRef":
+    def validate_locator(self) -> "EvidenceRef":
+        if self.source_type == SourceType.PDF and self.page_number is None:
+            raise ValueError("PDF evidence requires 1-based page_number")
+
         if (
             self.time_start_sec is not None
             and self.time_end_sec is not None
             and self.time_end_sec < self.time_start_sec
         ):
             raise ValueError("time_end_sec must be >= time_start_sec")
+
+        return self
+
+
+class SourceManifest(BaseModel):
+    source_id: str
+    source_type: SourceType
+    local_path: str
+    sha256: str
+    size_bytes: int = Field(gt=0)
+    mime_type: str | None = None
+    origin_uri: str | None = None
+    added_at: datetime
+
+    page_count: int | None = Field(default=None, ge=1)
+    width_px: int | None = Field(default=None, ge=1)
+    height_px: int | None = Field(default=None, ge=1)
+
+    metadata: dict[str, Any] = Field(default_factory=dict)
+
+    @model_validator(mode="after")
+    def validate_modality_metadata(self) -> "SourceManifest":
+        if self.source_type == SourceType.PDF and self.page_count is None:
+            raise ValueError("PDF source requires page_count")
+        if self.source_type == SourceType.IMAGE:
+            if self.width_px is None or self.height_px is None:
+                raise ValueError("image source requires width_px and height_px")
         return self
 
 
@@ -71,13 +105,23 @@ class EvalCase(BaseModel):
     annotation_status: Literal["draft", "verified"] = "draft"
     tags: list[str] = Field(default_factory=list)
 
+    verified_by: str | None = None
+    verified_at: datetime | None = None
+    verification_notes: str | None = None
+
     @model_validator(mode="after")
     def verified_requires_ground_truth(self) -> "EvalCase":
         if self.annotation_status == "verified":
             if self.answerable is None:
                 raise ValueError("verified case requires answerable label")
-            if self.answerable and not self.expected_answer:
-                raise ValueError("answerable verified case requires expected_answer")
+            if not self.expected_answer:
+                raise ValueError("verified case requires expected_answer")
+            if not self.expected_evidence:
+                raise ValueError("verified case requires expected_evidence")
+            if not self.verified_by or self.verified_at is None:
+                raise ValueError(
+                    "verified case requires verified_by and verified_at"
+                )
         return self
 
 

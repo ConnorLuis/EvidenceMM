@@ -1,0 +1,14 @@
+{
+  "source_id": "sts3215_datasheet",
+  "source_type": "pdf",
+  "local_path": "data/raw/manuals/sts3215_feetech.pdf",
+  "sha256": "707da810d6443597bb7877fc191251915bf01a3d3594ee77b1e0f8ef8b45d017",
+  "size_bytes": 631935,
+  "mime_type": "application/pdf",
+  "origin_uri": "https://www.feetechrc.com/74v-19-kgcm-plastic-case-metal-tooth-magnetic-code-double-axis-ttl-series-steering-gear.html",
+  "added_at": "2026-08-20T03:18:35.303642Z",
+  "page_count": 8,
+  "width_px": null,
+  "height_px": null,
+  "metadata": {}
+}

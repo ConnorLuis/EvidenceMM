@@ -22,3 +22,6 @@ reports/**
 
 # Python packaging artifacts
 *.egg-info/
+
+# Generated evidence inspection artifacts
+data/processed/

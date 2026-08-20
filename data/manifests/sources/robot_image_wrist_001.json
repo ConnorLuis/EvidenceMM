@@ -1,0 +1,17 @@
+{
+  "source_id": "robot_image_wrist_001",
+  "source_type": "image",
+  "local_path": "data/raw/wrist_sample.jpg",
+  "sha256": "b9e6e0ebbbde01d2311c767c4673f677d16d3a98bc4d728f4206c3aac8fce177",
+  "size_bytes": 79311,
+  "mime_type": "image/jpeg",
+  "origin_uri": "local://so-arm101/day2/wrist_sample",
+  "added_at": "2026-08-20T03:23:11.256834Z",
+  "page_count": null,
+  "width_px": 480,
+  "height_px": 640,
+  "metadata": {
+    "image_mode": "RGB",
+    "image_format": "JPEG"
+  }
+}
