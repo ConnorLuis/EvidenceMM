@@ -1,129 +1,99 @@
 # EvidenceMM
 
-EvidenceMM is a traceable multimodal RAG system for complex documents and
-robot-operation sequences.
+EvidenceMM is a traceable multimodal RAG system for complex technical documents
+and robot-operation sequences.
 
-The project is developed as a failure-driven series of reproducible baselines.
-By the end of Day 7, the document branch has an end-to-end grounded-QA
-baseline, while the robot branch has a separate temporal-evidence baseline.
-Those two branches are **not yet connected into one cross-domain diagnostic
-pipeline**.
+Its purpose is not to chat with a single uploaded image. The system binds
+canonical source bytes, retrieves evidence, constructs cross-domain evidence
+bundles, generates grounded answers, resolves citations deterministically, and
+diagnoses pipeline-contract failures.
 
 ## Current status
 
-- latest completed feature commit: `04c7f1b`
-  (`feat(temporal): add robot sequence evidence baseline`)
-- Day 1-7 capability chain is complete
-- Day 7 closure test suite: 37 tests passed
-- Day 7.5 public-contract/schema calibration adds one schema-contract test
-- canonical robot source: sample-synchronized front/wrist image sequence
-- cross-document + robot evidence generation: **not yet integrated**
-- failed-grasp diagnosis: **not yet implemented**
-- current evaluation remains a smoke baseline, not a production benchmark
+The project has completed the core evidence-system layer and is now moving from
+module validation toward the flagship robot-failure application.
 
-## Architecture
+Implemented and validated:
 
-```text
-                         EvidenceMM
-                             |
-              +--------------+--------------+
-              |                             |
-      document evidence                robot evidence
-              |                             |
-      PDF / page images          metadata.json + samples.csv
-              |                    front/*.jpg + wrist/*.jpg
-              |                             |
-      SourceManifest / SHA256          EpisodeManifest
-              |                        FrameRecord
-              |                             |
-       +------+-------+             TemporalSlice
-       |              |             midpoint baseline
-      BM25        ColQwen2.5               |
-       |              |              temporal gold
-       +------RRF-----+                    |
-              |                       event coverage
-      Top-k evidence pages
-              |
-    page image + extracted text
-              |
-       Qwen3-VL-4B-Instruct
-              |
-       structured grounded answer
-              |
-      citation validation + abstention
-```
+- real PDF/image source binding with SHA256 provenance;
+- page-level BM25 text retrieval;
+- ColQwen2.5 visual page retrieval;
+- BM25 + ColQwen visual RRF document baseline;
+- Qwen3-VL grounded generation with citation validation and abstention;
+- synchronized SO-ARM101 front/wrist robot-sequence evidence;
+- timestamp, observation, action, and tracking-error binding;
+- multiple frozen temporal-selection baselines;
+- `UnifiedEvidenceBundle` for document + robot evidence;
+- query-driven cross-domain retrieval-to-generation smoke;
+- BGE-M3 dense retrieval;
+- sparse+dense candidate union;
+- BGE cross-encoder reranking;
+- ranking trace;
+- EvidenceMM pipeline failure diagnosis.
 
-The document grounded-QA branch is connected end to end. The robot temporal
-branch currently stops at evidence selection/evaluation. A later phase will
-connect robot evidence with document evidence for diagnostic generation.
+Not completed and not claimed:
 
-## Day 1-7 progression
+- robot failed-grasp root-cause diagnosis;
+- benchmark-scale retrieval/generation quality;
+- large multi-episode evaluation;
+- production API/deployment;
+- Agent/MCP integration.
 
-| Day | Commit | Capability | Frozen observation |
-| --- | --- | --- | --- |
-| 1 | `650ce87` | Direct Qwen3-VL baseline + initial schemas/question bank | Direct static-image inference can speculate about temporal state |
-| 2 | `f87a173` | Real PDF/image binding, source identity, SHA256, verified evidence | Evidence is explicitly traceable to bound source bytes |
-| 3 | `725fd76` | Page-level BM25 text retrieval | On 2 verified PDF queries, one gold page is Rank 2 |
-| 4 | `c055283` | ColQwen2.5 page-image multi-vector retrieval | Same gold page improves from BM25 Rank 2 to visual Rank 1 |
-| 5 | `0402ba9` | BM25 + ColQwen2.5 Reciprocal Rank Fusion | RRF preserves both visual Top-1 hits without mixing incomparable raw scores |
-| 6 | `49d2654` | Grounded generation, citation policy, structured output, abstention | 3/3 smoke cases pass the deterministic grounded-answer contract |
-| 7 | `04c7f1b` | Synchronized robot-sequence temporal evidence baseline | 2 s uniform midpoint covers 2/3 verified events and misses a 0.268 s lift |
+## Canonical Day15 E2E
 
-## Document branch
-
-### Retrieval
-
-Day 3 text-only BM25 over one bound 8-page STS3215 datasheet and two
-human-verified PDF queries:
-
-| Metric | BM25 |
-| --- | ---: |
-| Recall@1 | 0.5000 |
-| Recall@3 | 1.0000 |
-| Recall@5 | 1.0000 |
-| MRR@5 | 0.7500 |
-| nDCG@5 | 0.8155 |
-
-Day 4 ColQwen2.5 vision-only retrieval and Day 5 RRF hybrid retrieval both
-reach perfect retrieval metrics on the same **two-query smoke set**. These
-numbers validate the pipeline and the case-level failure mechanism; they are
-not general retrieval-quality claims.
-
-### Grounded generation
-
-Day 6 connects hybrid retrieval to Qwen3-VL-4B-Instruct:
+The current default main path is:
 
 ```text
-question
-   -> BM25 + ColQwen2.5
-   -> RRF
-   -> Top-2 evidence pages
-   -> page image + extracted text
-   -> Qwen3-VL
-   -> strict structured answer
-   -> citation validation
-   -> answer or abstain
+Query
+  |
+  +--> Document
+  |      BM25 Top-5
+  |        +
+  |      BGE-M3 Top-5
+  |        ↓
+  |      candidate union
+  |        ↓
+  |      BGE reranker
+  |
+  +--> Robot
+         signal/state-action retrieval
+             |
+             v
+       fixed 3 document + 2 robot evidence
+             |
+             v
+      UnifiedEvidenceBundle
+             |
+             v
+      Qwen3-VL grounded generation
+             |
+             v
+      compact citation IDs
+             |
+             v
+      deterministic EvidenceRef resolution
+             |
+             v
+      citation / required-fact validation
+             |
+             v
+      pipeline failure diagnosis
 ```
 
-Observed deterministic metrics on **three smoke cases**:
+The canonical smoke supports `--document-mode bm25` and
+`--document-mode hybrid` so the frozen Day12 BM25 baseline remains comparable
+with the Day15 hybrid+rereanked document path.
 
-| Metric | Value |
-| --- | ---: |
-| Structured output rate | 1.0000 |
-| Answerability accuracy | 1.0000 |
-| Citation-policy valid rate | 1.0000 |
-| Citation gold-page hit rate | 1.0000 |
-| Mean citation precision | 1.0000 |
-| Mean required-fact coverage | 1.0000 |
-| Abstention accuracy | 1.0000 |
-| End-to-end pass rate | 1.0000 |
+### ColQwen status
 
-The perfect values above are explicitly limited to two answerable PDF cases
-plus one controlled unsupported/abstention case.
+ColQwen2.5 visual retrieval is a real validated component from the earlier
+document branch. It is not silently claimed as part of the current canonical
+cross-domain path. Visual retrieval will only be added to that path after a
+controlled integration/evaluation step.
 
-## Robot temporal branch
+## Robot source
 
-Day 7 uses the original robot-operation sequence as canonical evidence:
+The canonical robot source is the original synchronized operation sequence:
 
 ```text
 metadata.json
@@ -132,210 +102,105 @@ front/*.jpg
 wrist/*.jpg
 ```
 
-It does **not** manufacture an MP4 and then re-extract frames.
+Evidence retains:
 
-For episode `20260815_110415`:
+- `episode_id`;
+- `frame_index`;
+- canonical relative timestamp;
+- camera-specific source timestamp / age;
+- front/wrist image hashes;
+- observation;
+- action;
+- tracking error.
 
-- 900 sample-synchronized front/wrist pairs
-- 1800 `FrameRecord` entries
-- canonical timeline: `samples.csv:elapsed_ns`
-- camera-specific source timestamp and source age retained
-- original JPEG SHA256 retained
-- deterministic aggregate episode SHA256
-- joint state/action remain in the hashed source CSV but are intentionally
-  excluded from the Day 7 visual baseline
+MP4 is not required for canonical evidence.
 
-The frozen temporal selector uses non-overlapping 2 s timestamp windows and
-chooses the real sample nearest each window midpoint.
+## Traceability
 
-Observed selector diagnostics:
+Document evidence is traceable to PDF page number.
 
-- 30 temporal slices
-- mean midpoint error: 4.157 ms
-- max midpoint error: 5.591 ms
-- no image re-encoding
-- original frame hashes reused
+Robot evidence is traceable to frame, timestamp, camera, and bound episode.
 
-Human-verified visual temporal gold:
+Generation uses compact citation IDs and deterministic resolution to the frozen
+`EvidenceRef` contract rather than asking the VLM to reproduce complex
+references reliably.
 
-| Event | Inclusive frame interval | Duration | Uniform midpoint |
-| --- | ---: | ---: | --- |
-| `object_lift` | 408-412 | 0.268 s | MISS |
-| `object_transport` | 413-530 | 7.802 s | HIT |
-| `object_place` | 630-668 | 2.534 s | HIT |
+## Ranking explainability
 
-Day 7 event coverage:
+The document ranking trace records:
 
-```text
-2 / 3 = 0.6667
-```
+- BM25 rank/score;
+- BGE-M3 rank/cosine similarity;
+- sparse+dense candidate-union provenance;
+- cross-encoder reranker raw logit;
+- final rank.
 
-The short lift miss is deliberately preserved as a real baseline failure.
+The robot ranking trace records the selected query profile, signal score, frame,
+timestamp, and deterministic tie behavior.
 
-## Evidence schema
+## Failure diagnosis
 
-`src/evidencemm/schemas.py` defines the generic evidence locator contract for
-single-file/document/image/video sources and robot-sequence references.
+Current failure diagnosis is for the EvidenceMM pipeline:
 
-The canonical multi-file robot episode identity is defined separately by
-`src/evidencemm/temporal_evidence.py::EpisodeManifest`, because a robot
-sequence is composed of metadata, samples, and multiple camera frames rather
-than one video path.
+- retrieval miss;
+- missing document/robot/required evidence;
+- hallucinated/out-of-bundle citation;
+- duplicate citation;
+- citation gap;
+- incomplete generation;
+- false abstention;
+- over-answering.
 
-A robot-operation sequence may be represented by:
+This is not a physical robot root-cause classifier.
 
-- sample-synchronized image sequences, as implemented in Day 7; or
-- a native video source in a future adapter.
+## Evaluation scale
 
-MP4 derived from the Day 7 JPEG sequence is display-only and is not canonical
-evidence.
+Current results are smoke-scale and intentionally preserve negative or neutral
+results.
 
-## Current evaluation scale
+Examples:
 
-The repository is still in smoke-baseline mode:
+- the early BM25 document baseline has a verified rank-2 gold case;
+- visual/state-action temporal heuristics did not automatically beat simpler
+  temporal coverage baselines;
+- on the tiny Day13 document smoke set, BM25 and BGE-M3 had identical aggregate
+  retrieval metrics, while the cross-encoder reranker improved top-rank quality;
+- Day14 fault injection validates pipeline diagnosis but is not a set of real
+  robot failures.
 
-- 1 bound 8-page PDF
-- 2 human-verified PDF retrieval queries
-- 3 Day 6 grounded-generation smoke cases
-- 1 human-annotated robot episode
-- 3 verified visual temporal events
+Do not report these results as benchmark-scale model quality.
 
-Do not report the current perfect document metrics as general model quality.
+## Flagship target
 
-## Explicit integration boundary
-
-Already connected:
+The remaining flagship task is real robot-operation failure diagnosis:
 
 ```text
-document source
--> retrieval
--> hybrid evidence ranking
--> grounded generation
--> citation validation / abstention
+failed episode
++
+front/wrist evidence
++
+state/action trajectory
++
+manual evidence
+        ↓
+failure interval / hypothesis
+        ↓
+supporting evidence + counterevidence
+        ↓
+confidence / abstention
 ```
 
-Established but still separate:
+That capability will only be claimed after real failed episodes and held-out
+annotations exist.
+
+## Project boundary
 
 ```text
-robot sequence
--> frame/evidence binding
--> temporal slicing
--> temporal event evaluation
+chat-api   = LLM / RAG gateway
+agent-api  = Agent reasoning / orchestration
+EvidenceMM = multimodal evidence retrieval / grounding / diagnosis
+SO-ARM101  = robot data / imitation-learning validation
 ```
 
-Not yet connected:
-
-```text
-robot temporal evidence
-+ manual/document evidence
--> cross-domain diagnostic answer
-```
-
-The flagship failed-grasp diagnosis remains a target, not a completed claim.
-
-## Day 8 result
-
-Day 8 compares a deterministic visual-motion-aware selector against the frozen
-Day 7 uniform-midpoint baseline under the same episode, temporal windows,
-verified gold, and 30-shared-sample / 60-image evidence budget.
-
-The visual-motion rule is frozen as grayscale 160 x 120 adjacent-frame mean
-absolute pixel difference, fused with `max(front, wrist)` and lower-frame-index
-tie breaking.
-
-Observed one-episode smoke result:
-
-| Metric | Uniform midpoint | Visual motion |
-| --- | ---: | ---: |
-| Event coverage | 0.6667 | 0.6667 |
-| Mean closest-evidence distance | 344.467 ms | 544.470 ms |
-
-The motion selector does not improve event coverage and worsens mean temporal
-proximity by 200.003 ms. It improves `object_transport` substantially but still
-misses the 0.268 s `object_lift` event. This negative result is frozen without
-post-hoc tuning.
-
-The next independent comparison will introduce robot state/action evidence;
-the Day 8 visual-motion parameters will remain unchanged.
-
-## Day 9 result
-
-Day 9 adds a robot-state/action-aware temporal selector using the canonical
-`samples.csv` control signals while preserving the same episode, frozen
-two-second windows, verified gold, and 30-shared-sample / 60-image evidence
-budget.
-
-The source metadata defines `observation_*` as the follower
-`Present_Position` read before the current action write and `action_*` as the
-final absolute `Goal_Position` actually sent after mapping, clamp and rate
-limiting. The frozen selector uses equal-weight 6D adjacent RMS changes:
-
-```text
-state_change(t)  = RMS(q_t - q_(t-1))
-action_change(t) = RMS(a_t - a_(t-1))
-score(t)         = max(state_change(t), action_change(t))
-```
-
-Observed one-episode three-way smoke result:
-
-| Metric | Midpoint | Visual motion | State/action |
-| --- | ---: | ---: | ---: |
-| Event coverage | 0.6667 | 0.6667 | 0.6667 |
-| Mean closest-evidence distance | 344.467 ms | 544.470 ms | 699.200 ms |
-
-The state/action selector still misses the 0.268 s `object_lift` event and is
-worse than both earlier baselines on mean temporal proximity. Of its 30
-selected windows, 27 are action-dominated and 3 are state-dominated.
-
-This negative result is frozen without post-hoc joint weighting, gripper
-boosting, normalization or threshold tuning. State/action remains valuable as
-diagnostic evidence, but simple within-window change magnitude does not solve
-the current short-event localization problem.
-
-## Day 10 result
-
-Day 10 closes the current temporal micro-baseline phase by testing evidence
-density rather than introducing another salience score. It uses timestamp-only
-uniform interior quantiles over the same 30 frozen two-second windows:
-
-```text
-K=1 -> midpoint
-K=2 -> 1/3, 2/3
-K=3 -> 1/4, 1/2, 3/4
-```
-
-Observed one-episode diagnostic result:
-
-| K | Shared samples | Images | Event coverage | Mean closest-evidence distance |
-| ---: | ---: | ---: | ---: | ---: |
-| 1 | 30 | 60 | 0.6667 | 344.467 ms |
-| 2 | 60 | 120 | 1.0000 | 55.944 ms |
-| 3 | 90 | 180 | 1.0000 | 122.864 ms |
-
-K=1 exactly reproduces the Day 7 midpoint baseline. K=2 recovers the previously
-missed 0.268 s `object_lift` event at frame 410 and improves aggregate temporal
-proximity substantially. K=3 retains full coverage but is worse than K=2 on
-mean proximity in this small diagnostic.
-
-This does not select a production K: the gold is already known, the evaluation
-contains one episode and three verified events, and `choose_best_k=false`
-remains frozen. The result supports the narrower conclusion that one-sample
-compression was an important temporal-evidence bottleneck in this episode.
-
-After Day 10, EvidenceMM stops expanding temporal micro-baselines and returns
-to the main multimodal RAG path: unified document + robot evidence, temporal
-citation, operation-video source adaptation, failure diagnosis, benchmark
-expansion, API and deployment.
-
-## Project boundaries
-
-EvidenceMM is the multimodal perception/evidence layer.
-
-- model-access concerns belong to `chat-api`
-- reasoning/orchestration concerns belong to `agent-api`
-- robot policy/control belongs to the SO-ARM101 / LeRobot project
-- EvidenceMM focuses on evidence identity, retrieval, temporal localization,
-  grounding, citation, abstention, and later multimodal diagnosis
-
-See `docs/task_definition.md` and the Day-specific documents for the detailed
-contracts and frozen smoke results.
+EvidenceMM deliberately does not duplicate LangGraph, MCP, memory, or planning
+from `agent-api`.

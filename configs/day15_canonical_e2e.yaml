@@ -1,0 +1,7 @@
+default_document_mode: hybrid
+
+generation_config: configs/day12_retrieval_grounded_generation.yaml
+hybrid_config: configs/day13_hybrid_retrieval.yaml
+robot_config: configs/robot_sequence_evidence.yaml
+
+report_file: reports/day15_canonical_e2e.json

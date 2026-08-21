@@ -2,76 +2,62 @@
 
 ## 1. Problem
 
-EvidenceMM answers questions over multimodal operational evidence rather than
-chatting with a single uploaded image.
+EvidenceMM answers questions over traceable multimodal operational evidence.
 
-The final system should retrieve and verify evidence from:
+The evidence space includes:
 
 1. PDF manuals, diagrams, and tables;
-2. still images;
-3. robot-operation sequences;
+2. rendered document pages;
+3. synchronized robot-operation image sequences;
 4. robot state/action streams.
 
-A robot-operation sequence may be:
-
-- a sample-synchronized multi-camera image sequence, such as the Day 7
-  `front/wrist` SO-ARM101 source; or
-- a native video source handled by a future video adapter.
-
-A valid answer should be traceable to evidence such as page number, timestamp,
-frame index, camera view, or image region. If the available evidence is
-insufficient, the system should abstain instead of fabricating a diagnosis.
+A valid answer must be grounded in evidence locators such as PDF page number,
+robot frame index, timestamp, camera view, or region. When evidence is
+insufficient, the system should abstain.
 
 ## 2. Flagship scenario
 
-Given a failed robot-grasp episode, locate the failure interval and distinguish
-hypotheses such as:
+Given a real failed robot-grasp episode, the final system should locate the
+relevant failure interval and assess hypotheses such as:
 
 - target offset / perception error;
 - gripper-close timing error;
 - trajectory execution deviation;
 - insufficient evidence.
 
-The final target is to combine robot-operation evidence, robot state/action
-changes, and manual evidence in one traceable diagnostic answer.
+The final answer should combine robot visual evidence, state/action evidence,
+and relevant manual evidence.
 
-This cross-domain diagnostic pipeline is **not yet completed**. At Day 7 the
-document grounded-QA branch and robot temporal-evidence branch exist as
-separate baselines.
+This physical root-cause diagnosis is still a target. It is not yet a completed
+capability.
 
 ## 3. Evidence contract
 
-Evidence is represented with a generic `EvidenceRef`.
+Generic source locations use `EvidenceRef`.
 
-- PDF: `source_id + page_number`, optionally `bbox`.
-- image: `source_id`, optionally `bbox`.
-- native video: `source_id + time_start_sec/time_end_sec`, optionally
-  `frame_index` and `camera`.
-- robot sequence: `source_id + frame_index + camera`, or a temporal interval.
-- robot state/action: `source_id + time_start_sec/time_end_sec`, with
-  diagnostic notes stored outside the raw evidence locator.
-
-`bbox` uses normalized coordinates in [0, 1] with origin at the top-left:
+Document evidence binds:
 
 ```text
-(x1, y1) --------
-   |             |
-   |             |
-   -------- (x2, y2)
+source_id + page_number
 ```
 
-Page numbers are 1-based. Times are seconds from the beginning of the bound
-source timeline.
+Robot sequence evidence binds:
 
-### Robot sequence identity
+```text
+episode/source_id
++ frame_index
++ camera
++ timestamp interval
+```
 
-The generic locator contract does not force a multi-file robot episode into a
-single video-shaped manifest.
+Robot `observation`, `action`, and `tracking_error` are attached to the canonical
+robot sample rather than represented as disconnected evidence sources.
 
-The Day 7 canonical robot episode schema is
-`evidencemm.temporal_evidence.EpisodeManifest`.
+Cross-domain evidence is carried in `UnifiedEvidenceBundle`.
 
-Its canonical source is:
+## 4. Canonical source identity
+
+The canonical robot source is:
 
 ```text
 metadata.json
@@ -80,141 +66,128 @@ front/*.jpg
 wrist/*.jpg
 ```
 
-The aggregate episode identity is computed deterministically from source-file
-hashes and ordered frame hashes. `samples.csv:elapsed_ns` is the canonical
-relative sample timeline. Camera source timestamp and source age remain
-camera-specific.
+`samples.csv:elapsed_ns` is the canonical relative timeline.
 
-MP4 generated from this image sequence is a future derived display artifact,
-not canonical evidence.
+Camera source timestamp and age remain camera-specific.
 
-## 4. Current integration state
+MP4 is optional future input/display adaptation, not required canonical
+evidence.
 
-### Connected document baseline
+## 5. Current canonical integration
 
-```text
-bound PDF
--> page text + page image representation
--> BM25 + ColQwen2.5
--> RRF
--> Top-k evidence
--> Qwen3-VL
--> structured answer
--> citation validation
--> answer / abstain
-```
-
-### Separate robot temporal baseline
+Day15 canonical document retrieval:
 
 ```text
-sample-synchronized front/wrist sequence
--> EpisodeManifest
--> FrameRecord
--> timestamp-based TemporalSlice
--> uniform midpoint evidence
--> human temporal gold
--> event coverage
+BM25 Top-5
+       \
+        -> candidate union -> BGE reranker
+       /
+BGE-M3 Top-5
 ```
 
-The two branches have not yet been unified into cross-domain retrieval and
-generation.
+Cross-domain integration:
 
-## 5. Evaluation contract
+```text
+document ranking
++
+robot signal ranking
+        ↓
+fixed 3 + 2 budget
+        ↓
+UnifiedEvidenceBundle
+        ↓
+Qwen3-VL
+        ↓
+compact citation IDs
+        ↓
+EvidenceRef resolution
+        ↓
+citation / fact validation
+        ↓
+pipeline diagnosis
+```
 
-Every answer-oriented evaluation case has:
+The Day12 BM25-only document mode remains selectable as a frozen baseline.
 
-- stable `case_id`;
-- question;
-- intended input source IDs;
-- `answerable` label once manually verified;
-- reference answer once manually verified;
-- reference evidence once manually verified;
-- tags for modality/task analysis.
+## 6. Validated non-canonical modules
 
-Day 1 created 20 draft questions but intentionally did not invent ground truth
-before real assets were attached. Later cases are promoted to `verified` only
-after human annotation.
+The following are validated but are not silently claimed as part of the
+current Day15 canonical cross-domain path:
 
-Temporal evaluation additionally uses human-verified event intervals. Ambiguous
-or censored boundaries must be excluded rather than manufactured.
+- ColQwen2.5 visual page retrieval;
+- BM25 + ColQwen RRF;
+- historical temporal-selector micro-baselines;
+- generic experimental RRF adapter.
 
-## 6. Baseline ladder
+ColQwen remains relevant to the project, but canonical visual integration must
+be evaluated explicitly rather than assumed.
 
-The project keeps simple baselines frozen before adding stronger components.
+## 7. Evaluation contract
 
-### Document branch
+Evaluation labels are frozen before metric calculation.
 
-1. direct Qwen3-VL inference;
-2. BM25 text retrieval;
-3. ColQwen2.5 visual retrieval;
-4. RRF hybrid retrieval;
-5. grounded generation + citation validation + abstention.
+Gold labels must never be read by retrievers.
 
-### Robot branch
+Current smoke evaluation covers:
 
-1. sample-synchronized evidence binding;
-2. 2 s uniform-midpoint temporal selection;
-3. next: visual-motion-aware temporal selection;
-4. later: robot-state/action-aware temporal selection.
+- document retrieval rank;
+- citation policy;
+- required citation coverage;
+- required-fact coverage;
+- abstention;
+- robot temporal evidence;
+- ranking trace;
+- deterministic pipeline failure diagnosis.
 
-The later selector must be compared against the same human temporal gold and a
-controlled evidence budget.
+Current scale is not sufficient for broad quality claims.
 
-## 7. Current smoke results and limitations
+## 8. Failure taxonomy
 
-Current data scale is intentionally small:
+Current Day14 diagnosis concerns EvidenceMM system behavior:
 
-- one 8-page STS3215 datasheet;
-- two verified PDF retrieval queries;
-- three grounded-generation smoke cases;
-- one SO-ARM101 robot episode;
-- three verified visual temporal events.
+```text
+retrieval
+evidence
+generation
+```
 
-Day 6 produces perfect deterministic grounded-generation contract metrics on
-three smoke cases. This is not a general answer-quality benchmark.
+It includes retrieval misses, missing evidence, citation violations, incomplete
+answers, and abstention errors.
 
-Day 7 uniform midpoint covers 2 of 3 verified temporal events and misses the
-0.268 s `object_lift` event. This real miss is preserved as the motivation for
-the next temporal selector.
+It does not infer physical robot failure causes.
 
-## 8. Future evaluation metrics
+## 9. Next flagship evaluation
 
-Retrieval:
+The next major dataset/evaluation step should bind real successful and failed
+episodes with:
 
-- Recall@5
-- nDCG@5
+- failure time interval;
+- failure class / hypothesis;
+- uncertainty / unanswerable label;
+- visible camera(s);
+- relevant state/action span;
+- supporting manual page(s);
+- held-out episode split.
 
-Answer/evidence:
+Target metrics may include:
 
-- answer accuracy
-- citation/evidence accuracy
-- abstention accuracy
+- document Recall/nDCG;
+- temporal event recall and boundary error/IoU;
+- failure-cause macro-F1;
+- citation precision/recall;
+- abstention accuracy;
+- end-to-end latency and GPU memory.
 
-Temporal localization:
+## 10. Non-goals
 
-- event coverage
-- nearest-evidence temporal distance
-- temporal IoU and/or boundary error when the task supports interval prediction
+EvidenceMM does not own:
 
-Systems:
-
-- P50/P95 latency
-- throughput
-- peak GPU memory
-
-Formal system performance will later be measured on the RTX 4090. Current RTX
-4070 SUPER timings are development diagnostics only.
-
-## 9. Non-goals for the current stage
-
-The following are intentionally not part of the Day 7.5 calibration:
-
-- cross-domain robot + document generation;
-- failed-grasp diagnosis;
-- `q_t` / action-aware selection;
-- FastAPI service;
-- LangGraph / MCP orchestration;
 - robot control policy;
-- LoRA / QLoRA.
+- ACT training;
+- LangGraph orchestration;
+- MCP planning;
+- multi-agent memory;
+- LoRA/QLoRA by default.
 
-These remain later work and must not be presented as completed features.
+Those concerns belong to separate projects or are deferred until evidence
+analysis justifies them.
