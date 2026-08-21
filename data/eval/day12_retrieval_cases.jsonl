@@ -1,0 +1,2 @@
+{"case_id":"d12_ret_001","query":"STS3215 规格书列出的典型工作电压有哪些？ robot gripper action","document_gold_pages":[3],"expected_robot_joints":["gripper"],"expected_robot_signals":["action"]}
+{"case_id":"d12_ret_002","query":"STS3215 规格书列出了哪些反馈状态参数？ robot shoulder_pan action","document_gold_pages":[4],"expected_robot_joints":["shoulder_pan"],"expected_robot_signals":["action"]}
