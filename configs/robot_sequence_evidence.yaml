@@ -6,3 +6,12 @@ processed_root: data/processed/robot_sequence
 manifest_root: data/manifests/robot_episodes
 
 slice_duration_sec: 2.0
+
+motion_selection:
+  resize_width: 160
+  resize_height: 120
+  grayscale: true
+  difference: mean_absolute_pixel_difference
+  fusion: max
+  tie_break: lower_frame_index
+  verify_source_sha256: true

@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "evidencemm"
 version = "0.1.0"
-description = "Traceable multimodal RAG for complex documents and robot-operation video"
+description = "Traceable multimodal RAG for complex documents and robot-operation sequences"
 requires-python = ">=3.10"
 dependencies = [
   "torch",
@@ -16,6 +16,7 @@ dependencies = [
   "pydantic>=2.7.0",
   "PyYAML>=6.0",
   "Pillow>=10.0",
+  "numpy>=1.26",
   "PyMuPDF>=1.24",
   "colpali-engine @ git+https://github.com/illuin-tech/colpali.git@c23838d920a7c426ee297034211cff2f55da65dc",
 ]

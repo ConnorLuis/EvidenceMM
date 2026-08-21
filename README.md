@@ -233,23 +233,30 @@ robot temporal evidence
 
 The flagship failed-grasp diagnosis remains a target, not a completed claim.
 
-## Next: Day 8
+## Day 8 result
 
-Day 8 will compare a visual-motion-aware temporal selector against the frozen
-Day 7 uniform-midpoint baseline.
+Day 8 compares a deterministic visual-motion-aware selector against the frozen
+Day 7 uniform-midpoint baseline under the same episode, temporal windows,
+verified gold, and 30-shared-sample / 60-image evidence budget.
 
-Experimental discipline:
+The visual-motion rule is frozen as grayscale 160 x 120 adjacent-frame mean
+absolute pixel difference, fused with `max(front, wrist)` and lower-frame-index
+tie breaking.
 
-- same three verified temporal gold events
-- comparable evidence-frame budget
-- selection rule frozen before evaluation
-- no threshold tuning against frames 408-412
-- report event coverage and nearest-evidence temporal distance
-- no `q_t` / action signal yet
-- no FastAPI, LangGraph, MCP, control policy, or LoRA
+Observed one-episode smoke result:
 
-Robot state/action evidence is intentionally reserved for a later independent
-comparison.
+| Metric | Uniform midpoint | Visual motion |
+| --- | ---: | ---: |
+| Event coverage | 0.6667 | 0.6667 |
+| Mean closest-evidence distance | 344.467 ms | 544.470 ms |
+
+The motion selector does not improve event coverage and worsens mean temporal
+proximity by 200.003 ms. It improves `object_transport` substantially but still
+misses the 0.268 s `object_lift` event. This negative result is frozen without
+post-hoc tuning.
+
+The next independent comparison will introduce robot state/action evidence;
+the Day 8 visual-motion parameters will remain unchanged.
 
 ## Project boundaries
 
