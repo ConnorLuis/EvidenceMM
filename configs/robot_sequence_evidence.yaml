@@ -15,3 +15,22 @@ motion_selection:
   fusion: max
   tie_break: lower_frame_index
   verify_source_sha256: true
+
+state_action_selection:
+  joint_order:
+    - shoulder_pan
+    - shoulder_lift
+    - elbow_flex
+    - wrist_flex
+    - wrist_roll
+    - gripper
+  state_signal: observation
+  action_signal: action
+  state_change: adjacent_rms
+  action_change: adjacent_rms
+  fusion: max
+  tie_break: lower_frame_index
+  normalization: none
+  joint_weighting: equal
+  tracking_gap_role: diagnostic_only
+  verify_tracking_error: true

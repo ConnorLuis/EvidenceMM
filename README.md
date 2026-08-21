@@ -258,6 +258,40 @@ post-hoc tuning.
 The next independent comparison will introduce robot state/action evidence;
 the Day 8 visual-motion parameters will remain unchanged.
 
+## Day 9 result
+
+Day 9 adds a robot-state/action-aware temporal selector using the canonical
+`samples.csv` control signals while preserving the same episode, frozen
+two-second windows, verified gold, and 30-shared-sample / 60-image evidence
+budget.
+
+The source metadata defines `observation_*` as the follower
+`Present_Position` read before the current action write and `action_*` as the
+final absolute `Goal_Position` actually sent after mapping, clamp and rate
+limiting. The frozen selector uses equal-weight 6D adjacent RMS changes:
+
+```text
+state_change(t)  = RMS(q_t - q_(t-1))
+action_change(t) = RMS(a_t - a_(t-1))
+score(t)         = max(state_change(t), action_change(t))
+```
+
+Observed one-episode three-way smoke result:
+
+| Metric | Midpoint | Visual motion | State/action |
+| --- | ---: | ---: | ---: |
+| Event coverage | 0.6667 | 0.6667 | 0.6667 |
+| Mean closest-evidence distance | 344.467 ms | 544.470 ms | 699.200 ms |
+
+The state/action selector still misses the 0.268 s `object_lift` event and is
+worse than both earlier baselines on mean temporal proximity. Of its 30
+selected windows, 27 are action-dominated and 3 are state-dominated.
+
+This negative result is frozen without post-hoc joint weighting, gripper
+boosting, normalization or threshold tuning. State/action remains valuable as
+diagnostic evidence, but simple within-window change magnitude does not solve
+the current short-event localization problem.
+
 ## Project boundaries
 
 EvidenceMM is the multimodal perception/evidence layer.
