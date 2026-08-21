@@ -1,0 +1,15 @@
+candidate_pool_k: 5
+document_gold_page: 3
+
+retrieval_config: configs/day12_retrieval.yaml
+robot_config: configs/robot_sequence_evidence.yaml
+scenario_file: data/eval/day14_failure_scenarios.jsonl
+report_file: reports/day14_failure_diagnosis.json
+
+required_fact_groups:
+  - ["6V", "6 V"]
+  - ["7.4V", "7.4 V"]
+  - ["front"]
+  - ["wrist"]
+  - ["observation"]
+  - ["action"]

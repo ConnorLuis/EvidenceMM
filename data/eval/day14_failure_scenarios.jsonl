@@ -1,0 +1,8 @@
+{"scenario_id":"healthy_reference","expected_codes":[]}
+{"scenario_id":"retrieval_miss_injected","expected_codes":["retrieval_miss"]}
+{"scenario_id":"missing_required_evidence_injected","expected_codes":["evidence_missing_required_ref"]}
+{"scenario_id":"missing_robot_evidence_injected","expected_codes":["evidence_missing_robot","evidence_missing_required_ref"]}
+{"scenario_id":"hallucinated_citation_injected","expected_codes":["generation_hallucinated_citation"]}
+{"scenario_id":"citation_gap_injected","expected_codes":["generation_citation_gap"]}
+{"scenario_id":"incomplete_generation_injected","expected_codes":["generation_incomplete"]}
+{"scenario_id":"false_abstention_injected","expected_codes":["generation_false_abstention","generation_citation_gap","generation_incomplete"]}
