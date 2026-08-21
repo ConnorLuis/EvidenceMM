@@ -1,0 +1,4 @@
+retrieval:
+  method: hybrid
+  fusion: rrf
+  top_k: 5
