@@ -1,0 +1,9 @@
+model_name: BAAI/bge-m3
+device: cuda:0
+max_length: 2048
+batch_size: 4
+top_k: 5
+
+text_corpus: data/processed/text/sts3215_pages.jsonl
+eval_cases: data/eval/day12_retrieval_cases.jsonl
+report_file: reports/day13_dense_retrieval.json
