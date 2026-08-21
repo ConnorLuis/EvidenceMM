@@ -292,6 +292,41 @@ boosting, normalization or threshold tuning. State/action remains valuable as
 diagnostic evidence, but simple within-window change magnitude does not solve
 the current short-event localization problem.
 
+## Day 10 result
+
+Day 10 closes the current temporal micro-baseline phase by testing evidence
+density rather than introducing another salience score. It uses timestamp-only
+uniform interior quantiles over the same 30 frozen two-second windows:
+
+```text
+K=1 -> midpoint
+K=2 -> 1/3, 2/3
+K=3 -> 1/4, 1/2, 3/4
+```
+
+Observed one-episode diagnostic result:
+
+| K | Shared samples | Images | Event coverage | Mean closest-evidence distance |
+| ---: | ---: | ---: | ---: | ---: |
+| 1 | 30 | 60 | 0.6667 | 344.467 ms |
+| 2 | 60 | 120 | 1.0000 | 55.944 ms |
+| 3 | 90 | 180 | 1.0000 | 122.864 ms |
+
+K=1 exactly reproduces the Day 7 midpoint baseline. K=2 recovers the previously
+missed 0.268 s `object_lift` event at frame 410 and improves aggregate temporal
+proximity substantially. K=3 retains full coverage but is worse than K=2 on
+mean proximity in this small diagnostic.
+
+This does not select a production K: the gold is already known, the evaluation
+contains one episode and three verified events, and `choose_best_k=false`
+remains frozen. The result supports the narrower conclusion that one-sample
+compression was an important temporal-evidence bottleneck in this episode.
+
+After Day 10, EvidenceMM stops expanding temporal micro-baselines and returns
+to the main multimodal RAG path: unified document + robot evidence, temporal
+citation, operation-video source adaptation, failure diagnosis, benchmark
+expansion, API and deployment.
+
 ## Project boundaries
 
 EvidenceMM is the multimodal perception/evidence layer.
