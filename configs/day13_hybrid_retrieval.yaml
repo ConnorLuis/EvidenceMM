@@ -1,0 +1,23 @@
+dense_model_name: BAAI/bge-m3
+reranker_model_name: BAAI/bge-reranker-v2-m3
+device: cuda:0
+
+dense_max_length: 2048
+dense_batch_size: 4
+
+reranker_max_length: 1024
+reranker_batch_size: 8
+
+branch_top_k: 5
+final_top_k: 5
+
+text_corpus: data/processed/text/sts3215_pages.jsonl
+eval_cases: data/eval/day12_retrieval_cases.jsonl
+
+hybrid_report_file: reports/day13_hybrid_retrieval.json
+ranking_report_file: reports/day13_ranking_analysis.json
+
+analysis_document_case_id: d12_ret_001
+analysis_robot_query: robot gripper action
+analysis_robot_selected_k: 2
+episode_id: "20260815_110415"
