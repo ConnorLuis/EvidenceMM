@@ -188,3 +188,89 @@ validated, provenance-bound, citation-capable contract.
 After the schema and real cross-domain smoke are frozen, the next gate can
 connect this bundle to grounded generation while preserving citation
 validation and abstention behavior.
+
+## Gate B - Unified Grounded Generation Smoke
+
+Gate B connects the frozen `UnifiedEvidenceBundle` to the existing
+Qwen3-VL generator without adding unified retrieval or failure diagnosis.
+
+### Frozen smoke fixture
+
+The model receives exactly:
+
+```text
+document:
+  STS3215 PDF page 1
+  rendered page image
+  extracted page text
+
+robot:
+  episode 20260815_110415
+  frame 15
+  timestamp 1.0028709 s
+  front original JPEG
+  wrist original JPEG
+  observation 6D
+  action 6D
+  tracking_error 6D
+```
+
+The question asks only for evidence metadata that is directly available in the
+packet: page number, robot frame/timestamp, camera names, and whether
+observation/action are present.
+
+It explicitly does not ask the model to diagnose success/failure or infer a
+causal relationship between the manual and the robot sample.
+
+### Generation path
+
+```text
+UnifiedEvidenceBundle
+    -> unified prompt builder
+    -> Qwen3-VL-4B-Instruct
+    -> strict JSON parser
+    -> UnifiedGroundedAnswer
+    -> generic EvidenceRef citation policy
+    -> required cross-domain citation coverage
+```
+
+The prompt exposes exactly three allowed citations:
+
+```text
+1 PDF page ref
+1 robot front-frame ref
+1 robot wrist-frame ref
+```
+
+For this fixed smoke question, all three are required because the requested
+facts span the document and both named camera evidence sources.
+
+### Gate B acceptance
+
+The real GPU smoke must satisfy:
+
+```text
+structured_output_valid = true
+answerable_valid = true
+citation_policy_valid = true
+required_citation_coverage_valid = true
+required_fact_coverage = 1.0
+```
+
+The run also records generator load time, generation latency, peak allocated
+GPU memory, and allocated GPU memory after model unload.
+
+### Non-claims
+
+Gate B still does not claim:
+
+- unified document/robot retrieval;
+- reranking across source types;
+- failure diagnosis;
+- causal reasoning between the manual and episode;
+- Agent/MCP orchestration;
+- MP4 upload support.
+
+Passing Gate B means only that the same grounded-generation call can consume a
+real document page and a real synchronized robot sample under one generic,
+traceable citation contract.
