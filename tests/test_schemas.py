@@ -6,7 +6,12 @@ from pathlib import Path
 import pytest
 from pydantic import ValidationError
 
-from evidencemm.schemas import EvalCase, NormalizedBBox
+from evidencemm.schemas import (
+    EvalCase,
+    EvidenceRef,
+    NormalizedBBox,
+    SourceType,
+)
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -34,3 +39,35 @@ def test_bbox_requires_valid_normalized_order():
 
     with pytest.raises(ValidationError):
         NormalizedBBox(x1=0.8, y1=0.2, x2=0.1, y2=0.9)
+
+
+def test_robot_sequence_evidence_requires_traceable_locator():
+    ref = EvidenceRef(
+        source_id="robot_episode_001",
+        source_type=SourceType.ROBOT_SEQUENCE,
+        frame_index=408,
+        camera="front",
+    )
+    assert ref.frame_index == 408
+    assert ref.camera == "front"
+
+    interval_ref = EvidenceRef(
+        source_id="robot_episode_001",
+        source_type=SourceType.ROBOT_SEQUENCE,
+        time_start_sec=27.2,
+        time_end_sec=27.5,
+    )
+    assert interval_ref.time_start_sec == 27.2
+
+    with pytest.raises(ValidationError):
+        EvidenceRef(
+            source_id="robot_episode_001",
+            source_type=SourceType.ROBOT_SEQUENCE,
+        )
+
+    with pytest.raises(ValidationError):
+        EvidenceRef(
+            source_id="robot_episode_001",
+            source_type=SourceType.ROBOT_SEQUENCE,
+            frame_index=408,
+        )

@@ -11,6 +11,7 @@ class SourceType(str, Enum):
     PDF = "pdf"
     IMAGE = "image"
     VIDEO = "video"
+    ROBOT_SEQUENCE = "robot_sequence"
     ROBOT_STATE = "robot_state"
     ROBOT_ACTION = "robot_action"
 
@@ -54,6 +55,24 @@ class EvidenceRef(BaseModel):
         ):
             raise ValueError("time_end_sec must be >= time_start_sec")
 
+        if self.source_type == SourceType.ROBOT_SEQUENCE:
+            has_time = (
+                self.time_start_sec is not None
+                or self.time_end_sec is not None
+            )
+            has_frame = self.frame_index is not None
+
+            if not has_time and not has_frame:
+                raise ValueError(
+                    "robot_sequence evidence requires a time locator "
+                    "or frame_index"
+                )
+
+            if has_frame and self.camera is None:
+                raise ValueError(
+                    "robot_sequence frame evidence requires camera"
+                )
+
         return self
 
 
@@ -83,16 +102,11 @@ class SourceManifest(BaseModel):
         return self
 
 
-class RobotEpisodeManifest(BaseModel):
-    episode_id: str
-    task: str
-    wrist_video: str
-    front_video: str
-    state_file: str
-    action_file: str | None = None
-    success: bool | None = None
-    failure_type: str | None = None
-    metadata: dict[str, Any] = Field(default_factory=dict)
+# A robot-operation episode is a multi-file source, so it intentionally does
+# not use the old video-shaped RobotEpisodeManifest that previously lived in
+# this generic schema module. The canonical Day 7 episode identity is
+# evidencemm.temporal_evidence.EpisodeManifest. EvidenceRef remains the generic
+# locator contract used to cite a frame or interval from that episode.
 
 
 class EvalCase(BaseModel):
