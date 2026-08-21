@@ -1,0 +1,9 @@
+query: >-
+  STS3215 typical operating voltage; robot gripper action
+
+candidate_pool_k: 5
+
+document_manifest: data/manifests/sources/sts3215_datasheet.json
+document_visual_manifest: data/processed/vision/sts3215_pages.jsonl
+
+episode_id: "20260815_110415"
