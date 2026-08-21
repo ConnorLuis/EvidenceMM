@@ -121,8 +121,11 @@ Robot query `{robot["query"]}`:
 ```text
 profile: {robot["profile"]}
 top_score: {robot["top_score"]}
-top_score_tie_count: {robot["top_score_tie_count"]}
-top_score_tied_frames: {robot["top_score_tied_frames"]}
+exact_top_score_tie_count: {robot["exact_top_score_tie_count"]}
+exact_top_score_tied_frames: {robot["exact_top_score_tied_frames"]}
+near_top_tolerance: {robot["near_top_tolerance"]}
+near_top_score_count: {robot["near_top_score_count"]}
+near_top_score_frames: {robot["near_top_score_frames"]}
 selected_frames: {robot["selected_frames"]}
 selection_rule: {robot["selection_rule"]}
 ```

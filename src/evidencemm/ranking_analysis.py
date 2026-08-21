@@ -167,7 +167,7 @@ def robot_top_tie_summary(
     *,
     hits: list[RobotSignalRetrievalHit],
     selected_k: int,
-    tolerance: float = 1e-12,
+    near_tolerance: float = 1e-12,
 ) -> dict:
     if not hits:
         raise ValueError(
@@ -181,26 +181,48 @@ def robot_top_tie_summary(
         raise ValueError(
             "selected_k exceeds available hits"
         )
+    if near_tolerance < 0:
+        raise ValueError(
+            "near_tolerance must be >= 0"
+        )
 
     top_score = hits[0].raw_score
-    tied = [
+
+    # Match the frozen retriever exactly: it sorts by exact raw_score first
+    # and uses frame_index only when raw_score values compare equal.
+    exact_tied = [
+        hit
+        for hit in hits
+        if hit.raw_score == top_score
+    ]
+    near_top = [
         hit
         for hit in hits
         if abs(
             hit.raw_score
             - top_score
         )
-        <= tolerance
+        <= near_tolerance
     ]
 
     selected = hits[:selected_k]
 
     return {
         "top_score": top_score,
-        "top_score_tie_count": len(tied),
-        "top_score_tied_frames": [
+        "exact_top_score_tie_count": len(
+            exact_tied
+        ),
+        "exact_top_score_tied_frames": [
             hit.frame_index
-            for hit in tied
+            for hit in exact_tied
+        ],
+        "near_top_tolerance": near_tolerance,
+        "near_top_score_count": len(
+            near_top
+        ),
+        "near_top_score_frames": [
+            hit.frame_index
+            for hit in near_top
         ],
         "selected_k": selected_k,
         "selected_frames": [
@@ -209,7 +231,8 @@ def robot_top_tie_summary(
         ],
         "selection_rule": (
             "raw_score descending; "
-            "frame_index ascending on ties"
+            "frame_index ascending only when "
+            "raw_score values are exactly equal"
         ),
         "selected_hits": [
             hit.to_dict()

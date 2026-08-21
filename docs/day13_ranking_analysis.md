@@ -78,10 +78,13 @@ Robot query `robot gripper action`:
 ```text
 profile: {'joints': ['gripper'], 'signals': ['action'], 'explicit_joint_terms': True, 'explicit_signal_terms': True}
 top_score: 1.6666666666666679
-top_score_tie_count: 28
-top_score_tied_frames: [155, 156, 381, 382, 383, 384, 623, 624, 838, 847, 848, 863, 869, 870, 157, 158, 159, 252, 253, 369, 370, 371, 380, 630, 631, 835, 836, 837]
+exact_top_score_tie_count: 14
+exact_top_score_tied_frames: [155, 156, 381, 382, 383, 384, 623, 624, 838, 847, 848, 863, 869, 870]
+near_top_tolerance: 1e-12
+near_top_score_count: 28
+near_top_score_frames: [155, 156, 381, 382, 383, 384, 623, 624, 838, 847, 848, 863, 869, 870, 157, 158, 159, 252, 253, 369, 370, 371, 380, 630, 631, 835, 836, 837]
 selected_frames: [155, 156]
-selection_rule: raw_score descending; frame_index ascending on ties
+selection_rule: raw_score descending; frame_index ascending only when raw_score values are exactly equal
 ```
 
 The document trace explains exact BM25 term contributions, dense cosine

@@ -83,7 +83,7 @@ def test_bm25_contributions_are_sorted():
     )
 
 
-def test_robot_top_tie_summary_counts_ties():
+def test_robot_top_tie_summary_counts_exact_ties():
     summary = robot_top_tie_summary(
         hits=[
             robot_hit(1, 155, 1.5),
@@ -95,9 +95,37 @@ def test_robot_top_tie_summary_counts_ties():
     )
     assert (
         summary[
-            "top_score_tie_count"
+            "exact_top_score_tie_count"
         ]
         == 3
+    )
+
+
+def test_robot_top_tie_summary_separates_near_equal_scores():
+    summary = robot_top_tie_summary(
+        hits=[
+            robot_hit(1, 155, 1.5),
+            robot_hit(
+                2,
+                156,
+                1.5 - 5e-13,
+            ),
+            robot_hit(3, 381, 1.0),
+        ],
+        selected_k=2,
+        near_tolerance=1e-12,
+    )
+    assert (
+        summary[
+            "exact_top_score_tie_count"
+        ]
+        == 1
+    )
+    assert (
+        summary[
+            "near_top_score_count"
+        ]
+        == 2
     )
 
 
