@@ -34,3 +34,16 @@ state_action_selection:
   joint_weighting: equal
   tracking_gap_role: diagnostic_only
   verify_tracking_error: true
+
+multi_keyframe_selection:
+  k_values:
+    - 1
+    - 2
+    - 3
+  target_rule: uniform_interior_quantiles
+  nearest_sample_tie_break: lower_frame_index
+  selection_signals: timestamp_only
+  duplicate_policy: reject
+  camera_pairing: shared_frame_index
+  report_all_k: true
+  choose_best_k: false
