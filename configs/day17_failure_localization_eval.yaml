@@ -1,0 +1,35 @@
+schema_version: evidencemm_day17_failure_localization_eval_v1
+
+inputs:
+  human_gt_jsonl: data/annotations/day16_human_gt_events.jsonl
+  human_gt_summary: data/annotations/day16_human_gt_summary.json
+  dataset_root: /mnt/f/episodes_pick_place_pilot_v5
+  diagnostic_manifest_root: data/manifests/diagnostic_robot_episodes
+  processed_root: data/processed/diagnostic_robot_sequence
+
+selector:
+  config_path: configs/day16_review_pack.yaml
+  status: frozen_day16_pre_gt_review_selector
+
+output:
+  report_json: reports/day17_failure_localization_eval.json
+
+evaluation:
+  tolerance_frames:
+    - 5
+    - 15
+
+expected:
+  episode_count: 8
+  event_count: 9
+  verified_event_count: 7
+  reviewed_unresolved_count: 2
+  expected_episode_ids:
+    - "20260815_111613"
+    - "20260815_112058"
+    - "20260815_112633"
+    - "20260815_112859"
+    - "20260815_140119"
+    - "20260815_141416"
+    - "20260815_141657"
+    - "20260815_155139"
