@@ -1,0 +1,254 @@
+{
+  "schema_version": "evidencemm_day19_interval_localizer_model_v1",
+  "model_status": "development_selected_interval_proposal_localizer",
+  "model_selection_split": "development",
+  "provenance": {
+    "frozen_after_day18_commit": "d87b3fbf40dbe86e87b6a05b4007f815a88db8de",
+    "benchmark_split_sha256": "0a51e87f9735f0d01513ea004b38e4803050e094d62cce3d65ea23d06a532e12",
+    "frozen_selector_config_sha256": "c0264a0e85b731bbe7a8abc7b9b6fe33df17bf1c5f765ca683ab9109c7e3fbb3",
+    "human_gt_sha256": "6bc0766848e697f57fcf5d9ebd1920b3013383b033c41ebf7e65ade9ed096a61"
+  },
+  "anti_leakage": {
+    "candidate_generation_uses_gold": false,
+    "held_out_gt_used_for_model_selection": false,
+    "held_out_metrics_reported": false,
+    "held_out_episode_ids_materialized_in_model_artifact": false,
+    "note": "Day18 is prospective after all Day16 reviews existed; Day19 enforces code-level development-only model selection and defers held-out scoring to a later stage."
+  },
+  "localizer": {
+    "center_policy": "frozen_day16_signal_candidates_excluding_uniform_only",
+    "interval_rule": "symmetric_radius_around_candidate_center",
+    "selected_radius_frames": 5
+  },
+  "development_selection": {
+    "development_episode_count": 54,
+    "development_anomaly_episode_count": 6,
+    "held_out_episode_count_not_evaluated": 14,
+    "held_out_anomaly_episode_count_not_evaluated": 2,
+    "verified_event_count": 5,
+    "reviewed_unresolved_count": 2,
+    "radius_grid_frames": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      8,
+      10,
+      12
+    ],
+    "iou_thresholds": [
+      0.1,
+      0.25,
+      0.5
+    ],
+    "selection_objective": [
+      "maximize_event_recall",
+      "maximize_recall_at_iou_0p25",
+      "maximize_mean_best_iou",
+      "minimize_radius_frames"
+    ],
+    "selected_metrics": {
+      "event_count": 5,
+      "event_recall": 1.0,
+      "mean_best_iou": 0.3615151515151515,
+      "median_best_iou": 0.36363636363636365,
+      "recall_at_iou": {
+        "0.10": 1.0,
+        "0.25": 1.0,
+        "0.50": 0.0
+      },
+      "mean_onset_abs_error_frames": 2.2,
+      "mean_offset_abs_error_frames": 5.4,
+      "radius_frames": 5,
+      "episode_count": 6,
+      "mean_proposals_per_episode": 17.0,
+      "min_proposals_per_episode": 17,
+      "max_proposals_per_episode": 17
+    },
+    "grid_metrics": [
+      {
+        "event_count": 5,
+        "event_recall": 0.6,
+        "mean_best_iou": 0.1181818181818182,
+        "median_best_iou": 0.09090909090909091,
+        "recall_at_iou": {
+          "0.10": 0.4,
+          "0.25": 0.4,
+          "0.50": 0.0
+        },
+        "mean_onset_abs_error_frames": 3.2,
+        "mean_offset_abs_error_frames": 2.8,
+        "radius_frames": 0,
+        "episode_count": 6,
+        "mean_proposals_per_episode": 17.0,
+        "min_proposals_per_episode": 17,
+        "max_proposals_per_episode": 17
+      },
+      {
+        "event_count": 5,
+        "event_recall": 0.8,
+        "mean_best_iou": 0.31787878787878787,
+        "median_best_iou": 0.2727272727272727,
+        "recall_at_iou": {
+          "0.10": 0.8,
+          "0.25": 0.6,
+          "0.50": 0.2
+        },
+        "mean_onset_abs_error_frames": 2.2,
+        "mean_offset_abs_error_frames": 3.0,
+        "radius_frames": 1,
+        "episode_count": 6,
+        "mean_proposals_per_episode": 17.0,
+        "min_proposals_per_episode": 17,
+        "max_proposals_per_episode": 17
+      },
+      {
+        "event_count": 5,
+        "event_recall": 0.8,
+        "mean_best_iou": 0.3838095238095238,
+        "median_best_iou": 0.3333333333333333,
+        "recall_at_iou": {
+          "0.10": 0.8,
+          "0.25": 0.8,
+          "0.50": 0.4
+        },
+        "mean_onset_abs_error_frames": 1.6,
+        "mean_offset_abs_error_frames": 3.6,
+        "radius_frames": 2,
+        "episode_count": 6,
+        "mean_proposals_per_episode": 17.0,
+        "min_proposals_per_episode": 17,
+        "max_proposals_per_episode": 17
+      },
+      {
+        "event_count": 5,
+        "event_recall": 1.0,
+        "mean_best_iou": 0.4004945054945055,
+        "median_best_iou": 0.38461538461538464,
+        "recall_at_iou": {
+          "0.10": 1.0,
+          "0.25": 0.8,
+          "0.50": 0.4
+        },
+        "mean_onset_abs_error_frames": 1.4,
+        "mean_offset_abs_error_frames": 4.2,
+        "radius_frames": 3,
+        "episode_count": 6,
+        "mean_proposals_per_episode": 17.0,
+        "min_proposals_per_episode": 17,
+        "max_proposals_per_episode": 17
+      },
+      {
+        "event_count": 5,
+        "event_recall": 1.0,
+        "mean_best_iou": 0.3887445887445887,
+        "median_best_iou": 0.4444444444444444,
+        "recall_at_iou": {
+          "0.10": 1.0,
+          "0.25": 0.8,
+          "0.50": 0.0
+        },
+        "mean_onset_abs_error_frames": 1.6,
+        "mean_offset_abs_error_frames": 4.8,
+        "radius_frames": 4,
+        "episode_count": 6,
+        "mean_proposals_per_episode": 17.0,
+        "min_proposals_per_episode": 17,
+        "max_proposals_per_episode": 17
+      },
+      {
+        "event_count": 5,
+        "event_recall": 1.0,
+        "mean_best_iou": 0.3615151515151515,
+        "median_best_iou": 0.36363636363636365,
+        "recall_at_iou": {
+          "0.10": 1.0,
+          "0.25": 1.0,
+          "0.50": 0.0
+        },
+        "mean_onset_abs_error_frames": 2.2,
+        "mean_offset_abs_error_frames": 5.4,
+        "radius_frames": 5,
+        "episode_count": 6,
+        "mean_proposals_per_episode": 17.0,
+        "min_proposals_per_episode": 17,
+        "max_proposals_per_episode": 17
+      },
+      {
+        "event_count": 5,
+        "event_recall": 1.0,
+        "mean_best_iou": 0.34615384615384615,
+        "median_best_iou": 0.3076923076923077,
+        "recall_at_iou": {
+          "0.10": 1.0,
+          "0.25": 1.0,
+          "0.50": 0.2
+        },
+        "mean_onset_abs_error_frames": 2.8,
+        "mean_offset_abs_error_frames": 6.0,
+        "radius_frames": 6,
+        "episode_count": 6,
+        "mean_proposals_per_episode": 17.0,
+        "min_proposals_per_episode": 17,
+        "max_proposals_per_episode": 17
+      },
+      {
+        "event_count": 5,
+        "event_recall": 1.0,
+        "mean_best_iou": 0.29934640522875816,
+        "median_best_iou": 0.23529411764705882,
+        "recall_at_iou": {
+          "0.10": 1.0,
+          "0.25": 0.2,
+          "0.50": 0.2
+        },
+        "mean_onset_abs_error_frames": 4.8,
+        "mean_offset_abs_error_frames": 7.2,
+        "radius_frames": 8,
+        "episode_count": 6,
+        "mean_proposals_per_episode": 17.0,
+        "min_proposals_per_episode": 17,
+        "max_proposals_per_episode": 17
+      },
+      {
+        "event_count": 5,
+        "event_recall": 1.0,
+        "mean_best_iou": 0.2571428571428571,
+        "median_best_iou": 0.19047619047619047,
+        "recall_at_iou": {
+          "0.10": 1.0,
+          "0.25": 0.2,
+          "0.50": 0.2
+        },
+        "mean_onset_abs_error_frames": 6.8,
+        "mean_offset_abs_error_frames": 8.8,
+        "radius_frames": 10,
+        "episode_count": 6,
+        "mean_proposals_per_episode": 17.0,
+        "min_proposals_per_episode": 17,
+        "max_proposals_per_episode": 17
+      },
+      {
+        "event_count": 5,
+        "event_recall": 1.0,
+        "mean_best_iou": 0.21600000000000003,
+        "median_best_iou": 0.16,
+        "recall_at_iou": {
+          "0.10": 1.0,
+          "0.25": 0.2,
+          "0.50": 0.0
+        },
+        "mean_onset_abs_error_frames": 8.8,
+        "mean_offset_abs_error_frames": 10.8,
+        "radius_frames": 12,
+        "episode_count": 6,
+        "mean_proposals_per_episode": 17.0,
+        "min_proposals_per_episode": 17,
+        "max_proposals_per_episode": 17
+      }
+    ]
+  }
+}

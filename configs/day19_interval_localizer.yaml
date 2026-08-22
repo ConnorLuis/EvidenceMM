@@ -1,0 +1,51 @@
+schema_version: evidencemm_day19_interval_localizer_config_v1
+
+inputs:
+  benchmark_split_json: data/eval/day18_robot_benchmark_split.json
+  human_gt_jsonl: data/annotations/day16_human_gt_events.jsonl
+  dataset_root: /mnt/f/episodes_pick_place_pilot_v5
+  diagnostic_manifest_root: data/manifests/diagnostic_robot_episodes
+  processed_root: data/processed/diagnostic_robot_sequence
+  frozen_selector_config: configs/day16_review_pack.yaml
+
+output:
+  model_json: data/eval/day19_interval_localizer_model.json
+  development_report_json: reports/day19_interval_localizer_development.json
+
+provenance:
+  frozen_after_day18_commit: d87b3fbf40dbe86e87b6a05b4007f815a88db8de
+  day18_status: closed_frozen
+  model_selection_split: development
+
+localizer:
+  center_policy: frozen_day16_signal_candidates_excluding_uniform_only
+  interval_rule: symmetric_radius_around_candidate_center
+  radius_grid_frames:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 8
+    - 10
+    - 12
+  iou_thresholds:
+    - 0.10
+    - 0.25
+    - 0.50
+  selection_objective:
+    - maximize_event_recall
+    - maximize_recall_at_iou_0p25
+    - maximize_mean_best_iou
+    - minimize_radius_frames
+
+expected:
+  development_episode_count: 54
+  held_out_episode_count: 14
+  development_anomaly_episode_count: 6
+  held_out_anomaly_episode_count: 2
+  development_event_count: 7
+  development_verified_event_count: 5
+  development_reviewed_unresolved_count: 2
