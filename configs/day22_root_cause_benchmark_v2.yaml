@@ -1,0 +1,271 @@
+schema_version: evidencemm_day22_root_cause_benchmark_v2_config_v1
+
+provenance:
+  frozen_after_day21_commit: 1b2badac429100b1181f56eeea644c3d9e7d6ac9
+  expected_task_definition_blob_sha1: b31cc529c159f84665eb72df3d5db8f6683c49e0
+  expected_day21_doc_blob_sha1: 82e09d19ab471f31b52b7a4627d27820895631bc
+  expected_day21_artifact_blob_sha1: eccc5c3919a33b313aa6983090e319192025936a
+  day21_status: closed_frozen
+  protocol_frozen_date: "2026-08-22"
+
+outputs:
+  protocol_json: data/protocol/day22_root_cause_benchmark_v2_protocol.json
+  collection_plan_csv: data/protocol/day22_root_cause_collection_plan.csv
+
+ownership:
+  acquisition_project: embodied-agent-arm
+  acquisition_mode: existing_leader_follower_teleoperation
+  acquisition_code_change_required: false
+  evidence_project: EvidenceMM
+  rule: >-
+    Robot control and raw episode acquisition remain in embodied-agent-arm.
+    EvidenceMM owns benchmark protocol, source binding, Ground Truth,
+    evidence retrieval, localization, diagnosis, and evaluation.
+
+taxonomy:
+  physical_causes:
+    - target_offset_or_perception
+    - gripper_close_timing
+    - trajectory_execution_deviation
+  non_causal_physical_values:
+    - unknown
+    - none_clean
+  evidence_answerability:
+    - answerable
+    - insufficient_evidence
+    - not_applicable_clean
+  diagnostic_decisions:
+    - target_offset_or_perception
+    - gripper_close_timing
+    - trajectory_execution_deviation
+    - insufficient_evidence
+    - clean_success
+
+pilot:
+  excluded_from_final_benchmark: true
+  pilot_pair_group_count: 3
+  clean_control_per_group: 1
+  target_offset_per_group: 1
+  gripper_timing_per_group: 1
+  trajectory_deviation_per_group: 1
+  expected_episode_count: 12
+  minimum_failure_induction_per_cause: 2
+  required_clean_control_success_count: 3
+  freeze_intervention_parameters_after_pilot: true
+
+final_collection:
+  pair_group_count: 15
+  slots_per_pair_group: 6
+  target_eligible_episode_count: 90
+  clean_control_count: 15
+  insufficient_evidence_candidate_count: 15
+  controlled_cause_count: 60
+  target_offset_or_perception_count: 20
+  gripper_close_timing_count: 20
+  trajectory_execution_deviation_count: 20
+  retain_all_raw_attempts_in_audit: true
+  silent_deletion_for_failed_intervention: false
+
+interventions:
+  target_offset_or_perception:
+    intervention_type: object_target_pose_offset
+    primary_changed_factor: environment_target_pose
+    operator_rule: >-
+      Keep the nominal teleoperation intent unchanged while changing the
+      object's target-relative pose within the existing safe workspace.
+    pilot_parameters:
+      direction_field: target_offset_direction
+      magnitude_field: target_offset_magnitude
+      unit_field: target_offset_unit
+      numeric_values_frozen_on_day22: false
+  gripper_close_timing:
+    intervention_type: manual_gripper_close_timing_shift
+    primary_changed_factor: gripper_close_phase
+    operator_rule: >-
+      Use the existing Leader teleoperation path and intentionally close the
+      gripper earlier or later than the nominal grasp phase without adding a
+      second primary deviation.
+    pilot_parameters:
+      direction_field: timing_direction
+      magnitude_field: timing_shift
+      unit_field: timing_shift_unit
+      numeric_values_frozen_on_day22: false
+  trajectory_execution_deviation:
+    intervention_type: manual_bounded_trajectory_deviation
+    primary_changed_factor: commanded_motion_path
+    operator_rule: >-
+      Keep the object condition nominal and introduce one bounded, predeclared
+      path deviation through Leader teleoperation inside the existing safe
+      workspace.
+    pilot_parameters:
+      direction_field: deviation_direction
+      magnitude_field: deviation_magnitude
+      unit_field: deviation_unit
+      numeric_values_frozen_on_day22: false
+
+single_primary_intervention:
+  required: true
+  multiple_primary_interventions: experimental_exclusion
+  intervention_must_be_declared_before_episode: true
+  intervention_admin_metadata_visible_to_model: false
+
+paired_control:
+  required_for_each_pair_group: true
+  clean_control_may_anchor_multiple_intervention_slots: true
+  same_pair_group_must_share:
+    - scene_setup
+    - object_identity
+    - nominal_start_condition
+    - camera_setup
+    - acquisition_configuration
+  all_pair_group_members_must_stay_in_same_future_split: true
+
+insufficient_evidence:
+  role: diagnostic_decision_not_physical_cause
+  technically_valid_failure_required: true
+  technical_corruption_must_not_be_used_as_insufficient_evidence: true
+  physical_cause_may_be_known_or_unknown: true
+  answerability_must_be_judged_from_model_visible_evidence_only: true
+
+technical_exclusion:
+  examples:
+    - missing_metadata_or_samples
+    - missing_front_or_wrist_stream
+    - frame_or_timestamp_binding_failure
+    - severe_duplicate_or_static_camera_failure
+    - uncontrolled_power_loss_or_collapse
+    - aborted_episode_due_to_safety_stop
+  retained_in_raw_audit: true
+
+experimental_exclusion:
+  examples:
+    - declared_intervention_not_applied
+    - multiple_primary_interventions
+    - pair_group_setup_not_comparable
+    - controlled_intervention_episode_did_not_produce_required_failure_case
+    - clean_control_not_successful
+  retained_in_raw_audit: true
+  recollection_allowed: true
+
+human_review:
+  symptom_and_cause_must_remain_separate: true
+  required_verified_fields:
+    - episode_id
+    - pair_group_id
+    - technical_valid
+    - experimental_valid
+    - task_success
+    - intervention_verified
+    - physical_cause_gt
+    - evidence_answerability_gt
+    - diagnostic_decision_gt
+    - failure_interval
+    - supporting_robot_refs
+    - counterevidence_robot_refs
+    - supporting_manual_refs
+    - counterevidence_manual_refs
+    - confidence
+    - review_notes
+  answerable_physical_cause_requires:
+    - failure_interval
+    - supporting_robot_refs
+    - supporting_manual_refs
+  insufficient_evidence_requires:
+    - failure_interval
+    - explicit_uncertainty_reason
+  clean_success_requires_no_failure_interval: true
+
+manual_causal_ground_truth:
+  generic_diagnostic_sop_required_before_final_human_review: true
+  sop_must_not_contain_episode_ids_or_case_answers: true
+  current_sts3215_datasheet_remains_component_evidence: true
+  supporting_manual_refs_must_be_human_verified: true
+  retrieval_rank_alone_is_not_causal_support: true
+
+anti_label_leakage:
+  model_visible_modalities:
+    - front_images
+    - wrist_images
+    - observation
+    - action
+    - tracking_error
+    - approved_manual_corpus
+  admin_only_never_model_input:
+    - pair_group_id
+    - plan_row_id
+    - planned_physical_cause
+    - intervention_type
+    - intervention_parameters
+    - intervention_applied
+    - physical_cause_gt
+    - evidence_answerability_gt
+    - diagnostic_decision_gt
+    - human_review_notes
+    - supporting_ground_truth_refs
+  source_manifest_must_not_embed_admin_labels: true
+  prompts_must_not_include_intervention_metadata: true
+
+future_split:
+  materialize_membership_on_day22: false
+  materialize_target_day: 30
+  unit: pair_group_id
+  seed: evidencemm-root-cause-v2-split-v3
+  ranking_rule: sha256(seed|pair_group_id)_ascending
+  development_pair_group_count: 10
+  held_out_pair_group_count: 5
+  expected_development_episode_count: 60
+  expected_held_out_episode_count: 30
+  pair_group_cross_split_allowed: false
+  held_out_model_selection_allowed: false
+  held_out_prompt_tuning_allowed: false
+  held_out_retrieval_tuning_allowed: false
+
+final_metrics:
+  temporal:
+    - event_recall
+    - mean_best_iou
+    - recall_at_iou_0_25
+    - recall_at_iou_0_50
+    - onset_abs_error
+    - offset_abs_error
+  diagnosis:
+    - answerable_three_class_macro_f1
+    - failed_case_four_way_diagnostic_macro_f1
+    - abstention_accuracy
+    - false_answer_rate
+    - false_abstention_rate
+    - clean_control_false_positive_cause_rate
+  grounding:
+    - robot_citation_precision
+    - robot_citation_recall
+    - manual_citation_precision
+    - manual_citation_recall
+    - manual_recall_at_k
+    - out_of_bundle_citation_rate
+  efficiency:
+    - end_to_end_latency
+    - peak_gpu_memory
+
+safety:
+  preserve_existing_robot_safety_guards: true
+  no_safety_limit_bypass: true
+  no_deliberate_power_loss: true
+  no_hard_collision_as_intervention: true
+  intervention_must_remain_inside_existing_safe_workspace: true
+  unexpected_contact_or_hardware_fault_requires_abort_and_exclusion: true
+
+roadmap:
+  day22: root_cause_benchmark_v2_protocol_freeze
+  day23: excluded_pilot_and_intervention_parameter_freeze
+  day24: final_target_offset_collection
+  day25: final_gripper_timing_collection
+  day26: final_trajectory_deviation_collection
+  day27: final_insufficient_evidence_clean_controls_and_recollection
+  day28: raw_audit_technical_and_experimental_exclusions_source_binding
+  day29: human_causal_review_and_manual_support_annotation
+  day30: ground_truth_and_groupwise_development_heldout_split_freeze
+  day31: root_cause_diagnostic_baseline
+  day32: development_only_calibration
+  day33: single_frozen_heldout_final_evaluation
+  day34: metrics_error_analysis_latency_gpu_and_e2e
+  day35: documentation_release_resume_interview_closure
