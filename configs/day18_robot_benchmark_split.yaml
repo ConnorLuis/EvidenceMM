@@ -1,0 +1,47 @@
+schema_version: evidencemm_day18_robot_benchmark_split_config_v1
+
+inputs:
+  source_audit_jsonl: data/annotations/day16_source_audit.jsonl
+  human_gt_jsonl: data/annotations/day16_human_gt_events.jsonl
+
+output:
+  split_json: data/eval/day18_robot_benchmark_split.json
+
+provenance:
+  frozen_after_day17_commit: 2102136d63ba2e193fcd3fbedf215e2d41d39eef
+  day17_status: closed_frozen
+  split_status: prospective_for_day19_plus
+
+protocol:
+  seed: evidencemm-day18-v1
+  rank_rule: sha256(seed|audit_category|episode_id)
+  membership_inputs:
+    - episode_id
+    - audit_category
+  human_gt_used_for_membership: false
+  failure_interval_used_for_membership: false
+  held_out_counts:
+    clean_reference_candidate: 12
+    operation_anomaly: 2
+
+expected_source_audit:
+  total_rows: 75
+  clean_reference_candidate: 60
+  operation_anomaly: 8
+  demo_quality_only: 1
+  technical_exclusion: 6
+
+expected_human_gt:
+  episode_count: 8
+  event_count: 9
+  verified_event_count: 7
+  reviewed_unresolved_count: 2
+
+expected_split:
+  eligible_episode_count: 68
+  development_episode_count: 54
+  held_out_episode_count: 14
+  development_clean_count: 48
+  development_anomaly_count: 6
+  held_out_clean_count: 12
+  held_out_anomaly_count: 2

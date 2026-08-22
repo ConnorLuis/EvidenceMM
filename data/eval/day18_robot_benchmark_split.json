@@ -1,0 +1,849 @@
+{
+  "schema_version": "evidencemm_day18_robot_benchmark_split_v1",
+  "benchmark_status": "prospective_heldout_split_frozen_after_day17_baseline",
+  "split_scope": "future_day19_plus_model_selection_and_evaluation",
+  "provenance": {
+    "frozen_after_day17_commit": "2102136d63ba2e193fcd3fbedf215e2d41d39eef",
+    "source_audit_path": "data/annotations/day16_source_audit.jsonl",
+    "source_audit_sha256": "4ea11709be81358a64b8b4d7098cb86abf60e34fb91cd36031b911598465deea",
+    "human_gt_path": "data/annotations/day16_human_gt_events.jsonl",
+    "human_gt_sha256": "6bc0766848e697f57fcf5d9ebd1920b3013383b033c41ebf7e65ade9ed096a61"
+  },
+  "anti_leakage": {
+    "membership_inputs": [
+      "episode_id",
+      "audit_category"
+    ],
+    "human_gt_used_for_membership": false,
+    "failure_interval_used_for_membership": false,
+    "membership_frozen_before_human_gt_metadata_load": true,
+    "split_artifact_contains_failure_boundaries": false,
+    "note": "Day17 already evaluated all reviewed failures; this split is prospective only for Day19+ model selection/evaluation and does not retroactively make Day17 held-out."
+  },
+  "protocol": {
+    "seed": "evidencemm-day18-v1",
+    "rank_rule": "sha256(seed|audit_category|episode_id)",
+    "stratification": [
+      "clean_reference_candidate",
+      "operation_anomaly"
+    ],
+    "held_out_counts": {
+      "clean_reference_candidate": 12,
+      "operation_anomaly": 2
+    }
+  },
+  "counts": {
+    "eligible_episode_count": 68,
+    "development_episode_count": 54,
+    "held_out_episode_count": 14,
+    "development_clean_count": 48,
+    "development_anomaly_count": 6,
+    "held_out_clean_count": 12,
+    "held_out_anomaly_count": 2
+  },
+  "gold_metadata_counts_by_split": {
+    "development": {
+      "event_count": 7,
+      "verified_event_count": 5,
+      "reviewed_unresolved_count": 2
+    },
+    "held_out": {
+      "event_count": 2,
+      "verified_event_count": 2,
+      "reviewed_unresolved_count": 0
+    }
+  },
+  "splits": {
+    "development": {
+      "episode_ids": [
+        "20260815_110415",
+        "20260815_111613",
+        "20260815_112058",
+        "20260815_112355",
+        "20260815_112633",
+        "20260815_135210",
+        "20260815_135903",
+        "20260815_140119",
+        "20260815_140610",
+        "20260815_140811",
+        "20260815_141007",
+        "20260815_141206",
+        "20260815_141416",
+        "20260815_141657",
+        "20260815_141902",
+        "20260815_142125",
+        "20260815_142344",
+        "20260815_142902",
+        "20260815_143123",
+        "20260815_143339",
+        "20260815_143628",
+        "20260815_143902",
+        "20260815_144112",
+        "20260815_144553",
+        "20260815_144837",
+        "20260815_145113",
+        "20260815_145813",
+        "20260815_150030",
+        "20260815_150257",
+        "20260815_150535",
+        "20260815_151220",
+        "20260815_151431",
+        "20260815_152255",
+        "20260815_152449",
+        "20260815_152712",
+        "20260815_152924",
+        "20260815_153401",
+        "20260815_153615",
+        "20260815_154015",
+        "20260815_154245",
+        "20260815_154846",
+        "20260815_160129",
+        "20260815_160526",
+        "20260815_160733",
+        "20260815_160942",
+        "20260815_162126",
+        "20260815_162611",
+        "20260815_162806",
+        "20260815_163010",
+        "20260815_163220",
+        "20260815_163430",
+        "20260815_163829",
+        "20260815_164346",
+        "20260815_164932"
+      ]
+    },
+    "held_out": {
+      "episode_ids": [
+        "20260815_112859",
+        "20260815_140401",
+        "20260815_142644",
+        "20260815_144330",
+        "20260815_151728",
+        "20260815_152036",
+        "20260815_153821",
+        "20260815_155139",
+        "20260815_155903",
+        "20260815_160322",
+        "20260815_161146",
+        "20260815_161904",
+        "20260815_162322",
+        "20260815_163633"
+      ]
+    }
+  },
+  "episodes": [
+    {
+      "episode_id": "20260815_110415",
+      "split": "development",
+      "source_category": "clean_reference_candidate",
+      "task_success": true,
+      "operation_anomaly": false,
+      "human_gt_event_count": 0,
+      "human_gt_event_ids": [],
+      "human_gt_review_dispositions": []
+    },
+    {
+      "episode_id": "20260815_111613",
+      "split": "development",
+      "source_category": "operation_anomaly",
+      "task_success": true,
+      "operation_anomaly": true,
+      "human_gt_event_count": 2,
+      "human_gt_event_ids": [
+        "20260815_111613_event_01",
+        "20260815_111613_event_02"
+      ],
+      "human_gt_review_dispositions": [
+        "verified"
+      ]
+    },
+    {
+      "episode_id": "20260815_112058",
+      "split": "development",
+      "source_category": "operation_anomaly",
+      "task_success": true,
+      "operation_anomaly": true,
+      "human_gt_event_count": 1,
+      "human_gt_event_ids": [
+        "20260815_112058_event_01"
+      ],
+      "human_gt_review_dispositions": [
+        "verified"
+      ]
+    },
+    {
+      "episode_id": "20260815_112355",
+      "split": "development",
+      "source_category": "clean_reference_candidate",
+      "task_success": true,
+      "operation_anomaly": false,
+      "human_gt_event_count": 0,
+      "human_gt_event_ids": [],
+      "human_gt_review_dispositions": []
+    },
+    {
+      "episode_id": "20260815_112633",
+      "split": "development",
+      "source_category": "operation_anomaly",
+      "task_success": true,
+      "operation_anomaly": true,
+      "human_gt_event_count": 1,
+      "human_gt_event_ids": [
+        "20260815_112633_event_01"
+      ],
+      "human_gt_review_dispositions": [
+        "verified"
+      ]
+    },
+    {
+      "episode_id": "20260815_112859",
+      "split": "held_out",
+      "source_category": "operation_anomaly",
+      "task_success": true,
+      "operation_anomaly": true,
+      "human_gt_event_count": 1,
+      "human_gt_event_ids": [
+        "20260815_112859_event_01"
+      ],
+      "human_gt_review_dispositions": [
+        "verified"
+      ]
+    },
+    {
+      "episode_id": "20260815_135210",
+      "split": "development",
+      "source_category": "clean_reference_candidate",
+      "task_success": true,
+      "operation_anomaly": false,
+      "human_gt_event_count": 0,
+      "human_gt_event_ids": [],
+      "human_gt_review_dispositions": []
+    },
+    {
+      "episode_id": "20260815_135903",
+      "split": "development",
+      "source_category": "clean_reference_candidate",
+      "task_success": true,
+      "operation_anomaly": false,
+      "human_gt_event_count": 0,
+      "human_gt_event_ids": [],
+      "human_gt_review_dispositions": []
+    },
+    {
+      "episode_id": "20260815_140119",
+      "split": "development",
+      "source_category": "operation_anomaly",
+      "task_success": true,
+      "operation_anomaly": true,
+      "human_gt_event_count": 1,
+      "human_gt_event_ids": [
+        "20260815_140119_event_01"
+      ],
+      "human_gt_review_dispositions": [
+        "reviewed_unresolved"
+      ]
+    },
+    {
+      "episode_id": "20260815_140401",
+      "split": "held_out",
+      "source_category": "clean_reference_candidate",
+      "task_success": true,
+      "operation_anomaly": false,
+      "human_gt_event_count": 0,
+      "human_gt_event_ids": [],
+      "human_gt_review_dispositions": []
+    },
+    {
+      "episode_id": "20260815_140610",
+      "split": "development",
+      "source_category": "clean_reference_candidate",
+      "task_success": true,
+      "operation_anomaly": false,
+      "human_gt_event_count": 0,
+      "human_gt_event_ids": [],
+      "human_gt_review_dispositions": []
+    },
+    {
+      "episode_id": "20260815_140811",
+      "split": "development",
+      "source_category": "clean_reference_candidate",
+      "task_success": true,
+      "operation_anomaly": false,
+      "human_gt_event_count": 0,
+      "human_gt_event_ids": [],
+      "human_gt_review_dispositions": []
+    },
+    {
+      "episode_id": "20260815_141007",
+      "split": "development",
+      "source_category": "clean_reference_candidate",
+      "task_success": true,
+      "operation_anomaly": false,
+      "human_gt_event_count": 0,
+      "human_gt_event_ids": [],
+      "human_gt_review_dispositions": []
+    },
+    {
+      "episode_id": "20260815_141206",
+      "split": "development",
+      "source_category": "clean_reference_candidate",
+      "task_success": true,
+      "operation_anomaly": false,
+      "human_gt_event_count": 0,
+      "human_gt_event_ids": [],
+      "human_gt_review_dispositions": []
+    },
+    {
+      "episode_id": "20260815_141416",
+      "split": "development",
+      "source_category": "operation_anomaly",
+      "task_success": true,
+      "operation_anomaly": true,
+      "human_gt_event_count": 1,
+      "human_gt_event_ids": [
+        "20260815_141416_event_01"
+      ],
+      "human_gt_review_dispositions": [
+        "verified"
+      ]
+    },
+    {
+      "episode_id": "20260815_141657",
+      "split": "development",
+      "source_category": "operation_anomaly",
+      "task_success": true,
+      "operation_anomaly": true,
+      "human_gt_event_count": 1,
+      "human_gt_event_ids": [
+        "20260815_141657_event_01"
+      ],
+      "human_gt_review_dispositions": [
+        "reviewed_unresolved"
+      ]
+    },
+    {
+      "episode_id": "20260815_141902",
+      "split": "development",
+      "source_category": "clean_reference_candidate",
+      "task_success": true,
+      "operation_anomaly": false,
+      "human_gt_event_count": 0,
+      "human_gt_event_ids": [],
+      "human_gt_review_dispositions": []
+    },
+    {
+      "episode_id": "20260815_142125",
+      "split": "development",
+      "source_category": "clean_reference_candidate",
+      "task_success": true,
+      "operation_anomaly": false,
+      "human_gt_event_count": 0,
+      "human_gt_event_ids": [],
+      "human_gt_review_dispositions": []
+    },
+    {
+      "episode_id": "20260815_142344",
+      "split": "development",
+      "source_category": "clean_reference_candidate",
+      "task_success": true,
+      "operation_anomaly": false,
+      "human_gt_event_count": 0,
+      "human_gt_event_ids": [],
+      "human_gt_review_dispositions": []
+    },
+    {
+      "episode_id": "20260815_142644",
+      "split": "held_out",
+      "source_category": "clean_reference_candidate",
+      "task_success": true,
+      "operation_anomaly": false,
+      "human_gt_event_count": 0,
+      "human_gt_event_ids": [],
+      "human_gt_review_dispositions": []
+    },
+    {
+      "episode_id": "20260815_142902",
+      "split": "development",
+      "source_category": "clean_reference_candidate",
+      "task_success": true,
+      "operation_anomaly": false,
+      "human_gt_event_count": 0,
+      "human_gt_event_ids": [],
+      "human_gt_review_dispositions": []
+    },
+    {
+      "episode_id": "20260815_143123",
+      "split": "development",
+      "source_category": "clean_reference_candidate",
+      "task_success": true,
+      "operation_anomaly": false,
+      "human_gt_event_count": 0,
+      "human_gt_event_ids": [],
+      "human_gt_review_dispositions": []
+    },
+    {
+      "episode_id": "20260815_143339",
+      "split": "development",
+      "source_category": "clean_reference_candidate",
+      "task_success": true,
+      "operation_anomaly": false,
+      "human_gt_event_count": 0,
+      "human_gt_event_ids": [],
+      "human_gt_review_dispositions": []
+    },
+    {
+      "episode_id": "20260815_143628",
+      "split": "development",
+      "source_category": "clean_reference_candidate",
+      "task_success": true,
+      "operation_anomaly": false,
+      "human_gt_event_count": 0,
+      "human_gt_event_ids": [],
+      "human_gt_review_dispositions": []
+    },
+    {
+      "episode_id": "20260815_143902",
+      "split": "development",
+      "source_category": "clean_reference_candidate",
+      "task_success": true,
+      "operation_anomaly": false,
+      "human_gt_event_count": 0,
+      "human_gt_event_ids": [],
+      "human_gt_review_dispositions": []
+    },
+    {
+      "episode_id": "20260815_144112",
+      "split": "development",
+      "source_category": "clean_reference_candidate",
+      "task_success": true,
+      "operation_anomaly": false,
+      "human_gt_event_count": 0,
+      "human_gt_event_ids": [],
+      "human_gt_review_dispositions": []
+    },
+    {
+      "episode_id": "20260815_144330",
+      "split": "held_out",
+      "source_category": "clean_reference_candidate",
+      "task_success": true,
+      "operation_anomaly": false,
+      "human_gt_event_count": 0,
+      "human_gt_event_ids": [],
+      "human_gt_review_dispositions": []
+    },
+    {
+      "episode_id": "20260815_144553",
+      "split": "development",
+      "source_category": "clean_reference_candidate",
+      "task_success": true,
+      "operation_anomaly": false,
+      "human_gt_event_count": 0,
+      "human_gt_event_ids": [],
+      "human_gt_review_dispositions": []
+    },
+    {
+      "episode_id": "20260815_144837",
+      "split": "development",
+      "source_category": "clean_reference_candidate",
+      "task_success": true,
+      "operation_anomaly": false,
+      "human_gt_event_count": 0,
+      "human_gt_event_ids": [],
+      "human_gt_review_dispositions": []
+    },
+    {
+      "episode_id": "20260815_145113",
+      "split": "development",
+      "source_category": "clean_reference_candidate",
+      "task_success": true,
+      "operation_anomaly": false,
+      "human_gt_event_count": 0,
+      "human_gt_event_ids": [],
+      "human_gt_review_dispositions": []
+    },
+    {
+      "episode_id": "20260815_145813",
+      "split": "development",
+      "source_category": "clean_reference_candidate",
+      "task_success": true,
+      "operation_anomaly": false,
+      "human_gt_event_count": 0,
+      "human_gt_event_ids": [],
+      "human_gt_review_dispositions": []
+    },
+    {
+      "episode_id": "20260815_150030",
+      "split": "development",
+      "source_category": "clean_reference_candidate",
+      "task_success": true,
+      "operation_anomaly": false,
+      "human_gt_event_count": 0,
+      "human_gt_event_ids": [],
+      "human_gt_review_dispositions": []
+    },
+    {
+      "episode_id": "20260815_150257",
+      "split": "development",
+      "source_category": "clean_reference_candidate",
+      "task_success": true,
+      "operation_anomaly": false,
+      "human_gt_event_count": 0,
+      "human_gt_event_ids": [],
+      "human_gt_review_dispositions": []
+    },
+    {
+      "episode_id": "20260815_150535",
+      "split": "development",
+      "source_category": "clean_reference_candidate",
+      "task_success": true,
+      "operation_anomaly": false,
+      "human_gt_event_count": 0,
+      "human_gt_event_ids": [],
+      "human_gt_review_dispositions": []
+    },
+    {
+      "episode_id": "20260815_151220",
+      "split": "development",
+      "source_category": "clean_reference_candidate",
+      "task_success": true,
+      "operation_anomaly": false,
+      "human_gt_event_count": 0,
+      "human_gt_event_ids": [],
+      "human_gt_review_dispositions": []
+    },
+    {
+      "episode_id": "20260815_151431",
+      "split": "development",
+      "source_category": "clean_reference_candidate",
+      "task_success": true,
+      "operation_anomaly": false,
+      "human_gt_event_count": 0,
+      "human_gt_event_ids": [],
+      "human_gt_review_dispositions": []
+    },
+    {
+      "episode_id": "20260815_151728",
+      "split": "held_out",
+      "source_category": "clean_reference_candidate",
+      "task_success": true,
+      "operation_anomaly": false,
+      "human_gt_event_count": 0,
+      "human_gt_event_ids": [],
+      "human_gt_review_dispositions": []
+    },
+    {
+      "episode_id": "20260815_152036",
+      "split": "held_out",
+      "source_category": "clean_reference_candidate",
+      "task_success": true,
+      "operation_anomaly": false,
+      "human_gt_event_count": 0,
+      "human_gt_event_ids": [],
+      "human_gt_review_dispositions": []
+    },
+    {
+      "episode_id": "20260815_152255",
+      "split": "development",
+      "source_category": "clean_reference_candidate",
+      "task_success": true,
+      "operation_anomaly": false,
+      "human_gt_event_count": 0,
+      "human_gt_event_ids": [],
+      "human_gt_review_dispositions": []
+    },
+    {
+      "episode_id": "20260815_152449",
+      "split": "development",
+      "source_category": "clean_reference_candidate",
+      "task_success": true,
+      "operation_anomaly": false,
+      "human_gt_event_count": 0,
+      "human_gt_event_ids": [],
+      "human_gt_review_dispositions": []
+    },
+    {
+      "episode_id": "20260815_152712",
+      "split": "development",
+      "source_category": "clean_reference_candidate",
+      "task_success": true,
+      "operation_anomaly": false,
+      "human_gt_event_count": 0,
+      "human_gt_event_ids": [],
+      "human_gt_review_dispositions": []
+    },
+    {
+      "episode_id": "20260815_152924",
+      "split": "development",
+      "source_category": "clean_reference_candidate",
+      "task_success": true,
+      "operation_anomaly": false,
+      "human_gt_event_count": 0,
+      "human_gt_event_ids": [],
+      "human_gt_review_dispositions": []
+    },
+    {
+      "episode_id": "20260815_153401",
+      "split": "development",
+      "source_category": "clean_reference_candidate",
+      "task_success": true,
+      "operation_anomaly": false,
+      "human_gt_event_count": 0,
+      "human_gt_event_ids": [],
+      "human_gt_review_dispositions": []
+    },
+    {
+      "episode_id": "20260815_153615",
+      "split": "development",
+      "source_category": "clean_reference_candidate",
+      "task_success": true,
+      "operation_anomaly": false,
+      "human_gt_event_count": 0,
+      "human_gt_event_ids": [],
+      "human_gt_review_dispositions": []
+    },
+    {
+      "episode_id": "20260815_153821",
+      "split": "held_out",
+      "source_category": "clean_reference_candidate",
+      "task_success": true,
+      "operation_anomaly": false,
+      "human_gt_event_count": 0,
+      "human_gt_event_ids": [],
+      "human_gt_review_dispositions": []
+    },
+    {
+      "episode_id": "20260815_154015",
+      "split": "development",
+      "source_category": "clean_reference_candidate",
+      "task_success": true,
+      "operation_anomaly": false,
+      "human_gt_event_count": 0,
+      "human_gt_event_ids": [],
+      "human_gt_review_dispositions": []
+    },
+    {
+      "episode_id": "20260815_154245",
+      "split": "development",
+      "source_category": "clean_reference_candidate",
+      "task_success": true,
+      "operation_anomaly": false,
+      "human_gt_event_count": 0,
+      "human_gt_event_ids": [],
+      "human_gt_review_dispositions": []
+    },
+    {
+      "episode_id": "20260815_154846",
+      "split": "development",
+      "source_category": "clean_reference_candidate",
+      "task_success": true,
+      "operation_anomaly": false,
+      "human_gt_event_count": 0,
+      "human_gt_event_ids": [],
+      "human_gt_review_dispositions": []
+    },
+    {
+      "episode_id": "20260815_155139",
+      "split": "held_out",
+      "source_category": "operation_anomaly",
+      "task_success": true,
+      "operation_anomaly": true,
+      "human_gt_event_count": 1,
+      "human_gt_event_ids": [
+        "20260815_155139_event_01"
+      ],
+      "human_gt_review_dispositions": [
+        "verified"
+      ]
+    },
+    {
+      "episode_id": "20260815_155903",
+      "split": "held_out",
+      "source_category": "clean_reference_candidate",
+      "task_success": true,
+      "operation_anomaly": false,
+      "human_gt_event_count": 0,
+      "human_gt_event_ids": [],
+      "human_gt_review_dispositions": []
+    },
+    {
+      "episode_id": "20260815_160129",
+      "split": "development",
+      "source_category": "clean_reference_candidate",
+      "task_success": true,
+      "operation_anomaly": false,
+      "human_gt_event_count": 0,
+      "human_gt_event_ids": [],
+      "human_gt_review_dispositions": []
+    },
+    {
+      "episode_id": "20260815_160322",
+      "split": "held_out",
+      "source_category": "clean_reference_candidate",
+      "task_success": true,
+      "operation_anomaly": false,
+      "human_gt_event_count": 0,
+      "human_gt_event_ids": [],
+      "human_gt_review_dispositions": []
+    },
+    {
+      "episode_id": "20260815_160526",
+      "split": "development",
+      "source_category": "clean_reference_candidate",
+      "task_success": true,
+      "operation_anomaly": false,
+      "human_gt_event_count": 0,
+      "human_gt_event_ids": [],
+      "human_gt_review_dispositions": []
+    },
+    {
+      "episode_id": "20260815_160733",
+      "split": "development",
+      "source_category": "clean_reference_candidate",
+      "task_success": true,
+      "operation_anomaly": false,
+      "human_gt_event_count": 0,
+      "human_gt_event_ids": [],
+      "human_gt_review_dispositions": []
+    },
+    {
+      "episode_id": "20260815_160942",
+      "split": "development",
+      "source_category": "clean_reference_candidate",
+      "task_success": true,
+      "operation_anomaly": false,
+      "human_gt_event_count": 0,
+      "human_gt_event_ids": [],
+      "human_gt_review_dispositions": []
+    },
+    {
+      "episode_id": "20260815_161146",
+      "split": "held_out",
+      "source_category": "clean_reference_candidate",
+      "task_success": true,
+      "operation_anomaly": false,
+      "human_gt_event_count": 0,
+      "human_gt_event_ids": [],
+      "human_gt_review_dispositions": []
+    },
+    {
+      "episode_id": "20260815_161904",
+      "split": "held_out",
+      "source_category": "clean_reference_candidate",
+      "task_success": true,
+      "operation_anomaly": false,
+      "human_gt_event_count": 0,
+      "human_gt_event_ids": [],
+      "human_gt_review_dispositions": []
+    },
+    {
+      "episode_id": "20260815_162126",
+      "split": "development",
+      "source_category": "clean_reference_candidate",
+      "task_success": true,
+      "operation_anomaly": false,
+      "human_gt_event_count": 0,
+      "human_gt_event_ids": [],
+      "human_gt_review_dispositions": []
+    },
+    {
+      "episode_id": "20260815_162322",
+      "split": "held_out",
+      "source_category": "clean_reference_candidate",
+      "task_success": true,
+      "operation_anomaly": false,
+      "human_gt_event_count": 0,
+      "human_gt_event_ids": [],
+      "human_gt_review_dispositions": []
+    },
+    {
+      "episode_id": "20260815_162611",
+      "split": "development",
+      "source_category": "clean_reference_candidate",
+      "task_success": true,
+      "operation_anomaly": false,
+      "human_gt_event_count": 0,
+      "human_gt_event_ids": [],
+      "human_gt_review_dispositions": []
+    },
+    {
+      "episode_id": "20260815_162806",
+      "split": "development",
+      "source_category": "clean_reference_candidate",
+      "task_success": true,
+      "operation_anomaly": false,
+      "human_gt_event_count": 0,
+      "human_gt_event_ids": [],
+      "human_gt_review_dispositions": []
+    },
+    {
+      "episode_id": "20260815_163010",
+      "split": "development",
+      "source_category": "clean_reference_candidate",
+      "task_success": true,
+      "operation_anomaly": false,
+      "human_gt_event_count": 0,
+      "human_gt_event_ids": [],
+      "human_gt_review_dispositions": []
+    },
+    {
+      "episode_id": "20260815_163220",
+      "split": "development",
+      "source_category": "clean_reference_candidate",
+      "task_success": true,
+      "operation_anomaly": false,
+      "human_gt_event_count": 0,
+      "human_gt_event_ids": [],
+      "human_gt_review_dispositions": []
+    },
+    {
+      "episode_id": "20260815_163430",
+      "split": "development",
+      "source_category": "clean_reference_candidate",
+      "task_success": true,
+      "operation_anomaly": false,
+      "human_gt_event_count": 0,
+      "human_gt_event_ids": [],
+      "human_gt_review_dispositions": []
+    },
+    {
+      "episode_id": "20260815_163633",
+      "split": "held_out",
+      "source_category": "clean_reference_candidate",
+      "task_success": true,
+      "operation_anomaly": false,
+      "human_gt_event_count": 0,
+      "human_gt_event_ids": [],
+      "human_gt_review_dispositions": []
+    },
+    {
+      "episode_id": "20260815_163829",
+      "split": "development",
+      "source_category": "clean_reference_candidate",
+      "task_success": true,
+      "operation_anomaly": false,
+      "human_gt_event_count": 0,
+      "human_gt_event_ids": [],
+      "human_gt_review_dispositions": []
+    },
+    {
+      "episode_id": "20260815_164346",
+      "split": "development",
+      "source_category": "clean_reference_candidate",
+      "task_success": true,
+      "operation_anomaly": false,
+      "human_gt_event_count": 0,
+      "human_gt_event_ids": [],
+      "human_gt_review_dispositions": []
+    },
+    {
+      "episode_id": "20260815_164932",
+      "split": "development",
+      "source_category": "clean_reference_candidate",
+      "task_success": true,
+      "operation_anomaly": false,
+      "human_gt_event_count": 0,
+      "human_gt_event_ids": [],
+      "human_gt_review_dispositions": []
+    }
+  ]
+}
