@@ -1,0 +1,52 @@
+schema_version: evidencemm_day21_cross_domain_diagnostic_pack_config_v1
+
+inputs:
+  day20_report_json: data/eval/day20_heldout_interval_eval.json
+  day19_model_json: data/eval/day19_interval_localizer_model.json
+  dataset_root: /mnt/f/episodes_pick_place_pilot_v5
+  diagnostic_manifest_root: data/manifests/diagnostic_robot_episodes
+  processed_root: data/processed/diagnostic_robot_sequence
+
+  document_manifest: data/manifests/sources/sts3215_datasheet.json
+  document_visual_manifest: data/processed/vision/sts3215_pages.jsonl
+  hybrid_config: configs/day13_hybrid_retrieval.yaml
+
+output:
+  artifact_json: data/eval/day21_cross_domain_diagnostic_cases.json
+
+provenance:
+  frozen_after_day20_commit: 1195eb3db7afa4b56cb28df13c72b2998e78942d
+  expected_day20_report_blob_sha1: 2c8109b767bf332d99c6d2a711aa773a669f87b1
+  day20_status: closed_frozen
+
+manual_retrieval:
+  retriever: document_bm25_bge_m3_reranker_v1
+  top_k: 3
+  query: >-
+    STS3215 servo operating limits torque load overload stall feedback
+    position voltage protection robot gripper operation troubleshooting
+
+diagnostic_case:
+  question: >-
+    只根据提供的机器人局部时序证据和检索到的 STS3215 规格书页面，
+    判断当前证据是否足以支持一个具体的物理根因结论。
+    如果证据不足，必须拒绝给出 target offset、gripper close timing
+    或 trajectory execution deviation 中任一具体根因，并明确说明缺少
+    可验证的因果证据。不得把检索到的规格页自动当作故障因果标签。
+  robot_frames_per_case: 3
+  localization_origin: day20_gt_matched_best_proposal_for_post_eval_diagnostics
+  manual_support_status: retrieved_candidates_unlabeled_for_causal_support
+  physical_root_cause_policy: abstain
+
+expected:
+  case_count: 2
+  event_ids:
+    - "20260815_112859_event_01"
+    - "20260815_155139_event_01"
+  episode_ids:
+    - "20260815_112859"
+    - "20260815_155139"
+  document_items_per_case: 3
+  robot_items_per_case: 3
+  root_cause_answerable_count: 0
+  abstain_count: 2

@@ -1,0 +1,1089 @@
+{
+  "schema_version": "evidencemm_day21_cross_domain_diagnostic_cases_v1",
+  "artifact_status": "post_heldout_cross_domain_diagnostic_evidence_pack",
+  "scope": "cross_domain_evidence_assembly_and_abstention_contract_not_physical_root_cause_inference",
+  "provenance": {
+    "frozen_after_day20_commit": "1195eb3db7afa4b56cb28df13c72b2998e78942d",
+    "day20_report_blob_sha1": "2c8109b767bf332d99c6d2a711aa773a669f87b1",
+    "day20_report_sha256": "74fa4702528d8252f3c6959271e8afca72252a7dc85e2840bed3b561d0e01010",
+    "day19_model_sha256": "189e64443e730b709df7de8210f1ffbbe87f714345054c7d67f3e9a398ad0f27",
+    "document_manifest_sha256": "4559c226381522209dca0f649d1266e0ac4fcf26026a40bc00aa4face5cd0ab5",
+    "document_visual_manifest_sha256": "a8e148b8c4f45ec65e04f08ca5fbd392879c8bd3fc1e796d81d69d47b5b282a6"
+  },
+  "manual_retrieval": {
+    "query": "STS3215 servo operating limits torque load overload stall feedback position voltage protection robot gripper operation troubleshooting",
+    "retriever_name": "document_bm25_bge_m3_reranker_v1",
+    "top_k": 3,
+    "candidates": [
+      {
+        "rank": 1,
+        "raw_score": 3.265625,
+        "page_number": 4,
+        "evidence_id": "doc:sts3215_datasheet:p4"
+      },
+      {
+        "rank": 2,
+        "raw_score": 2.953125,
+        "page_number": 3,
+        "evidence_id": "doc:sts3215_datasheet:p3"
+      },
+      {
+        "rank": 3,
+        "raw_score": 2.359375,
+        "page_number": 5,
+        "evidence_id": "doc:sts3215_datasheet:p5"
+      }
+    ],
+    "trace": {
+      "query": "STS3215 servo operating limits torque load overload stall feedback position voltage protection robot gripper operation troubleshooting",
+      "branch_top_k": 5,
+      "final_top_k": 3,
+      "bm25_hits": [
+        {
+          "rank": 1,
+          "score": 6.87518,
+          "source_id": "sts3215_datasheet",
+          "page_number": 3,
+          "text_preview": "深圳飞特模型有限公司 SHENZHEN FEETECH RC MODEL CO.,LTD. 版本EDITION: A/0 型号/MODEL: STS3215 产品规格书 PRODUCT SPECIFICATION 日期/Date: 2020-04-10 页 码 Page:3/8 1.使用环境条件 Apply Environmental Condition: No. 项目(Item) 规格(Specification) 1-1 保存温度Storage Temperature R"
+        },
+        {
+          "rank": 2,
+          "score": 4.141456,
+          "source_id": "sts3215_datasheet",
+          "page_number": 4,
+          "text_preview": "深圳飞特模型有限公司 SHENZHEN FEETECH RC MODEL CO.,LTD. 版本EDITION: A/0 型号/MODEL: STS3215 产品规格书 PRODUCT SPECIFICATION 日期/Date: 2020-04-10 页 码 Page:4/8 6 机械规格 Mechanical Specification: No. 项目(Item) 规格(Specification) 备注(remarks) 6-1 外观尺寸 Size 45.2X24.7X"
+        },
+        {
+          "rank": 3,
+          "score": 3.999463,
+          "source_id": "sts3215_datasheet",
+          "page_number": 5,
+          "text_preview": "深圳飞特模型有限公司 SHENZHEN FEETECH RC MODEL CO.,LTD. 版本EDITION: A/0 型号/MODEL: STS3215 产品规格书 PRODUCT SPECIFICATION 日期/Date: 2020-04-10 页 码 Page:5/8 7-2. 控制特性Control Specification: No. 项目(Item) 规格(Specification) 备注(remarks) 7-11 电子保护 Electronic Prot"
+        },
+        {
+          "rank": 4,
+          "score": 2.559199,
+          "source_id": "sts3215_datasheet",
+          "page_number": 8,
+          "text_preview": "深圳飞特模型有限公司 SHENZHEN FEETECH RC MODEL CO.,LTD. 版本EDITION: A/0 型号/MODEL: STS3215 产品规格书 PRODUCT SPECIFICATION 日期/Date: 2020-04-10 页 码 Page:8/8 11 接口定义 Interface Definition 控制信号参数(Control signal parameter) 最大位置更新率 Max Position Update Rate 1ms 信"
+        },
+        {
+          "rank": 5,
+          "score": 0.090951,
+          "source_id": "sts3215_datasheet",
+          "page_number": 7,
+          "text_preview": "深圳飞特模型有限公司 SHENZHEN FEETECH RC MODEL CO.,LTD. 版本EDITION: A/0 型号/MODEL: STS3215 产品规格书 PRODUCT SPECIFICATION 日期/Date: 2020-03-28 页 码 Page:7/8 10 配件 Accessories No Accessories"
+        }
+      ],
+      "dense_hits": [
+        {
+          "rank": 1,
+          "score": 0.6938472986221313,
+          "source_id": "sts3215_datasheet",
+          "page_number": 5
+        },
+        {
+          "rank": 2,
+          "score": 0.6196655035018921,
+          "source_id": "sts3215_datasheet",
+          "page_number": 3
+        },
+        {
+          "rank": 3,
+          "score": 0.6159917712211609,
+          "source_id": "sts3215_datasheet",
+          "page_number": 8
+        },
+        {
+          "rank": 4,
+          "score": 0.6154952645301819,
+          "source_id": "sts3215_datasheet",
+          "page_number": 4
+        },
+        {
+          "rank": 5,
+          "score": 0.6106624007225037,
+          "source_id": "sts3215_datasheet",
+          "page_number": 6
+        }
+      ],
+      "candidate_union": [
+        {
+          "pool_index": 1,
+          "source_id": "sts3215_datasheet",
+          "page_number": 3,
+          "from_bm25": true,
+          "bm25_rank": 1,
+          "bm25_score": 6.87518,
+          "from_dense": true,
+          "dense_rank": 2,
+          "dense_score": 0.6196655035018921
+        },
+        {
+          "pool_index": 2,
+          "source_id": "sts3215_datasheet",
+          "page_number": 4,
+          "from_bm25": true,
+          "bm25_rank": 2,
+          "bm25_score": 4.141456,
+          "from_dense": true,
+          "dense_rank": 4,
+          "dense_score": 0.6154952645301819
+        },
+        {
+          "pool_index": 3,
+          "source_id": "sts3215_datasheet",
+          "page_number": 5,
+          "from_bm25": true,
+          "bm25_rank": 3,
+          "bm25_score": 3.999463,
+          "from_dense": true,
+          "dense_rank": 1,
+          "dense_score": 0.6938472986221313
+        },
+        {
+          "pool_index": 4,
+          "source_id": "sts3215_datasheet",
+          "page_number": 6,
+          "from_bm25": false,
+          "bm25_rank": null,
+          "bm25_score": null,
+          "from_dense": true,
+          "dense_rank": 5,
+          "dense_score": 0.6106624007225037
+        },
+        {
+          "pool_index": 5,
+          "source_id": "sts3215_datasheet",
+          "page_number": 7,
+          "from_bm25": true,
+          "bm25_rank": 5,
+          "bm25_score": 0.090951,
+          "from_dense": false,
+          "dense_rank": null,
+          "dense_score": null
+        },
+        {
+          "pool_index": 6,
+          "source_id": "sts3215_datasheet",
+          "page_number": 8,
+          "from_bm25": true,
+          "bm25_rank": 4,
+          "bm25_score": 2.559199,
+          "from_dense": true,
+          "dense_rank": 3,
+          "dense_score": 0.6159917712211609
+        }
+      ],
+      "reranked_hits": [
+        {
+          "rank": 1,
+          "source_id": "sts3215_datasheet",
+          "page_number": 4,
+          "reranker_score": 3.265625,
+          "candidate_pool_index": 2,
+          "from_bm25": true,
+          "bm25_rank": 2,
+          "bm25_score": 4.141456,
+          "from_dense": true,
+          "dense_rank": 4,
+          "dense_score": 0.6154952645301819
+        },
+        {
+          "rank": 2,
+          "source_id": "sts3215_datasheet",
+          "page_number": 3,
+          "reranker_score": 2.953125,
+          "candidate_pool_index": 1,
+          "from_bm25": true,
+          "bm25_rank": 1,
+          "bm25_score": 6.87518,
+          "from_dense": true,
+          "dense_rank": 2,
+          "dense_score": 0.6196655035018921
+        },
+        {
+          "rank": 3,
+          "source_id": "sts3215_datasheet",
+          "page_number": 5,
+          "reranker_score": 2.359375,
+          "candidate_pool_index": 3,
+          "from_bm25": true,
+          "bm25_rank": 3,
+          "bm25_score": 3.999463,
+          "from_dense": true,
+          "dense_rank": 1,
+          "dense_score": 0.6938472986221313
+        }
+      ]
+    },
+    "support_status": "retrieved_candidates_unlabeled_for_causal_support",
+    "causal_relevance_ground_truth": null
+  },
+  "diagnostic_policy": {
+    "physical_root_cause_policy": "abstain",
+    "allowed_output": "evidence_summary_and_missing_evidence_only",
+    "forbidden_claims": [
+      "target_offset_or_perception",
+      "gripper_close_timing",
+      "trajectory_execution_deviation"
+    ]
+  },
+  "cases": [
+    {
+      "case_id": "day21_20260815_112859_event_01",
+      "event_id": "20260815_112859_event_01",
+      "episode_id": "20260815_112859",
+      "localization_origin": "day20_gt_matched_best_proposal_for_post_eval_diagnostics",
+      "localized_proposal": {
+        "start_frame": 670,
+        "center_frame": 675,
+        "end_frame": 680,
+        "representative_frames": [
+          670,
+          675,
+          680
+        ]
+      },
+      "manual_support_status": "retrieved_candidates_unlabeled_for_causal_support",
+      "evidence_bundle": {
+        "schema_version": "evidencemm_unified_evidence_bundle_v1",
+        "bundle_id": "day21_cross_domain_20260815_112859_event_01",
+        "question": "只根据提供的机器人局部时序证据和检索到的 STS3215 规格书页面， 判断当前证据是否足以支持一个具体的物理根因结论。 如果证据不足，必须拒绝给出 target offset、gripper close timing 或 trajectory execution deviation 中任一具体根因，并明确说明缺少 可验证的因果证据。不得把检索到的规格页自动当作故障因果标签。",
+        "items": [
+          {
+            "evidence_id": "doc:sts3215_datasheet:p4",
+            "kind": "document_page",
+            "refs": [
+              {
+                "source_id": "sts3215_datasheet",
+                "source_type": "pdf",
+                "page_number": 4,
+                "time_start_sec": null,
+                "time_end_sec": null,
+                "frame_index": null,
+                "camera": null,
+                "bbox": null,
+                "note": null
+              }
+            ],
+            "provenance": {
+              "source_id": "sts3215_datasheet",
+              "source_type": "pdf",
+              "manifest_path": "data/manifests/sources/sts3215_datasheet.json",
+              "canonical_sha256": "707da810d6443597bb7877fc191251915bf01a3d3594ee77b1e0f8ef8b45d017",
+              "supporting_sha256": {
+                "rendered_page_image": "dc4f720d944195b8ffd2dd5dca363e5fd89d1e4221eb043b41922ac8b6ba6e9a"
+              }
+            },
+            "payload": {
+              "page_number": 4,
+              "text_sha256": "b9640af0caaa4dc726e8dbbeded43465bbcff280c8844b6c3a85135106f7e124",
+              "char_count": 1461,
+              "text_excerpt": "深圳飞特模型有限公司 SHENZHEN FEETECH RC MODEL CO.,LTD. 版本EDITION: A/0 型号/MODEL: STS3215 产品规格书 PRODUCT SPECIFICATION 日期/Date: 2020-04-10 页 码 Page:4/8 6 机械规格 Mechanical Specification: No. 项目(Item) 规格(Specification) 备注(remarks) 6-1 外观尺寸 Size 45.2X24.7X35 见图纸See drawings 6-2 机构极限角度 Limit Angle No limit 6-3 外壳材质 Case material PA+GF 6-4 齿轮材质 Gear material 铜 Copper 6-5 轴承类型 Bearing type 滚珠轴承 Ball bearings 6-6 角度传感器 Angle Sansor 类型Type 12Bits Magnetic Coding 角度 Angle 360° 寿命 Life No limite 6-7 连接器和电缆 Connector and Cable 类型 Type 5264-3P Material材 质 PP 线长度 Length 15CM 引脚定义 Pin Definition 1 GND 2 Vcc 3 Signal/TT L 6-8 重量The Weight 55± 1g 6-9 出力轴 Horn Type 25T/OD5.9mm 6-10 减速比Gear Ratio 1/345 6-11 齿轮虚位Back Lash ≦0.5° 6-12 摇臂虚位 The rocker phantom 0° 6-13 出力轴螺丝 The rocker screw M3X6 6-14 马达 Motor Core Motor 7-1 控制特性Control Specification: No. 项目(Item) 规格(Specification) 备注(remarks) 7-1 控制信号 Command Signal Digital Packet 7-2 协议类型 Protocol Type Half Duplex Asynchronous Serial Communication 8bit, 1stop, No Parity 7-3 ID范围 ID range 0-253 Customizable 7-4 通讯波特率 Communication Baud Rate 38400bps ~ 1 Mbps Customizable (出厂默 认1Mbps) 7-5 控制算法 Control Algorithm PID Customizable (支持修 改) 7-6 中位 Neutral Position 180°(2048) 7-7 旋转角度 Running degree 360°(when 0~4096) 7-8 电子分辨率 Resolution [deg/pulse] 0.088°(360°/4096) 7-9 旋转方向 Rotating Direction Clockwise(0→4096) Customizable 7-10 反馈 Feedback Load(负载), Position(位 置),Speed(工作速度), Input Voltage(输入电压),Current(工作 电流),Temperature(工作温度)",
+              "page_image_path": "data/processed/vision/sts3215_pages/sts3215_datasheet_page_0004.png"
+            }
+          },
+          {
+            "evidence_id": "doc:sts3215_datasheet:p3",
+            "kind": "document_page",
+            "refs": [
+              {
+                "source_id": "sts3215_datasheet",
+                "source_type": "pdf",
+                "page_number": 3,
+                "time_start_sec": null,
+                "time_end_sec": null,
+                "frame_index": null,
+                "camera": null,
+                "bbox": null,
+                "note": null
+              }
+            ],
+            "provenance": {
+              "source_id": "sts3215_datasheet",
+              "source_type": "pdf",
+              "manifest_path": "data/manifests/sources/sts3215_datasheet.json",
+              "canonical_sha256": "707da810d6443597bb7877fc191251915bf01a3d3594ee77b1e0f8ef8b45d017",
+              "supporting_sha256": {
+                "rendered_page_image": "50b3a8c1d1e35c5a019b6411a88a17c5149fc8cc6eeb94ce6d20ffdc392395bf"
+              }
+            },
+            "payload": {
+              "page_number": 3,
+              "text_sha256": "e3fd6ba7c824b045a680587dda6cfc2ac5597efa6a23802c9e560e5115e698ba",
+              "char_count": 1434,
+              "text_excerpt": "深圳飞特模型有限公司 SHENZHEN FEETECH RC MODEL CO.,LTD. 版本EDITION: A/0 型号/MODEL: STS3215 产品规格书 PRODUCT SPECIFICATION 日期/Date: 2020-04-10 页 码 Page:3/8 1.使用环境条件 Apply Environmental Condition: No. 项目(Item) 规格(Specification) 1-1 保存温度Storage Temperature Range -30°C~80°C 1-2 运行温度Operating Temperature Range -20°C~60°C 2.测试环境 Standard Test Environment: No. 项目(Item) 规格(Specification) 2-1 温度 Temperature Range 25°C ±5°C 2-2 湿度 Humidity Range 65%±10% 3.安全特性与认证 Secure Performance and Certificate No. 项目/Item 认证Certificate 备注(remarks) 3-1 ASTM F963 No 美国玩具检测标准 3-2 EN71 No 欧盟市场玩具类产品的规范标准 3-3 FCC No 对电子、电器中的电磁干扰,管理和控制无线电频率范 围,保护电信网络、电器产品的正常工作。 3-4 ROHS Yes 电子,电器设备中对人体有害物质的含量。 4.外观检查 Appearance Inspection 3-5 REACH NO 欧盟法规《化学品的注册、评估、授权和限制》 : No. 项目(Item) 规格(Specification) 4-1 外观尺寸OutlineDrawing 尺寸见附件(第12项) See the appendix 4-2 外观Appearance 无损坏,不允许影响功能 No damage and mustn’t affect functions. 5.电气特性 Electrical Specification No. 项目(Item) 规格(Specification) 规格(Specification) 备注Remark 5-1 典型工作电压 Operating Voltage 6V 7.4V 5-2 空载速度 No Load Speed 0.238sec/60° (42RPM) 0.192sec/60° (52RPM) 5-3 空载电流Running Current ( no load) 130mA 150mA 5-4 堵车扭力 Stall Torque (at locked) 16.5kg.cm 19.5kg.cm 229.54oz.in 271.28oz.in 5-5 堵转电流 Stall Current (at locked) 2A 2.5A 5-6 静态电流 Idle Current (at stopped) 6mA 6mA 5-7 工作电压 Input Voltage 4V-7.4V 5-8 额定负载 Rated Torgue 4kg.cm 5kg.cm 5-9 额定电流 Rated Current 500mA 650mA 5-10 电机内阻 Terminal resistance 2.5Ω 5-11 Kt常数 8kg.cm/A",
+              "page_image_path": "data/processed/vision/sts3215_pages/sts3215_datasheet_page_0003.png"
+            }
+          },
+          {
+            "evidence_id": "doc:sts3215_datasheet:p5",
+            "kind": "document_page",
+            "refs": [
+              {
+                "source_id": "sts3215_datasheet",
+                "source_type": "pdf",
+                "page_number": 5,
+                "time_start_sec": null,
+                "time_end_sec": null,
+                "frame_index": null,
+                "camera": null,
+                "bbox": null,
+                "note": null
+              }
+            ],
+            "provenance": {
+              "source_id": "sts3215_datasheet",
+              "source_type": "pdf",
+              "manifest_path": "data/manifests/sources/sts3215_datasheet.json",
+              "canonical_sha256": "707da810d6443597bb7877fc191251915bf01a3d3594ee77b1e0f8ef8b45d017",
+              "supporting_sha256": {
+                "rendered_page_image": "9d49d6024a005d5ade0b731e1ca779955ed2f35be7c79edb56533b7514e72096"
+              }
+            },
+            "payload": {
+              "page_number": 5,
+              "text_sha256": "77d0be6b68d90367449cbc02d9e6546c2b19f1f9e1df91f53ae04102c3e03fe2",
+              "char_count": 780,
+              "text_excerpt": "深圳飞特模型有限公司 SHENZHEN FEETECH RC MODEL CO.,LTD. 版本EDITION: A/0 型号/MODEL: STS3215 产品规格书 PRODUCT SPECIFICATION 日期/Date: 2020-04-10 页 码 Page:5/8 7-2. 控制特性Control Specification: No. 项目(Item) 规格(Specification) 备注(remarks) 7-11 电子保护 Electronic Protection 过载 Over Load 堵在大于堵转的80%并持续 2S后进入保护,重新 发位置指令,会清除过载 保护标志,可自定义设定堵 转的百分比和持续时间 过流 Over Current 运行中电流大于2A并持续 2s后,关闭输出并进入过 流保护,重新发位置指 令,会清除过流保护标志, 可自定义设定电流值和持 续时间 过压 Over Voltage 大于7.4V或者小于4V进入 保护,电压恢复正常范围 后,自动解除保护,可自定 义设定电压值范围 过热 Over Hot 大于70°C关闭扭矩输出 7-12 运行模式 Operating Modes 模式0:角度伺服模式 默认此模式,0-360度绝对 位置可控 模式1:速度闭环电机模式 电机模式,随负载增加, 速度智能维持不减速。 模式2:速度开环电机模式 电机模式,随负载增加, 速度会持续减慢 模式3:步进模式 相对当前位置进行步进运 动 7-13 多圈模式 Multi-Loop Mode 最高精度下可以正负7圈绝对位置控 制,但掉电圈数不保存 扩大分辨率,圈数可翻倍 7-14 置中功能 Step Middle Position 一键较准,360度角度任意位置安 装,一键较正当前位置为中位 40号地址输入128",
+              "page_image_path": "data/processed/vision/sts3215_pages/sts3215_datasheet_page_0005.png"
+            }
+          },
+          {
+            "evidence_id": "robot:20260815_112859:f670",
+            "kind": "robot_sample",
+            "refs": [
+              {
+                "source_id": "20260815_112859",
+                "source_type": "robot_sequence",
+                "page_number": null,
+                "time_start_sec": 44.6717757,
+                "time_end_sec": 44.6717757,
+                "frame_index": 670,
+                "camera": "front",
+                "bbox": null,
+                "note": null
+              },
+              {
+                "source_id": "20260815_112859",
+                "source_type": "robot_sequence",
+                "page_number": null,
+                "time_start_sec": 44.6717757,
+                "time_end_sec": 44.6717757,
+                "frame_index": 670,
+                "camera": "wrist",
+                "bbox": null,
+                "note": null
+              }
+            ],
+            "provenance": {
+              "source_id": "20260815_112859",
+              "source_type": "robot_sequence",
+              "manifest_path": "data/manifests/diagnostic_robot_episodes/20260815_112859.json",
+              "canonical_sha256": "0b2fa277e742015c31e8014bc92b1568cb10d475cd32d268317f4761dd8ef2e5",
+              "supporting_sha256": {
+                "metadata.json": "f011b05a2b8b51e5fe2cefa4f0d8e641dc32d00971e41ffb339b2453a7d4a21e",
+                "samples.csv": "bbe6db2b5c9b910416088443c720bcbeebe8de56083ae2aa707a29653321de09"
+              }
+            },
+            "payload": {
+              "episode_id": "20260815_112859",
+              "frame_index": 670,
+              "timestamp_sec": 44.6717757,
+              "cameras": [
+                {
+                  "camera": "front",
+                  "frame_index": 670,
+                  "timestamp_sec": 44.6717757,
+                  "image_relpath": "front/000670.jpg",
+                  "image_sha256": "ea16ccd23eff893c25e1d8c9f0f4a86e2d7ef5bf333b4a0c783811d6d80d1c3e",
+                  "source_timestamp_ns": 401586225561300,
+                  "source_age_ms": 29.293,
+                  "width_px": 640,
+                  "height_px": 480
+                },
+                {
+                  "camera": "wrist",
+                  "frame_index": 670,
+                  "timestamp_sec": 44.6717757,
+                  "image_relpath": "wrist/000670.jpg",
+                  "image_sha256": "de130fbc7d75de5393c10b9924099f256ff6310b210e995e8f40e45e30843fff",
+                  "source_timestamp_ns": 401586213188500,
+                  "source_age_ms": 41.666,
+                  "width_px": 480,
+                  "height_px": 640
+                }
+              ],
+              "state_action": {
+                "frame_index": 670,
+                "timestamp_sec": 44.6717757,
+                "observation": {
+                  "shoulder_pan": -15.555555555555557,
+                  "shoulder_lift": 37.27613494377343,
+                  "elbow_flex": -17.955676164631384,
+                  "wrist_flex": 60.05067567567568,
+                  "wrist_roll": 11.289487312273437,
+                  "gripper": 37.45046235138705
+                },
+                "action": {
+                  "shoulder_pan": -11.543078787878784,
+                  "shoulder_lift": 30.092382897556806,
+                  "elbow_flex": -19.214754528903065,
+                  "wrist_flex": 60.0,
+                  "wrist_roll": 11.39443454737398,
+                  "gripper": 37.5542288590604
+                },
+                "tracking_error": {
+                  "shoulder_pan": 4.012476767676773,
+                  "shoulder_lift": 7.183752046216622,
+                  "elbow_flex": 1.25907836427168,
+                  "wrist_flex": 0.05067567567567721,
+                  "wrist_roll": 0.10494723510054271,
+                  "gripper": 0.10376650767334894
+                }
+              }
+            }
+          },
+          {
+            "evidence_id": "robot:20260815_112859:f675",
+            "kind": "robot_sample",
+            "refs": [
+              {
+                "source_id": "20260815_112859",
+                "source_type": "robot_sequence",
+                "page_number": null,
+                "time_start_sec": 45.002624,
+                "time_end_sec": 45.002624,
+                "frame_index": 675,
+                "camera": "front",
+                "bbox": null,
+                "note": null
+              },
+              {
+                "source_id": "20260815_112859",
+                "source_type": "robot_sequence",
+                "page_number": null,
+                "time_start_sec": 45.002624,
+                "time_end_sec": 45.002624,
+                "frame_index": 675,
+                "camera": "wrist",
+                "bbox": null,
+                "note": null
+              }
+            ],
+            "provenance": {
+              "source_id": "20260815_112859",
+              "source_type": "robot_sequence",
+              "manifest_path": "data/manifests/diagnostic_robot_episodes/20260815_112859.json",
+              "canonical_sha256": "0b2fa277e742015c31e8014bc92b1568cb10d475cd32d268317f4761dd8ef2e5",
+              "supporting_sha256": {
+                "metadata.json": "f011b05a2b8b51e5fe2cefa4f0d8e641dc32d00971e41ffb339b2453a7d4a21e",
+                "samples.csv": "bbe6db2b5c9b910416088443c720bcbeebe8de56083ae2aa707a29653321de09"
+              }
+            },
+            "payload": {
+              "episode_id": "20260815_112859",
+              "frame_index": 675,
+              "timestamp_sec": 45.002624,
+              "cameras": [
+                {
+                  "camera": "front",
+                  "frame_index": 675,
+                  "timestamp_sec": 45.002624,
+                  "image_relpath": "front/000675.jpg",
+                  "image_sha256": "0f1c6250f3ba55cdb8273b3b789439dbbd11b987bed433b8b04209f1dca34edd",
+                  "source_timestamp_ns": 401586578400300,
+                  "source_age_ms": 7.302,
+                  "width_px": 640,
+                  "height_px": 480
+                },
+                {
+                  "camera": "wrist",
+                  "frame_index": 675,
+                  "timestamp_sec": 45.002624,
+                  "image_relpath": "wrist/000675.jpg",
+                  "image_sha256": "7950a96ad57a5909889c08b19864408312d30f0c89a0da09d9b3e3e754331139",
+                  "source_timestamp_ns": 401586565546800,
+                  "source_age_ms": 20.156,
+                  "width_px": 480,
+                  "height_px": 640
+                }
+              ],
+              "state_action": {
+                "frame_index": 675,
+                "timestamp_sec": 45.002624,
+                "observation": {
+                  "shoulder_pan": -8.812260536398469,
+                  "shoulder_lift": 36.19325281132862,
+                  "elbow_flex": -17.955676164631384,
+                  "wrist_flex": 60.13513513513513,
+                  "wrist_roll": 11.807353702744678,
+                  "gripper": 37.45046235138705
+                },
+                "action": {
+                  "shoulder_pan": -6.318331313131308,
+                  "shoulder_lift": 29.23511757393914,
+                  "elbow_flex": -19.214754528903065,
+                  "wrist_flex": 60.0,
+                  "wrist_roll": 12.027847057271035,
+                  "gripper": 37.72201409395973
+                },
+                "tracking_error": {
+                  "shoulder_pan": 2.493929223267161,
+                  "shoulder_lift": 6.958135237389481,
+                  "elbow_flex": 1.25907836427168,
+                  "wrist_flex": 0.13513513513512976,
+                  "wrist_roll": 0.22049335452635788,
+                  "gripper": 0.2715517425726759
+                }
+              }
+            }
+          },
+          {
+            "evidence_id": "robot:20260815_112859:f680",
+            "kind": "robot_sample",
+            "refs": [
+              {
+                "source_id": "20260815_112859",
+                "source_type": "robot_sequence",
+                "page_number": null,
+                "time_start_sec": 45.3385657,
+                "time_end_sec": 45.3385657,
+                "frame_index": 680,
+                "camera": "front",
+                "bbox": null,
+                "note": null
+              },
+              {
+                "source_id": "20260815_112859",
+                "source_type": "robot_sequence",
+                "page_number": null,
+                "time_start_sec": 45.3385657,
+                "time_end_sec": 45.3385657,
+                "frame_index": 680,
+                "camera": "wrist",
+                "bbox": null,
+                "note": null
+              }
+            ],
+            "provenance": {
+              "source_id": "20260815_112859",
+              "source_type": "robot_sequence",
+              "manifest_path": "data/manifests/diagnostic_robot_episodes/20260815_112859.json",
+              "canonical_sha256": "0b2fa277e742015c31e8014bc92b1568cb10d475cd32d268317f4761dd8ef2e5",
+              "supporting_sha256": {
+                "metadata.json": "f011b05a2b8b51e5fe2cefa4f0d8e641dc32d00971e41ffb339b2453a7d4a21e",
+                "samples.csv": "bbe6db2b5c9b910416088443c720bcbeebe8de56083ae2aa707a29653321de09"
+              }
+            },
+            "payload": {
+              "episode_id": "20260815_112859",
+              "frame_index": 680,
+              "timestamp_sec": 45.3385657,
+              "cameras": [
+                {
+                  "camera": "front",
+                  "frame_index": 680,
+                  "timestamp_sec": 45.3385657,
+                  "image_relpath": "front/000680.jpg",
+                  "image_sha256": "0cb0a817c971986f5d79aeac77fdbc43920c222066d068ece3fab6042b96f547",
+                  "source_timestamp_ns": 401586880902300,
+                  "source_age_ms": 40.742,
+                  "width_px": 640,
+                  "height_px": 480
+                },
+                {
+                  "camera": "wrist",
+                  "frame_index": 680,
+                  "timestamp_sec": 45.3385657,
+                  "image_relpath": "wrist/000680.jpg",
+                  "image_sha256": "ac2e75ade281eac73bc9162cc32c37fb56589bfbd7ee3d0627a587395aae64bc",
+                  "source_timestamp_ns": 401586884342700,
+                  "source_age_ms": 37.302,
+                  "width_px": 480,
+                  "height_px": 640
+                }
+              ],
+              "state_action": {
+                "frame_index": 680,
+                "timestamp_sec": 45.3385657,
+                "observation": {
+                  "shoulder_pan": -7.203065134099617,
+                  "shoulder_lift": 36.19325281132862,
+                  "elbow_flex": -17.955676164631384,
+                  "wrist_flex": 60.13513513513513,
+                  "wrist_roll": 11.807353702744678,
+                  "gripper": 37.45046235138705
+                },
+                "action": {
+                  "shoulder_pan": -6.156715151515156,
+                  "shoulder_lift": 28.720758379768544,
+                  "elbow_flex": -19.214754528903065,
+                  "wrist_flex": 60.0,
+                  "wrist_roll": 12.027847057271035,
+                  "gripper": 37.72201409395973
+                },
+                "tracking_error": {
+                  "shoulder_pan": 1.046349982584461,
+                  "shoulder_lift": 7.472494431560076,
+                  "elbow_flex": 1.25907836427168,
+                  "wrist_flex": 0.13513513513512976,
+                  "wrist_roll": 0.22049335452635788,
+                  "gripper": 0.2715517425726759
+                }
+              }
+            }
+          }
+        ]
+      },
+      "readiness": {
+        "decision": "abstain_physical_root_cause",
+        "root_cause_answerable": false,
+        "checks": {
+          "cross_domain_bundle_valid": true,
+          "document_evidence_available": true,
+          "robot_visual_state_action_evidence_available": true,
+          "manual_causal_ground_truth_available": false,
+          "causal_supervision_available": false,
+          "end_to_end_localization_inference_claim": false
+        },
+        "uncertainty_reasons": [
+          "day20_best_proposal_is_gt_matched_for_post_eval_diagnostic_analysis_not_end_to_end_inference",
+          "retrieved_manual_pages_are_candidates_without_human_verified_causal_support_labels",
+          "current_verified_robot_events_do_not_provide_discriminative_physical_cause_supervision"
+        ]
+      }
+    },
+    {
+      "case_id": "day21_20260815_155139_event_01",
+      "event_id": "20260815_155139_event_01",
+      "episode_id": "20260815_155139",
+      "localization_origin": "day20_gt_matched_best_proposal_for_post_eval_diagnostics",
+      "localized_proposal": {
+        "start_frame": 475,
+        "center_frame": 480,
+        "end_frame": 485,
+        "representative_frames": [
+          475,
+          480,
+          485
+        ]
+      },
+      "manual_support_status": "retrieved_candidates_unlabeled_for_causal_support",
+      "evidence_bundle": {
+        "schema_version": "evidencemm_unified_evidence_bundle_v1",
+        "bundle_id": "day21_cross_domain_20260815_155139_event_01",
+        "question": "只根据提供的机器人局部时序证据和检索到的 STS3215 规格书页面， 判断当前证据是否足以支持一个具体的物理根因结论。 如果证据不足，必须拒绝给出 target offset、gripper close timing 或 trajectory execution deviation 中任一具体根因，并明确说明缺少 可验证的因果证据。不得把检索到的规格页自动当作故障因果标签。",
+        "items": [
+          {
+            "evidence_id": "doc:sts3215_datasheet:p4",
+            "kind": "document_page",
+            "refs": [
+              {
+                "source_id": "sts3215_datasheet",
+                "source_type": "pdf",
+                "page_number": 4,
+                "time_start_sec": null,
+                "time_end_sec": null,
+                "frame_index": null,
+                "camera": null,
+                "bbox": null,
+                "note": null
+              }
+            ],
+            "provenance": {
+              "source_id": "sts3215_datasheet",
+              "source_type": "pdf",
+              "manifest_path": "data/manifests/sources/sts3215_datasheet.json",
+              "canonical_sha256": "707da810d6443597bb7877fc191251915bf01a3d3594ee77b1e0f8ef8b45d017",
+              "supporting_sha256": {
+                "rendered_page_image": "dc4f720d944195b8ffd2dd5dca363e5fd89d1e4221eb043b41922ac8b6ba6e9a"
+              }
+            },
+            "payload": {
+              "page_number": 4,
+              "text_sha256": "b9640af0caaa4dc726e8dbbeded43465bbcff280c8844b6c3a85135106f7e124",
+              "char_count": 1461,
+              "text_excerpt": "深圳飞特模型有限公司 SHENZHEN FEETECH RC MODEL CO.,LTD. 版本EDITION: A/0 型号/MODEL: STS3215 产品规格书 PRODUCT SPECIFICATION 日期/Date: 2020-04-10 页 码 Page:4/8 6 机械规格 Mechanical Specification: No. 项目(Item) 规格(Specification) 备注(remarks) 6-1 外观尺寸 Size 45.2X24.7X35 见图纸See drawings 6-2 机构极限角度 Limit Angle No limit 6-3 外壳材质 Case material PA+GF 6-4 齿轮材质 Gear material 铜 Copper 6-5 轴承类型 Bearing type 滚珠轴承 Ball bearings 6-6 角度传感器 Angle Sansor 类型Type 12Bits Magnetic Coding 角度 Angle 360° 寿命 Life No limite 6-7 连接器和电缆 Connector and Cable 类型 Type 5264-3P Material材 质 PP 线长度 Length 15CM 引脚定义 Pin Definition 1 GND 2 Vcc 3 Signal/TT L 6-8 重量The Weight 55± 1g 6-9 出力轴 Horn Type 25T/OD5.9mm 6-10 减速比Gear Ratio 1/345 6-11 齿轮虚位Back Lash ≦0.5° 6-12 摇臂虚位 The rocker phantom 0° 6-13 出力轴螺丝 The rocker screw M3X6 6-14 马达 Motor Core Motor 7-1 控制特性Control Specification: No. 项目(Item) 规格(Specification) 备注(remarks) 7-1 控制信号 Command Signal Digital Packet 7-2 协议类型 Protocol Type Half Duplex Asynchronous Serial Communication 8bit, 1stop, No Parity 7-3 ID范围 ID range 0-253 Customizable 7-4 通讯波特率 Communication Baud Rate 38400bps ~ 1 Mbps Customizable (出厂默 认1Mbps) 7-5 控制算法 Control Algorithm PID Customizable (支持修 改) 7-6 中位 Neutral Position 180°(2048) 7-7 旋转角度 Running degree 360°(when 0~4096) 7-8 电子分辨率 Resolution [deg/pulse] 0.088°(360°/4096) 7-9 旋转方向 Rotating Direction Clockwise(0→4096) Customizable 7-10 反馈 Feedback Load(负载), Position(位 置),Speed(工作速度), Input Voltage(输入电压),Current(工作 电流),Temperature(工作温度)",
+              "page_image_path": "data/processed/vision/sts3215_pages/sts3215_datasheet_page_0004.png"
+            }
+          },
+          {
+            "evidence_id": "doc:sts3215_datasheet:p3",
+            "kind": "document_page",
+            "refs": [
+              {
+                "source_id": "sts3215_datasheet",
+                "source_type": "pdf",
+                "page_number": 3,
+                "time_start_sec": null,
+                "time_end_sec": null,
+                "frame_index": null,
+                "camera": null,
+                "bbox": null,
+                "note": null
+              }
+            ],
+            "provenance": {
+              "source_id": "sts3215_datasheet",
+              "source_type": "pdf",
+              "manifest_path": "data/manifests/sources/sts3215_datasheet.json",
+              "canonical_sha256": "707da810d6443597bb7877fc191251915bf01a3d3594ee77b1e0f8ef8b45d017",
+              "supporting_sha256": {
+                "rendered_page_image": "50b3a8c1d1e35c5a019b6411a88a17c5149fc8cc6eeb94ce6d20ffdc392395bf"
+              }
+            },
+            "payload": {
+              "page_number": 3,
+              "text_sha256": "e3fd6ba7c824b045a680587dda6cfc2ac5597efa6a23802c9e560e5115e698ba",
+              "char_count": 1434,
+              "text_excerpt": "深圳飞特模型有限公司 SHENZHEN FEETECH RC MODEL CO.,LTD. 版本EDITION: A/0 型号/MODEL: STS3215 产品规格书 PRODUCT SPECIFICATION 日期/Date: 2020-04-10 页 码 Page:3/8 1.使用环境条件 Apply Environmental Condition: No. 项目(Item) 规格(Specification) 1-1 保存温度Storage Temperature Range -30°C~80°C 1-2 运行温度Operating Temperature Range -20°C~60°C 2.测试环境 Standard Test Environment: No. 项目(Item) 规格(Specification) 2-1 温度 Temperature Range 25°C ±5°C 2-2 湿度 Humidity Range 65%±10% 3.安全特性与认证 Secure Performance and Certificate No. 项目/Item 认证Certificate 备注(remarks) 3-1 ASTM F963 No 美国玩具检测标准 3-2 EN71 No 欧盟市场玩具类产品的规范标准 3-3 FCC No 对电子、电器中的电磁干扰,管理和控制无线电频率范 围,保护电信网络、电器产品的正常工作。 3-4 ROHS Yes 电子,电器设备中对人体有害物质的含量。 4.外观检查 Appearance Inspection 3-5 REACH NO 欧盟法规《化学品的注册、评估、授权和限制》 : No. 项目(Item) 规格(Specification) 4-1 外观尺寸OutlineDrawing 尺寸见附件(第12项) See the appendix 4-2 外观Appearance 无损坏,不允许影响功能 No damage and mustn’t affect functions. 5.电气特性 Electrical Specification No. 项目(Item) 规格(Specification) 规格(Specification) 备注Remark 5-1 典型工作电压 Operating Voltage 6V 7.4V 5-2 空载速度 No Load Speed 0.238sec/60° (42RPM) 0.192sec/60° (52RPM) 5-3 空载电流Running Current ( no load) 130mA 150mA 5-4 堵车扭力 Stall Torque (at locked) 16.5kg.cm 19.5kg.cm 229.54oz.in 271.28oz.in 5-5 堵转电流 Stall Current (at locked) 2A 2.5A 5-6 静态电流 Idle Current (at stopped) 6mA 6mA 5-7 工作电压 Input Voltage 4V-7.4V 5-8 额定负载 Rated Torgue 4kg.cm 5kg.cm 5-9 额定电流 Rated Current 500mA 650mA 5-10 电机内阻 Terminal resistance 2.5Ω 5-11 Kt常数 8kg.cm/A",
+              "page_image_path": "data/processed/vision/sts3215_pages/sts3215_datasheet_page_0003.png"
+            }
+          },
+          {
+            "evidence_id": "doc:sts3215_datasheet:p5",
+            "kind": "document_page",
+            "refs": [
+              {
+                "source_id": "sts3215_datasheet",
+                "source_type": "pdf",
+                "page_number": 5,
+                "time_start_sec": null,
+                "time_end_sec": null,
+                "frame_index": null,
+                "camera": null,
+                "bbox": null,
+                "note": null
+              }
+            ],
+            "provenance": {
+              "source_id": "sts3215_datasheet",
+              "source_type": "pdf",
+              "manifest_path": "data/manifests/sources/sts3215_datasheet.json",
+              "canonical_sha256": "707da810d6443597bb7877fc191251915bf01a3d3594ee77b1e0f8ef8b45d017",
+              "supporting_sha256": {
+                "rendered_page_image": "9d49d6024a005d5ade0b731e1ca779955ed2f35be7c79edb56533b7514e72096"
+              }
+            },
+            "payload": {
+              "page_number": 5,
+              "text_sha256": "77d0be6b68d90367449cbc02d9e6546c2b19f1f9e1df91f53ae04102c3e03fe2",
+              "char_count": 780,
+              "text_excerpt": "深圳飞特模型有限公司 SHENZHEN FEETECH RC MODEL CO.,LTD. 版本EDITION: A/0 型号/MODEL: STS3215 产品规格书 PRODUCT SPECIFICATION 日期/Date: 2020-04-10 页 码 Page:5/8 7-2. 控制特性Control Specification: No. 项目(Item) 规格(Specification) 备注(remarks) 7-11 电子保护 Electronic Protection 过载 Over Load 堵在大于堵转的80%并持续 2S后进入保护,重新 发位置指令,会清除过载 保护标志,可自定义设定堵 转的百分比和持续时间 过流 Over Current 运行中电流大于2A并持续 2s后,关闭输出并进入过 流保护,重新发位置指 令,会清除过流保护标志, 可自定义设定电流值和持 续时间 过压 Over Voltage 大于7.4V或者小于4V进入 保护,电压恢复正常范围 后,自动解除保护,可自定 义设定电压值范围 过热 Over Hot 大于70°C关闭扭矩输出 7-12 运行模式 Operating Modes 模式0:角度伺服模式 默认此模式,0-360度绝对 位置可控 模式1:速度闭环电机模式 电机模式,随负载增加, 速度智能维持不减速。 模式2:速度开环电机模式 电机模式,随负载增加, 速度会持续减慢 模式3:步进模式 相对当前位置进行步进运 动 7-13 多圈模式 Multi-Loop Mode 最高精度下可以正负7圈绝对位置控 制,但掉电圈数不保存 扩大分辨率,圈数可翻倍 7-14 置中功能 Step Middle Position 一键较准,360度角度任意位置安 装,一键较正当前位置为中位 40号地址输入128",
+              "page_image_path": "data/processed/vision/sts3215_pages/sts3215_datasheet_page_0005.png"
+            }
+          },
+          {
+            "evidence_id": "robot:20260815_155139:f475",
+            "kind": "robot_sample",
+            "refs": [
+              {
+                "source_id": "20260815_155139",
+                "source_type": "robot_sequence",
+                "page_number": null,
+                "time_start_sec": 31.6691144,
+                "time_end_sec": 31.6691144,
+                "frame_index": 475,
+                "camera": "front",
+                "bbox": null,
+                "note": null
+              },
+              {
+                "source_id": "20260815_155139",
+                "source_type": "robot_sequence",
+                "page_number": null,
+                "time_start_sec": 31.6691144,
+                "time_end_sec": 31.6691144,
+                "frame_index": 475,
+                "camera": "wrist",
+                "bbox": null,
+                "note": null
+              }
+            ],
+            "provenance": {
+              "source_id": "20260815_155139",
+              "source_type": "robot_sequence",
+              "manifest_path": "data/manifests/diagnostic_robot_episodes/20260815_155139.json",
+              "canonical_sha256": "cc4dab13c7dce8bdb5c870cabc5403486dfb751217ab129e3b46811a5cf793e2",
+              "supporting_sha256": {
+                "metadata.json": "7c704f5a4f17dfad917c0873f5f23df450c76831226ba602cc872d2531e4ceb2",
+                "samples.csv": "9ca21d73f46a45979c7008f42bb908f2f805a0fc3eaac978b7395b871dc1e1c3"
+              }
+            },
+            "payload": {
+              "episode_id": "20260815_155139",
+              "frame_index": 475,
+              "timestamp_sec": 31.6691144,
+              "cameras": [
+                {
+                  "camera": "front",
+                  "frame_index": 475,
+                  "timestamp_sec": 31.6691144,
+                  "image_relpath": "front/000475.jpg",
+                  "image_sha256": "126e1451982aaec3f58ab97ff32a1919704bc182dac178e409311d089c30299e",
+                  "source_timestamp_ns": 417301385833600,
+                  "source_age_ms": 1.705,
+                  "width_px": 640,
+                  "height_px": 480
+                },
+                {
+                  "camera": "wrist",
+                  "frame_index": 475,
+                  "timestamp_sec": 31.6691144,
+                  "image_relpath": "wrist/000475.jpg",
+                  "image_sha256": "cad6d285acb59075707d5a6b58363578e0f26508b2b711325d3cc82209b905af",
+                  "source_timestamp_ns": 417301327094300,
+                  "source_age_ms": 60.444,
+                  "width_px": 480,
+                  "height_px": 640
+                }
+              ],
+              "state_action": {
+                "frame_index": 475,
+                "timestamp_sec": 31.6691144,
+                "observation": {
+                  "shoulder_pan": 5.5938697318007655,
+                  "shoulder_lift": 12.369845897542689,
+                  "elbow_flex": -13.523292627770246,
+                  "wrist_flex": 60.21959459459461,
+                  "wrist_roll": 12.169860176074579,
+                  "gripper": 27.60898282694848
+                },
+                "action": {
+                  "shoulder_pan": 4.025103030303045,
+                  "shoulder_lift": 6.6890395627946795,
+                  "elbow_flex": -15.391358989531177,
+                  "wrist_flex": 60.0,
+                  "wrist_roll": 11.711140802322522,
+                  "gripper": 22.28577248322148
+                },
+                "tracking_error": {
+                  "shoulder_pan": 1.5687667014977205,
+                  "shoulder_lift": 5.680806334748009,
+                  "elbow_flex": 1.8680663617609312,
+                  "wrist_flex": 0.21959459459461073,
+                  "wrist_roll": 0.4587193737520572,
+                  "gripper": 5.323210343727002
+                }
+              }
+            }
+          },
+          {
+            "evidence_id": "robot:20260815_155139:f480",
+            "kind": "robot_sample",
+            "refs": [
+              {
+                "source_id": "20260815_155139",
+                "source_type": "robot_sequence",
+                "page_number": null,
+                "time_start_sec": 32.0025284,
+                "time_end_sec": 32.0025284,
+                "frame_index": 480,
+                "camera": "front",
+                "bbox": null,
+                "note": null
+              },
+              {
+                "source_id": "20260815_155139",
+                "source_type": "robot_sequence",
+                "page_number": null,
+                "time_start_sec": 32.0025284,
+                "time_end_sec": 32.0025284,
+                "frame_index": 480,
+                "camera": "wrist",
+                "bbox": null,
+                "note": null
+              }
+            ],
+            "provenance": {
+              "source_id": "20260815_155139",
+              "source_type": "robot_sequence",
+              "manifest_path": "data/manifests/diagnostic_robot_episodes/20260815_155139.json",
+              "canonical_sha256": "cc4dab13c7dce8bdb5c870cabc5403486dfb751217ab129e3b46811a5cf793e2",
+              "supporting_sha256": {
+                "metadata.json": "7c704f5a4f17dfad917c0873f5f23df450c76831226ba602cc872d2531e4ceb2",
+                "samples.csv": "9ca21d73f46a45979c7008f42bb908f2f805a0fc3eaac978b7395b871dc1e1c3"
+              }
+            },
+            "payload": {
+              "episode_id": "20260815_155139",
+              "frame_index": 480,
+              "timestamp_sec": 32.0025284,
+              "cameras": [
+                {
+                  "camera": "front",
+                  "frame_index": 480,
+                  "timestamp_sec": 32.0025284,
+                  "image_relpath": "front/000480.jpg",
+                  "image_sha256": "b23c668f18921d76041814808d73a55bd645dd480695b9d0bbd8dd920f295ecb",
+                  "source_timestamp_ns": 417301695188600,
+                  "source_age_ms": 25.764,
+                  "width_px": 640,
+                  "height_px": 480
+                },
+                {
+                  "camera": "wrist",
+                  "frame_index": 480,
+                  "timestamp_sec": 32.0025284,
+                  "image_relpath": "wrist/000480.jpg",
+                  "image_sha256": "faa102a7367648e9b2d762ad6d17a4da32df8dbf2e4e16eb0ac6896eb47e4050",
+                  "source_timestamp_ns": 417301694014700,
+                  "source_age_ms": 26.938,
+                  "width_px": 480,
+                  "height_px": 640
+                }
+              ],
+              "state_action": {
+                "frame_index": 480,
+                "timestamp_sec": 32.0025284,
+                "observation": {
+                  "shoulder_pan": 3.5249042145593705,
+                  "shoulder_lift": 12.369845897542689,
+                  "elbow_flex": -13.523292627770246,
+                  "wrist_flex": 60.21959459459461,
+                  "wrist_roll": 11.496633868461942,
+                  "gripper": 25.23117569352708
+                },
+                "action": {
+                  "shoulder_pan": 2.89378989898991,
+                  "shoulder_lift": 6.603313030432918,
+                  "elbow_flex": -15.391358989531177,
+                  "wrist_flex": 60.0,
+                  "wrist_roll": 11.236081419899723,
+                  "gripper": 22.28577248322148
+                },
+                "tracking_error": {
+                  "shoulder_pan": 0.6311143155694605,
+                  "shoulder_lift": 5.76653286710977,
+                  "elbow_flex": 1.8680663617609312,
+                  "wrist_flex": 0.21959459459461073,
+                  "wrist_roll": 0.26055244856221904,
+                  "gripper": 2.945403210305603
+                }
+              }
+            }
+          },
+          {
+            "evidence_id": "robot:20260815_155139:f485",
+            "kind": "robot_sample",
+            "refs": [
+              {
+                "source_id": "20260815_155139",
+                "source_type": "robot_sequence",
+                "page_number": null,
+                "time_start_sec": 32.3374321,
+                "time_end_sec": 32.3374321,
+                "frame_index": 485,
+                "camera": "front",
+                "bbox": null,
+                "note": null
+              },
+              {
+                "source_id": "20260815_155139",
+                "source_type": "robot_sequence",
+                "page_number": null,
+                "time_start_sec": 32.3374321,
+                "time_end_sec": 32.3374321,
+                "frame_index": 485,
+                "camera": "wrist",
+                "bbox": null,
+                "note": null
+              }
+            ],
+            "provenance": {
+              "source_id": "20260815_155139",
+              "source_type": "robot_sequence",
+              "manifest_path": "data/manifests/diagnostic_robot_episodes/20260815_155139.json",
+              "canonical_sha256": "cc4dab13c7dce8bdb5c870cabc5403486dfb751217ab129e3b46811a5cf793e2",
+              "supporting_sha256": {
+                "metadata.json": "7c704f5a4f17dfad917c0873f5f23df450c76831226ba602cc872d2531e4ceb2",
+                "samples.csv": "9ca21d73f46a45979c7008f42bb908f2f805a0fc3eaac978b7395b871dc1e1c3"
+              }
+            },
+            "payload": {
+              "episode_id": "20260815_155139",
+              "frame_index": 485,
+              "timestamp_sec": 32.3374321,
+              "cameras": [
+                {
+                  "camera": "front",
+                  "frame_index": 485,
+                  "timestamp_sec": 32.3374321,
+                  "image_relpath": "front/000485.jpg",
+                  "image_sha256": "499f4e50e3cb0efea8ef45485c69d039a8a17a5ff3b9c02e360e7c5af4de4953",
+                  "source_timestamp_ns": 417302048093500,
+                  "source_age_ms": 7.763,
+                  "width_px": 640,
+                  "height_px": 480
+                },
+                {
+                  "camera": "wrist",
+                  "frame_index": 485,
+                  "timestamp_sec": 32.3374321,
+                  "image_relpath": "wrist/000485.jpg",
+                  "image_sha256": "275a2f5e5c45a1f31c18d0adc8857e50dba3d1633a01fa4d7b9aab0cce6834f2",
+                  "source_timestamp_ns": 417302046944100,
+                  "source_age_ms": 8.912,
+                  "width_px": 480,
+                  "height_px": 640
+                }
+              ],
+              "state_action": {
+                "frame_index": 485,
+                "timestamp_sec": 32.3374321,
+                "observation": {
+                  "shoulder_pan": 3.371647509578551,
+                  "shoulder_lift": 12.369845897542689,
+                  "elbow_flex": -13.523292627770246,
+                  "wrist_flex": 60.21959459459461,
+                  "wrist_roll": 11.496633868461942,
+                  "gripper": 22.85336856010568
+                },
+                "action": {
+                  "shoulder_pan": 2.89378989898991,
+                  "shoulder_lift": 6.603313030432918,
+                  "elbow_flex": -15.300325762403268,
+                  "wrist_flex": 60.0,
+                  "wrist_roll": 11.236081419899723,
+                  "gripper": 22.28577248322148
+                },
+                "tracking_error": {
+                  "shoulder_pan": 0.4778576105886412,
+                  "shoulder_lift": 5.76653286710977,
+                  "elbow_flex": 1.7770331346330224,
+                  "wrist_flex": 0.21959459459461073,
+                  "wrist_roll": 0.26055244856221904,
+                  "gripper": 0.5675960768842003
+                }
+              }
+            }
+          }
+        ]
+      },
+      "readiness": {
+        "decision": "abstain_physical_root_cause",
+        "root_cause_answerable": false,
+        "checks": {
+          "cross_domain_bundle_valid": true,
+          "document_evidence_available": true,
+          "robot_visual_state_action_evidence_available": true,
+          "manual_causal_ground_truth_available": false,
+          "causal_supervision_available": false,
+          "end_to_end_localization_inference_claim": false
+        },
+        "uncertainty_reasons": [
+          "day20_best_proposal_is_gt_matched_for_post_eval_diagnostic_analysis_not_end_to_end_inference",
+          "retrieved_manual_pages_are_candidates_without_human_verified_causal_support_labels",
+          "current_verified_robot_events_do_not_provide_discriminative_physical_cause_supervision"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "case_count": 2,
+    "root_cause_answerable_count": 0,
+    "abstain_count": 2
+  }
+}
