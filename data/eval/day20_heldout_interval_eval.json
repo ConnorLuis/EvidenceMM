@@ -1,0 +1,465 @@
+{
+  "schema_version": "evidencemm_day20_heldout_interval_eval_report_v1",
+  "evaluation_status": "prospective_procedural_heldout_interval_evaluation",
+  "evaluation_split": "held_out",
+  "provenance": {
+    "frozen_after_day19_commit": "93490c0143aa72ad46595cb01fa49cb867945b5b",
+    "day19_model_blob_sha1": "ae0ae72452fdbf22f91e0dc34479bd5028c8ef44",
+    "benchmark_split_sha256": "0a51e87f9735f0d01513ea004b38e4803050e094d62cce3d65ea23d06a532e12",
+    "interval_model_sha256": "189e64443e730b709df7de8210f1ffbbe87f714345054c7d67f3e9a398ad0f27",
+    "frozen_selector_config_sha256": "c0264a0e85b731bbe7a8abc7b9b6fe33df17bf1c5f765ca683ab9109c7e3fbb3",
+    "human_gt_sha256": "6bc0766848e697f57fcf5d9ebd1920b3013383b033c41ebf7e65ade9ed096a61"
+  },
+  "anti_leakage": {
+    "candidate_generation_uses_gold": false,
+    "held_out_gt_loaded_after_candidate_generation": true,
+    "model_selection_performed": false,
+    "radius_tuned_on_held_out": false,
+    "post_heldout_tuning_allowed": false,
+    "day18_split_changed": false,
+    "day19_model_changed": false,
+    "note": "This is the one frozen-model held-out evaluation. The Day18 split was created after Human GT existed, so the claim is procedural/prospective relative to Day19 model selection, not a pristine unseen-human external benchmark."
+  },
+  "localizer": {
+    "selected_radius_frames": 5,
+    "center_policy": "frozen_day16_signal_candidates_excluding_uniform_only",
+    "interval_rule": "symmetric_radius_around_candidate_center"
+  },
+  "held_out_universe": {
+    "anomaly_episode_ids": [
+      "20260815_112859",
+      "20260815_155139"
+    ],
+    "verified_event_count": 2,
+    "reviewed_unresolved_count": 0,
+    "reviewed_unresolved_event_ids": []
+  },
+  "held_out_proposals": {
+    "20260815_112859": [
+      {
+        "center_frame": 48,
+        "start_frame": 43,
+        "end_frame": 53,
+        "radius_frames": 5,
+        "center_timestamp_sec": 3.205175,
+        "reasons": [
+          "state_action_change"
+        ]
+      },
+      {
+        "center_frame": 69,
+        "start_frame": 64,
+        "end_frame": 74,
+        "radius_frames": 5,
+        "center_timestamp_sec": 4.6052439,
+        "reasons": [
+          "state_action_change"
+        ]
+      },
+      {
+        "center_frame": 85,
+        "start_frame": 80,
+        "end_frame": 90,
+        "radius_frames": 5,
+        "center_timestamp_sec": 5.6694777,
+        "reasons": [
+          "gripper_action_change"
+        ]
+      },
+      {
+        "center_frame": 88,
+        "start_frame": 83,
+        "end_frame": 93,
+        "radius_frames": 5,
+        "center_timestamp_sec": 5.8698455,
+        "reasons": [
+          "state_action_change"
+        ]
+      },
+      {
+        "center_frame": 90,
+        "start_frame": 85,
+        "end_frame": 95,
+        "radius_frames": 5,
+        "center_timestamp_sec": 6.0051067,
+        "reasons": [
+          "front_visual_motion"
+        ]
+      },
+      {
+        "center_frame": 99,
+        "start_frame": 94,
+        "end_frame": 104,
+        "radius_frames": 5,
+        "center_timestamp_sec": 6.6043863,
+        "reasons": [
+          "wrist_visual_motion"
+        ]
+      },
+      {
+        "center_frame": 117,
+        "start_frame": 112,
+        "end_frame": 122,
+        "radius_frames": 5,
+        "center_timestamp_sec": 7.8026079,
+        "reasons": [
+          "front_visual_motion"
+        ]
+      },
+      {
+        "center_frame": 243,
+        "start_frame": 238,
+        "end_frame": 248,
+        "radius_frames": 5,
+        "center_timestamp_sec": 16.2036554,
+        "reasons": [
+          "front_visual_motion"
+        ]
+      },
+      {
+        "center_frame": 384,
+        "start_frame": 379,
+        "end_frame": 389,
+        "radius_frames": 5,
+        "center_timestamp_sec": 25.6027608,
+        "reasons": [
+          "gripper_action_change"
+        ]
+      },
+      {
+        "center_frame": 400,
+        "start_frame": 395,
+        "end_frame": 405,
+        "radius_frames": 5,
+        "center_timestamp_sec": 26.6718152,
+        "reasons": [
+          "gripper_action_change"
+        ]
+      },
+      {
+        "center_frame": 423,
+        "start_frame": 418,
+        "end_frame": 428,
+        "radius_frames": 5,
+        "center_timestamp_sec": 28.203887,
+        "reasons": [
+          "front_visual_motion"
+        ]
+      },
+      {
+        "center_frame": 477,
+        "start_frame": 472,
+        "end_frame": 482,
+        "radius_frames": 5,
+        "center_timestamp_sec": 31.8047034,
+        "reasons": [
+          "wrist_visual_motion"
+        ]
+      },
+      {
+        "center_frame": 576,
+        "start_frame": 571,
+        "end_frame": 581,
+        "radius_frames": 5,
+        "center_timestamp_sec": 38.4051054,
+        "reasons": [
+          "gripper_action_change"
+        ]
+      },
+      {
+        "center_frame": 675,
+        "start_frame": 670,
+        "end_frame": 680,
+        "radius_frames": 5,
+        "center_timestamp_sec": 45.002624,
+        "reasons": [
+          "wrist_visual_motion"
+        ]
+      },
+      {
+        "center_frame": 687,
+        "start_frame": 682,
+        "end_frame": 692,
+        "radius_frames": 5,
+        "center_timestamp_sec": 45.80245,
+        "reasons": [
+          "tracking_gap",
+          "wrist_visual_motion"
+        ]
+      },
+      {
+        "center_frame": 710,
+        "start_frame": 705,
+        "end_frame": 715,
+        "radius_frames": 5,
+        "center_timestamp_sec": 47.3382484,
+        "reasons": [
+          "state_action_change"
+        ]
+      },
+      {
+        "center_frame": 812,
+        "start_frame": 807,
+        "end_frame": 817,
+        "radius_frames": 5,
+        "center_timestamp_sec": 54.138646,
+        "reasons": [
+          "state_action_change"
+        ]
+      }
+    ],
+    "20260815_155139": [
+      {
+        "center_frame": 16,
+        "start_frame": 11,
+        "end_frame": 21,
+        "radius_frames": 5,
+        "center_timestamp_sec": 1.0713322,
+        "reasons": [
+          "state_action_change"
+        ]
+      },
+      {
+        "center_frame": 33,
+        "start_frame": 28,
+        "end_frame": 38,
+        "radius_frames": 5,
+        "center_timestamp_sec": 2.2024339,
+        "reasons": [
+          "state_action_change"
+        ]
+      },
+      {
+        "center_frame": 202,
+        "start_frame": 197,
+        "end_frame": 207,
+        "radius_frames": 5,
+        "center_timestamp_sec": 13.471746,
+        "reasons": [
+          "gripper_action_change"
+        ]
+      },
+      {
+        "center_frame": 363,
+        "start_frame": 358,
+        "end_frame": 368,
+        "radius_frames": 5,
+        "center_timestamp_sec": 24.2051001,
+        "reasons": [
+          "gripper_action_change"
+        ]
+      },
+      {
+        "center_frame": 376,
+        "start_frame": 371,
+        "end_frame": 381,
+        "radius_frames": 5,
+        "center_timestamp_sec": 25.0701817,
+        "reasons": [
+          "gripper_action_change"
+        ]
+      },
+      {
+        "center_frame": 399,
+        "start_frame": 394,
+        "end_frame": 404,
+        "radius_frames": 5,
+        "center_timestamp_sec": 26.605093,
+        "reasons": [
+          "front_visual_motion"
+        ]
+      },
+      {
+        "center_frame": 411,
+        "start_frame": 406,
+        "end_frame": 416,
+        "radius_frames": 5,
+        "center_timestamp_sec": 27.4049605,
+        "reasons": [
+          "front_visual_motion"
+        ]
+      },
+      {
+        "center_frame": 480,
+        "start_frame": 475,
+        "end_frame": 485,
+        "radius_frames": 5,
+        "center_timestamp_sec": 32.0025284,
+        "reasons": [
+          "wrist_visual_motion"
+        ]
+      },
+      {
+        "center_frame": 543,
+        "start_frame": 538,
+        "end_frame": 548,
+        "radius_frames": 5,
+        "center_timestamp_sec": 36.2048473,
+        "reasons": [
+          "wrist_visual_motion"
+        ]
+      },
+      {
+        "center_frame": 558,
+        "start_frame": 553,
+        "end_frame": 563,
+        "radius_frames": 5,
+        "center_timestamp_sec": 37.2048693,
+        "reasons": [
+          "gripper_action_change",
+          "state_action_change"
+        ]
+      },
+      {
+        "center_frame": 573,
+        "start_frame": 568,
+        "end_frame": 578,
+        "radius_frames": 5,
+        "center_timestamp_sec": 38.2024649,
+        "reasons": [
+          "front_visual_motion",
+          "wrist_visual_motion"
+        ]
+      },
+      {
+        "center_frame": 660,
+        "start_frame": 655,
+        "end_frame": 665,
+        "radius_frames": 5,
+        "center_timestamp_sec": 44.0052118,
+        "reasons": [
+          "tracking_gap"
+        ]
+      },
+      {
+        "center_frame": 663,
+        "start_frame": 658,
+        "end_frame": 668,
+        "radius_frames": 5,
+        "center_timestamp_sec": 44.2049469,
+        "reasons": [
+          "front_visual_motion"
+        ]
+      },
+      {
+        "center_frame": 684,
+        "start_frame": 679,
+        "end_frame": 689,
+        "radius_frames": 5,
+        "center_timestamp_sec": 45.605415,
+        "reasons": [
+          "tracking_gap"
+        ]
+      },
+      {
+        "center_frame": 693,
+        "start_frame": 688,
+        "end_frame": 698,
+        "radius_frames": 5,
+        "center_timestamp_sec": 46.202781,
+        "reasons": [
+          "state_action_change"
+        ]
+      },
+      {
+        "center_frame": 828,
+        "start_frame": 823,
+        "end_frame": 833,
+        "radius_frames": 5,
+        "center_timestamp_sec": 55.2048383,
+        "reasons": [
+          "wrist_visual_motion"
+        ]
+      },
+      {
+        "center_frame": 861,
+        "start_frame": 856,
+        "end_frame": 866,
+        "radius_frames": 5,
+        "center_timestamp_sec": 57.4036944,
+        "reasons": [
+          "state_action_change"
+        ]
+      }
+    ]
+  },
+  "event_results": [
+    {
+      "event_id": "20260815_112859_event_01",
+      "episode_id": "20260815_112859",
+      "observed_failure_mode": "post_place_collision",
+      "gold_start_frame": 673,
+      "gold_end_frame": 680,
+      "best_proposal_center_frame": 675,
+      "best_proposal_start_frame": 670,
+      "best_proposal_end_frame": 680,
+      "best_iou": 0.7272727272727273,
+      "overlap_hit": true,
+      "onset_abs_error_frames": 3,
+      "offset_abs_error_frames": 0
+    },
+    {
+      "event_id": "20260815_155139_event_01",
+      "episode_id": "20260815_155139",
+      "observed_failure_mode": "grasp_drop",
+      "gold_start_frame": 480,
+      "gold_end_frame": 482,
+      "best_proposal_center_frame": 480,
+      "best_proposal_start_frame": 475,
+      "best_proposal_end_frame": 485,
+      "best_iou": 0.2727272727272727,
+      "overlap_hit": true,
+      "onset_abs_error_frames": 5,
+      "offset_abs_error_frames": 3
+    }
+  ],
+  "metrics": {
+    "overall": {
+      "event_count": 2,
+      "event_recall": 1.0,
+      "mean_best_iou": 0.5,
+      "median_best_iou": 0.5,
+      "recall_at_iou": {
+        "0.10": 1.0,
+        "0.25": 1.0,
+        "0.50": 0.5
+      },
+      "mean_onset_abs_error_frames": 4.0,
+      "mean_offset_abs_error_frames": 1.5
+    },
+    "by_observed_failure_mode": {
+      "grasp_drop": {
+        "event_count": 1,
+        "event_recall": 1.0,
+        "mean_best_iou": 0.2727272727272727,
+        "median_best_iou": 0.2727272727272727,
+        "recall_at_iou": {
+          "0.10": 1.0,
+          "0.25": 1.0,
+          "0.50": 0.0
+        },
+        "mean_onset_abs_error_frames": 5.0,
+        "mean_offset_abs_error_frames": 3.0
+      },
+      "post_place_collision": {
+        "event_count": 1,
+        "event_recall": 1.0,
+        "mean_best_iou": 0.7272727272727273,
+        "median_best_iou": 0.7272727272727273,
+        "recall_at_iou": {
+          "0.10": 1.0,
+          "0.25": 1.0,
+          "0.50": 1.0
+        },
+        "mean_onset_abs_error_frames": 3.0,
+        "mean_offset_abs_error_frames": 0.0
+      }
+    }
+  },
+  "evaluation_seal": {
+    "frozen_model_final_evaluation": true,
+    "same_held_out_set_may_be_reused_for_diagnostics": true,
+    "same_held_out_set_may_be_used_for_future_model_selection": false,
+    "new_prospective_claim_requires_new_held_out_data_or_split": true
+  }
+}

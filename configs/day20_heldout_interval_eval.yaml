@@ -1,0 +1,42 @@
+schema_version: evidencemm_day20_heldout_interval_eval_config_v1
+
+inputs:
+  benchmark_split_json: data/eval/day18_robot_benchmark_split.json
+  interval_model_json: data/eval/day19_interval_localizer_model.json
+  human_gt_jsonl: data/annotations/day16_human_gt_events.jsonl
+  dataset_root: /mnt/f/episodes_pick_place_pilot_v5
+  diagnostic_manifest_root: data/manifests/diagnostic_robot_episodes
+  processed_root: data/processed/diagnostic_robot_sequence
+  frozen_selector_config: configs/day16_review_pack.yaml
+
+output:
+  report_json: data/eval/day20_heldout_interval_eval.json
+
+provenance:
+  frozen_after_day19_commit: 93490c0143aa72ad46595cb01fa49cb867945b5b
+  expected_day19_model_blob_sha1: ae0ae72452fdbf22f91e0dc34479bd5028c8ef44
+  day19_status: closed_frozen
+  evaluation_split: held_out
+
+evaluation:
+  iou_thresholds:
+    - 0.10
+    - 0.25
+    - 0.50
+  model_selection_performed: false
+  radius_tuned_on_held_out: false
+  post_heldout_tuning_allowed: false
+
+expected:
+  held_out_episode_count: 14
+  held_out_anomaly_episode_count: 2
+  held_out_event_count: 2
+  held_out_verified_event_count: 2
+  held_out_reviewed_unresolved_count: 0
+  selected_radius_frames: 5
+  held_out_anomaly_episode_ids:
+    - "20260815_112859"
+    - "20260815_155139"
+  held_out_event_ids:
+    - "20260815_112859_event_01"
+    - "20260815_155139_event_01"
