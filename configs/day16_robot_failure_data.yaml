@@ -1,0 +1,33 @@
+source:
+  dataset_root: /mnt/f/episodes_pick_place_pilot_v5
+  training_manifest: /mnt/f/episodes_pick_place_pilot_v5/training_manifest.csv
+  encoding: gb18030
+
+audit:
+  output_jsonl: data/annotations/day16_source_audit.jsonl
+  anomaly_review_jsonl: data/annotations/day16_anomaly_review_cases.jsonl
+  report_json: reports/day16_source_audit.json
+
+diagnostic_binding:
+  timestamp_source: samples_csv.elapsed_ns
+  manifest_root: data/manifests/diagnostic_robot_episodes
+  processed_root: data/processed/diagnostic_robot_sequence
+  report_json: reports/day16_diagnostic_binding.json
+
+expected_current_source_audit:
+  total_rows: 75
+  clean_reference_candidate: 60
+  operation_anomaly: 8
+  demo_quality_only: 1
+  technical_exclusion: 6
+  manual_review_required: 0
+
+expected_operation_anomaly_episode_ids:
+  - "20260815_111613"
+  - "20260815_112058"
+  - "20260815_112633"
+  - "20260815_112859"
+  - "20260815_140119"
+  - "20260815_141416"
+  - "20260815_141657"
+  - "20260815_155139"

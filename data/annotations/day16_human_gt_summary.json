@@ -1,0 +1,22 @@
+{
+  "schema_version": "day16_human_gt_v1",
+  "episode_count": 8,
+  "event_count": 9,
+  "verified_count": 7,
+  "reviewed_unresolved_count": 2,
+  "waiting_for_review_count": 0,
+  "human_review_complete": true,
+  "verified_event_ids": [
+    "20260815_111613_event_01",
+    "20260815_111613_event_02",
+    "20260815_112058_event_01",
+    "20260815_112633_event_01",
+    "20260815_112859_event_01",
+    "20260815_141416_event_01",
+    "20260815_155139_event_01"
+  ],
+  "reviewed_unresolved_event_ids": [
+    "20260815_140119_event_01",
+    "20260815_141657_event_01"
+  ]
+}

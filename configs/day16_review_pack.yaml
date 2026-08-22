@@ -1,0 +1,30 @@
+inputs:
+  source_audit_jsonl: data/annotations/day16_source_audit.jsonl
+  anomaly_review_jsonl: data/annotations/day16_anomaly_review_cases.jsonl
+  diagnostic_binding_report: reports/day16_diagnostic_binding.json
+
+output:
+  root: reports/day16_review_pack
+
+selection:
+  uniform_count: 7
+  top_state_action: 5
+  top_tracking_gap: 3
+  top_gripper_change: 4
+  top_visual_motion_per_camera: 4
+  min_separation_frames: 12
+  visual_stride: 3
+  visual_width: 160
+  visual_height: 120
+  max_selected_frames: 24
+  thumbnail_width: 360
+
+expected_episode_ids:
+  - "20260815_111613"
+  - "20260815_112058"
+  - "20260815_112633"
+  - "20260815_112859"
+  - "20260815_140119"
+  - "20260815_141416"
+  - "20260815_141657"
+  - "20260815_155139"

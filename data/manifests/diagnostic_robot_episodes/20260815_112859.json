@@ -1,0 +1,32 @@
+{
+  "schema_version": "evidencemm_robot_sequence_episode_v1",
+  "episode_id": "20260815_112859",
+  "canonical_source_type": "sample_synchronized_image_sequence",
+  "source_schema_version": "so101_episode_local_v1",
+  "source_script_version": "episode_recorder_v5",
+  "task": "抓取无压纹红色方块并放入固定目标区",
+  "frame_count": 900,
+  "nominal_hz": 15.0,
+  "actual_record_span_seconds": 60.0006104,
+  "timestamp_source": "samples_csv.elapsed_ns",
+  "metadata_sha256": "f011b05a2b8b51e5fe2cefa4f0d8e641dc32d00971e41ffb339b2453a7d4a21e",
+  "samples_csv_sha256": "bbe6db2b5c9b910416088443c720bcbeebe8de56083ae2aa707a29653321de09",
+  "episode_sha256": "0b2fa277e742015c31e8014bc92b1568cb10d475cd32d268317f4761dd8ef2e5",
+  "cameras": [
+    {
+      "camera": "front",
+      "frame_count": 900,
+      "width_px": 640,
+      "height_px": 480,
+      "transform": "none"
+    },
+    {
+      "camera": "wrist",
+      "frame_count": 900,
+      "width_px": 480,
+      "height_px": 640,
+      "transform": "ccw90"
+    }
+  ],
+  "source_checks_overall_pass": true
+}
