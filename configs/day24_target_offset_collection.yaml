@@ -1,0 +1,171 @@
+schema_version: evidencemm_day24_target_collection_config_v1
+
+status: day24_final_target_offset_collection_pre_collection
+
+provenance:
+  frozen_day22_protocol_commit: 5fcbc60bda246604a8405354320a23704a8cf70d
+  frozen_day23_pilot_commit: 64901f7093e46d21104e65b845ace4c2c104ca83
+  day22_protocol_path: data/protocol/day22_root_cause_benchmark_v2_protocol.json
+  day22_collection_plan_path: data/protocol/day22_root_cause_collection_plan.csv
+  expected_day22_collection_plan_sha256: 93345b1fd8330fa9e6076b95de018e423750788d91ccb26ac15258e92916e76d
+  day23_parameter_path: data/protocol/day23_intervention_parameters.json
+
+roadmap_contract:
+  day24_scope: final_target_offset_collection
+  day25_scope: final_gripper_timing_collection
+  day26_scope: final_trajectory_deviation_collection
+  day27_scope: final_insufficient_evidence_clean_controls_and_recollection
+  day28_scope: raw_audit_technical_and_experimental_exclusions_source_binding
+  day29_scope: human_causal_review_and_manual_support_annotation
+  day30_scope: ground_truth_and_groupwise_development_heldout_split_freeze
+  day31_scope: root_cause_diagnostic_baseline
+  day32_scope: development_only_calibration
+  day33_scope: single_frozen_heldout_final_evaluation
+  day34_scope: metrics_error_analysis_latency_gpu_and_e2e
+  day35_scope: documentation_release_resume_interview_closure
+
+acquisition:
+  project: embodied-agent-arm
+  recorder_script: scripts/windows/record_episode_150_windows_v7.py
+  recorder_version_required: episode_recorder_v7
+  windows_project_root: 'C:\Users\Administrator\projects\embodied-agent-arm'
+  windows_output_dir: 'outputs\episodes_root_cause_v2_final'
+  wsl_dataset_root: /mnt/c/Users/Administrator/projects/embodied-agent-arm/outputs/episodes_root_cause_v2_final
+  task_text: 抓取无压纹红色方块并放入固定目标区
+  duration_sec: 60
+  hz: 15
+  expected_samples: 900
+  expected_front_images: 900
+  expected_wrist_images: 900
+  motion_speed_scale: 1.25
+  gripper_speed_scale: 1.0
+  follower_pose: configs\poses\follower_home_v2.json
+  leader_pose: configs\poses\leader_episode_home_v1.json
+  source_representation: synchronized_front_wrist_image_sequences_plus_state_action
+  mp4_required: false
+
+day24_collection:
+  pair_group_count: 15
+  clean_control_count: 15
+  target_primary_count: 15
+  target_repeat_count: 5
+  target_total_count: 20
+  canonical_slot_count: 35
+  target_repeat_pair_groups:
+    - rcv2_g01
+    - rcv2_g04
+    - rcv2_g07
+    - rcv2_g10
+    - rcv2_g13
+  clean_anchor_policy: collect_once_on_day24_and_reuse_for_day25_day26_pairing
+  day25_day26_new_clean_required: false
+  clean_recollection_allowed_if_invalid: true
+
+frozen_target_intervention:
+  physical_cause: target_offset_or_perception
+  intervention_type: object_target_pose_offset
+  primary_changed_factor: environment_target_pose
+  direction: follower_forward
+  magnitude: 40
+  unit: mm
+  object_identity: red_cube_no_emboss_v1
+  nominal_start_condition: nominal_start_marker_v1
+  rule_zh: >-
+    将红色方块从 nominal 标记位置沿 Follower 正前方移动 40 mm；
+    机械臂仍执行原 nominal 抓取位置，不追踪、不补偿偏移后的方块。
+    不改变夹爪时序，不故意改变机器人 nominal 路径，不添加第二个干预。
+
+paired_control:
+  required: true
+  clean_control_may_anchor_multiple_intervention_slots: true
+  same_pair_group_must_share:
+    - scene_setup
+    - object_identity
+    - nominal_start_condition
+    - camera_setup
+    - acquisition_configuration
+  scene_setup_id: red_cube_fixed_target_scene_v1
+  object_identity: red_cube_no_emboss_v1
+  nominal_start_condition: nominal_start_marker_v1
+  camera_setup: front_wrist_v1
+  acquisition_configuration: so101_recorder_v7_60s_15hz_v1
+  all_members_same_future_split: true
+
+technical_gate:
+  required_files:
+    - metadata.json
+    - samples.csv
+    - front
+    - wrist
+  recorder_overall_pass_required: true
+  expected_samples: 900
+  expected_csv_rows: 900
+  expected_front_images: 900
+  expected_wrist_images: 900
+  exact_zero_based_frame_indices: true
+  strictly_monotonic_elapsed_ns: true
+  nonfinite_state_action_values_forbidden: true
+  all_recorder_checks_must_pass: true
+
+experimental_eligibility:
+  clean_control:
+    technical_valid: true
+    task_success: true
+    intervention_applied: false
+  target_offset:
+    technical_valid: true
+    task_success: false
+    intervention_applied: true
+    single_primary_intervention: true
+    changed_factor_observable: true
+    parameter_direction: follower_forward
+    parameter_value: 40
+    parameter_unit: mm
+  retain_all_failed_attempts_in_audit: true
+  successful_target_intervention_is_experimental_exclusion: true
+  do_not_increase_parameter_after_successful_target_attempt: true
+  recollect_same_plan_row_with_same_frozen_40mm_parameter: true
+
+anti_label_leakage:
+  recorder_task_text_contains_cause_label: false
+  raw_episode_metadata_must_not_embed_plan_row_or_physical_cause: true
+  model_visible_later:
+    - front_images
+    - wrist_images
+    - observation
+    - action
+    - tracking_error
+    - approved_manual_corpus
+  admin_only:
+    - pair_group_id
+    - plan_row_id
+    - planned_physical_cause
+    - intervention_parameters
+    - task_success_gt
+    - human_review_notes
+
+future_split:
+  materialize_on_day24: false
+  materialize_target_day: 30
+  split_unit: pair_group_id
+  seed: evidencemm-root-cause-v2-split-v3
+  pair_group_cross_split_allowed: false
+
+safety:
+  preserve_existing_robot_safety_guards: true
+  no_safety_limit_bypass: true
+  no_deliberate_power_loss: true
+  no_hard_collision: true
+  target_offset_must_remain_inside_existing_safe_workspace: true
+  unexpected_contact_requires_abort: true
+  hardware_fault_requires_abort: true
+
+acceptance:
+  canonical_episode_count: 35
+  pair_group_count: 15
+  clean_success_count: 15
+  target_failure_count: 20
+  target_parameter_uniform_40mm: true
+  target_direction_uniform_follower_forward: true
+  recorder_technical_pass_count: 35
+  future_split_not_materialized: true

@@ -1,0 +1,54 @@
+{
+  "schema_version": "evidencemm_day23_intervention_parameters_v2",
+  "status": "frozen_day23_to_final_collection_handoff",
+  "provenance": {
+    "day22_protocol_commit": "5fcbc60bda246604a8405354320a23704a8cf70d",
+    "day23_pilot_commit": "64901f7093e46d21104e65b845ace4c2c104ca83",
+    "note": "This artifact materializes the parameter freeze required by the Day22 protocol. It does not make pilot episodes final-benchmark eligible."
+  },
+  "selection_rule": "Prefer the eligible medium/intensity-rank-2 pilot; selected operational parameter must have been physically tested in the excluded Day23 pilot.",
+  "parameters": {
+    "target_offset_or_perception": {
+      "selected_pilot_row_id": "p23_g02_target",
+      "physical_cause": "target_offset_or_perception",
+      "intervention_type": "object_target_pose_offset",
+      "primary_changed_factor": "environment_target_pose",
+      "direction": "follower_forward",
+      "magnitude": 40.0,
+      "unit": "mm",
+      "pilot_outcome": "failure",
+      "measurement_precision": "manually_measured_scalar",
+      "final_collection_instruction_zh": "方块从 nominal 标记位置沿 Follower 正前方移动 40 mm；机械臂仍执行原 nominal 抓取位置，不追踪、不补偿移动后的方块。"
+    },
+    "gripper_close_timing": {
+      "selected_pilot_row_id": "p23_g02_gripper",
+      "physical_cause": "gripper_close_timing",
+      "intervention_type": "manual_gripper_close_timing_shift",
+      "primary_changed_factor": "gripper_close_phase",
+      "direction": "late",
+      "operational_measurement": "upward_progress_after_nominal_close_point_before_close",
+      "magnitude_range": [
+        30.0,
+        40.0
+      ],
+      "unit": "mm",
+      "pilot_outcome": "failure",
+      "measurement_precision": "operator_estimated_range",
+      "note": "Day23 refined the timing intervention operationalization: the robot continues along the nominal clean path and closes only after passing the nominal grasp-close phase. Spatial upward progress is used as the repeatable operator-side phase proxy; the physical cause and changed factor remain gripper_close_timing/gripper_close_phase."
+    },
+    "trajectory_execution_deviation": {
+      "selected_pilot_row_id": "p23_g02_trajectory",
+      "physical_cause": "trajectory_execution_deviation",
+      "intervention_type": "manual_bounded_trajectory_deviation",
+      "primary_changed_factor": "commanded_motion_path",
+      "direction": "follower_forward",
+      "magnitude_range": [
+        40.0,
+        60.0
+      ],
+      "unit": "mm",
+      "pilot_outcome": "failure",
+      "measurement_precision": "operator_estimated_range"
+    }
+  }
+}

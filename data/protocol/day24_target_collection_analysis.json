@@ -1,0 +1,450 @@
+{
+  "schema_version": "evidencemm_day24_target_collection_analysis_v1",
+  "status": "complete",
+  "attempt_count": 35,
+  "canonical_episode_count": 35,
+  "expected_canonical_episode_count": 35,
+  "clean_canonical_count": 15,
+  "clean_success_count": 15,
+  "target_canonical_count": 20,
+  "target_failure_count": 20,
+  "technical_exclusion_attempt_count": 0,
+  "experimental_exclusion_attempt_count": 0,
+  "pair_group_count": 15,
+  "complete_pair_group_count": 15,
+  "target_parameter": {
+    "direction": "follower_forward",
+    "magnitude": 40.0,
+    "unit": "mm"
+  },
+  "future_split_materialized": false,
+  "per_group": {
+    "rcv2_g01": {
+      "expected_slots": 3,
+      "canonical_slots": 3,
+      "complete": true
+    },
+    "rcv2_g02": {
+      "expected_slots": 2,
+      "canonical_slots": 2,
+      "complete": true
+    },
+    "rcv2_g03": {
+      "expected_slots": 2,
+      "canonical_slots": 2,
+      "complete": true
+    },
+    "rcv2_g04": {
+      "expected_slots": 3,
+      "canonical_slots": 3,
+      "complete": true
+    },
+    "rcv2_g05": {
+      "expected_slots": 2,
+      "canonical_slots": 2,
+      "complete": true
+    },
+    "rcv2_g06": {
+      "expected_slots": 2,
+      "canonical_slots": 2,
+      "complete": true
+    },
+    "rcv2_g07": {
+      "expected_slots": 3,
+      "canonical_slots": 3,
+      "complete": true
+    },
+    "rcv2_g08": {
+      "expected_slots": 2,
+      "canonical_slots": 2,
+      "complete": true
+    },
+    "rcv2_g09": {
+      "expected_slots": 2,
+      "canonical_slots": 2,
+      "complete": true
+    },
+    "rcv2_g10": {
+      "expected_slots": 3,
+      "canonical_slots": 3,
+      "complete": true
+    },
+    "rcv2_g11": {
+      "expected_slots": 2,
+      "canonical_slots": 2,
+      "complete": true
+    },
+    "rcv2_g12": {
+      "expected_slots": 2,
+      "canonical_slots": 2,
+      "complete": true
+    },
+    "rcv2_g13": {
+      "expected_slots": 3,
+      "canonical_slots": 3,
+      "complete": true
+    },
+    "rcv2_g14": {
+      "expected_slots": 2,
+      "canonical_slots": 2,
+      "complete": true
+    },
+    "rcv2_g15": {
+      "expected_slots": 2,
+      "canonical_slots": 2,
+      "complete": true
+    }
+  },
+  "canonical_details": [
+    {
+      "plan_row_id": "rcv2_g01_s01",
+      "pair_group_id": "rcv2_g01",
+      "episode_id": "20260823_163223",
+      "task_success": true,
+      "technical_valid": true,
+      "duration_seconds": 59.930977,
+      "max_tracking_error": 10.4527,
+      "recorder_script_version": "episode_recorder_v7"
+    },
+    {
+      "plan_row_id": "rcv2_g01_s02",
+      "pair_group_id": "rcv2_g01",
+      "episode_id": "20260823_163557",
+      "task_success": false,
+      "technical_valid": true,
+      "duration_seconds": 59.935241,
+      "max_tracking_error": 10.6621,
+      "recorder_script_version": "episode_recorder_v7"
+    },
+    {
+      "plan_row_id": "rcv2_g01_s05",
+      "pair_group_id": "rcv2_g01",
+      "episode_id": "20260823_163843",
+      "task_success": false,
+      "technical_valid": true,
+      "duration_seconds": 59.933103,
+      "max_tracking_error": 11.2348,
+      "recorder_script_version": "episode_recorder_v7"
+    },
+    {
+      "plan_row_id": "rcv2_g02_s01",
+      "pair_group_id": "rcv2_g02",
+      "episode_id": "20260823_164637",
+      "task_success": true,
+      "technical_valid": true,
+      "duration_seconds": 59.938741,
+      "max_tracking_error": 10.6581,
+      "recorder_script_version": "episode_recorder_v7"
+    },
+    {
+      "plan_row_id": "rcv2_g02_s02",
+      "pair_group_id": "rcv2_g02",
+      "episode_id": "20260823_165454",
+      "task_success": false,
+      "technical_valid": true,
+      "duration_seconds": 59.933638,
+      "max_tracking_error": 10.2891,
+      "recorder_script_version": "episode_recorder_v7"
+    },
+    {
+      "plan_row_id": "rcv2_g03_s01",
+      "pair_group_id": "rcv2_g03",
+      "episode_id": "20260823_171354",
+      "task_success": true,
+      "technical_valid": true,
+      "duration_seconds": 59.936197,
+      "max_tracking_error": 9.2776,
+      "recorder_script_version": "episode_recorder_v7"
+    },
+    {
+      "plan_row_id": "rcv2_g03_s02",
+      "pair_group_id": "rcv2_g03",
+      "episode_id": "20260823_171616",
+      "task_success": false,
+      "technical_valid": true,
+      "duration_seconds": 59.933603,
+      "max_tracking_error": 10.6615,
+      "recorder_script_version": "episode_recorder_v7"
+    },
+    {
+      "plan_row_id": "rcv2_g04_s01",
+      "pair_group_id": "rcv2_g04",
+      "episode_id": "20260823_172235",
+      "task_success": true,
+      "technical_valid": true,
+      "duration_seconds": 59.935127,
+      "max_tracking_error": 9.3254,
+      "recorder_script_version": "episode_recorder_v7"
+    },
+    {
+      "plan_row_id": "rcv2_g04_s02",
+      "pair_group_id": "rcv2_g04",
+      "episode_id": "20260823_172518",
+      "task_success": false,
+      "technical_valid": true,
+      "duration_seconds": 59.933787,
+      "max_tracking_error": 9.9412,
+      "recorder_script_version": "episode_recorder_v7"
+    },
+    {
+      "plan_row_id": "rcv2_g04_s05",
+      "pair_group_id": "rcv2_g04",
+      "episode_id": "20260823_173422",
+      "task_success": false,
+      "technical_valid": true,
+      "duration_seconds": 59.934397,
+      "max_tracking_error": 9.7201,
+      "recorder_script_version": "episode_recorder_v7"
+    },
+    {
+      "plan_row_id": "rcv2_g05_s01",
+      "pair_group_id": "rcv2_g05",
+      "episode_id": "20260823_174955",
+      "task_success": true,
+      "technical_valid": true,
+      "duration_seconds": 59.93275,
+      "max_tracking_error": 9.7039,
+      "recorder_script_version": "episode_recorder_v7"
+    },
+    {
+      "plan_row_id": "rcv2_g05_s02",
+      "pair_group_id": "rcv2_g05",
+      "episode_id": "20260823_175237",
+      "task_success": false,
+      "technical_valid": true,
+      "duration_seconds": 59.933159,
+      "max_tracking_error": 10.1736,
+      "recorder_script_version": "episode_recorder_v7"
+    },
+    {
+      "plan_row_id": "rcv2_g06_s01",
+      "pair_group_id": "rcv2_g06",
+      "episode_id": "20260823_175817",
+      "task_success": true,
+      "technical_valid": true,
+      "duration_seconds": 59.936707,
+      "max_tracking_error": 9.7653,
+      "recorder_script_version": "episode_recorder_v7"
+    },
+    {
+      "plan_row_id": "rcv2_g06_s02",
+      "pair_group_id": "rcv2_g06",
+      "episode_id": "20260823_180125",
+      "task_success": false,
+      "technical_valid": true,
+      "duration_seconds": 59.936066,
+      "max_tracking_error": 9.9206,
+      "recorder_script_version": "episode_recorder_v7"
+    },
+    {
+      "plan_row_id": "rcv2_g07_s01",
+      "pair_group_id": "rcv2_g07",
+      "episode_id": "20260823_193023",
+      "task_success": true,
+      "technical_valid": true,
+      "duration_seconds": 59.933773,
+      "max_tracking_error": 9.949,
+      "recorder_script_version": "episode_recorder_v7"
+    },
+    {
+      "plan_row_id": "rcv2_g07_s02",
+      "pair_group_id": "rcv2_g07",
+      "episode_id": "20260823_193258",
+      "task_success": false,
+      "technical_valid": true,
+      "duration_seconds": 59.934295,
+      "max_tracking_error": 11.1468,
+      "recorder_script_version": "episode_recorder_v7"
+    },
+    {
+      "plan_row_id": "rcv2_g07_s05",
+      "pair_group_id": "rcv2_g07",
+      "episode_id": "20260823_193517",
+      "task_success": false,
+      "technical_valid": true,
+      "duration_seconds": 59.934395,
+      "max_tracking_error": 10.461,
+      "recorder_script_version": "episode_recorder_v7"
+    },
+    {
+      "plan_row_id": "rcv2_g08_s01",
+      "pair_group_id": "rcv2_g08",
+      "episode_id": "20260823_195142",
+      "task_success": true,
+      "technical_valid": true,
+      "duration_seconds": 59.932274,
+      "max_tracking_error": 10.1057,
+      "recorder_script_version": "episode_recorder_v7"
+    },
+    {
+      "plan_row_id": "rcv2_g08_s02",
+      "pair_group_id": "rcv2_g08",
+      "episode_id": "20260823_195807",
+      "task_success": false,
+      "technical_valid": true,
+      "duration_seconds": 59.933223,
+      "max_tracking_error": 9.5479,
+      "recorder_script_version": "episode_recorder_v7"
+    },
+    {
+      "plan_row_id": "rcv2_g09_s01",
+      "pair_group_id": "rcv2_g09",
+      "episode_id": "20260823_200430",
+      "task_success": true,
+      "technical_valid": true,
+      "duration_seconds": 59.934827,
+      "max_tracking_error": 10.833,
+      "recorder_script_version": "episode_recorder_v7"
+    },
+    {
+      "plan_row_id": "rcv2_g09_s02",
+      "pair_group_id": "rcv2_g09",
+      "episode_id": "20260823_200913",
+      "task_success": false,
+      "technical_valid": true,
+      "duration_seconds": 59.933482,
+      "max_tracking_error": 10.8061,
+      "recorder_script_version": "episode_recorder_v7"
+    },
+    {
+      "plan_row_id": "rcv2_g10_s01",
+      "pair_group_id": "rcv2_g10",
+      "episode_id": "20260823_201357",
+      "task_success": true,
+      "technical_valid": true,
+      "duration_seconds": 59.935584,
+      "max_tracking_error": 10.7727,
+      "recorder_script_version": "episode_recorder_v7"
+    },
+    {
+      "plan_row_id": "rcv2_g10_s02",
+      "pair_group_id": "rcv2_g10",
+      "episode_id": "20260823_201622",
+      "task_success": false,
+      "technical_valid": true,
+      "duration_seconds": 59.934257,
+      "max_tracking_error": 10.2523,
+      "recorder_script_version": "episode_recorder_v7"
+    },
+    {
+      "plan_row_id": "rcv2_g10_s05",
+      "pair_group_id": "rcv2_g10",
+      "episode_id": "20260823_202206",
+      "task_success": false,
+      "technical_valid": true,
+      "duration_seconds": 59.938126,
+      "max_tracking_error": 10.6048,
+      "recorder_script_version": "episode_recorder_v7"
+    },
+    {
+      "plan_row_id": "rcv2_g11_s01",
+      "pair_group_id": "rcv2_g11",
+      "episode_id": "20260823_202726",
+      "task_success": true,
+      "technical_valid": true,
+      "duration_seconds": 59.934948,
+      "max_tracking_error": 10.738,
+      "recorder_script_version": "episode_recorder_v7"
+    },
+    {
+      "plan_row_id": "rcv2_g11_s02",
+      "pair_group_id": "rcv2_g11",
+      "episode_id": "20260823_203003",
+      "task_success": false,
+      "technical_valid": true,
+      "duration_seconds": 59.934104,
+      "max_tracking_error": 10.7473,
+      "recorder_script_version": "episode_recorder_v7"
+    },
+    {
+      "plan_row_id": "rcv2_g12_s01",
+      "pair_group_id": "rcv2_g12",
+      "episode_id": "20260823_204919",
+      "task_success": true,
+      "technical_valid": true,
+      "duration_seconds": 59.934322,
+      "max_tracking_error": 10.4034,
+      "recorder_script_version": "episode_recorder_v7"
+    },
+    {
+      "plan_row_id": "rcv2_g12_s02",
+      "pair_group_id": "rcv2_g12",
+      "episode_id": "20260823_205139",
+      "task_success": false,
+      "technical_valid": true,
+      "duration_seconds": 59.934648,
+      "max_tracking_error": 9.7331,
+      "recorder_script_version": "episode_recorder_v7"
+    },
+    {
+      "plan_row_id": "rcv2_g13_s01",
+      "pair_group_id": "rcv2_g13",
+      "episode_id": "20260823_205550",
+      "task_success": true,
+      "technical_valid": true,
+      "duration_seconds": 59.931178,
+      "max_tracking_error": 9.7371,
+      "recorder_script_version": "episode_recorder_v7"
+    },
+    {
+      "plan_row_id": "rcv2_g13_s02",
+      "pair_group_id": "rcv2_g13",
+      "episode_id": "20260823_205808",
+      "task_success": false,
+      "technical_valid": true,
+      "duration_seconds": 59.932646,
+      "max_tracking_error": 9.8803,
+      "recorder_script_version": "episode_recorder_v7"
+    },
+    {
+      "plan_row_id": "rcv2_g13_s05",
+      "pair_group_id": "rcv2_g13",
+      "episode_id": "20260823_210152",
+      "task_success": false,
+      "technical_valid": true,
+      "duration_seconds": 59.936662,
+      "max_tracking_error": 9.9071,
+      "recorder_script_version": "episode_recorder_v7"
+    },
+    {
+      "plan_row_id": "rcv2_g14_s01",
+      "pair_group_id": "rcv2_g14",
+      "episode_id": "20260823_211411",
+      "task_success": true,
+      "technical_valid": true,
+      "duration_seconds": 59.932254,
+      "max_tracking_error": 10.7762,
+      "recorder_script_version": "episode_recorder_v7"
+    },
+    {
+      "plan_row_id": "rcv2_g14_s02",
+      "pair_group_id": "rcv2_g14",
+      "episode_id": "20260823_211641",
+      "task_success": false,
+      "technical_valid": true,
+      "duration_seconds": 59.935063,
+      "max_tracking_error": 10.063,
+      "recorder_script_version": "episode_recorder_v7"
+    },
+    {
+      "plan_row_id": "rcv2_g15_s01",
+      "pair_group_id": "rcv2_g15",
+      "episode_id": "20260823_212056",
+      "task_success": true,
+      "technical_valid": true,
+      "duration_seconds": 59.934148,
+      "max_tracking_error": 9.4198,
+      "recorder_script_version": "episode_recorder_v7"
+    },
+    {
+      "plan_row_id": "rcv2_g15_s02",
+      "pair_group_id": "rcv2_g15",
+      "episode_id": "20260823_212501",
+      "task_success": false,
+      "technical_valid": true,
+      "duration_seconds": 59.937387,
+      "max_tracking_error": 9.9926,
+      "recorder_script_version": "episode_recorder_v7"
+    }
+  ]
+}
