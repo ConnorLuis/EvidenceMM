@@ -1,0 +1,76 @@
+{
+  "schema_version": "evidencemm_day23_root_cause_benchmark_v2_final",
+  "benchmark_status": "frozen_physical_root_cause_pilot",
+  "episode_count": 12,
+  "exploratory_positive_cases_excluded": [
+    "20260822_210402",
+    "20260823_135951"
+  ],
+  "groups": {
+    "clean": [
+      [
+        "20260822_195505",
+        true
+      ],
+      [
+        "20260823_135129",
+        true
+      ],
+      [
+        "20260823_151933",
+        true
+      ]
+    ],
+    "target_offset_or_perception": [
+      [
+        "20260822_201544",
+        false,
+        "20mm"
+      ],
+      [
+        "20260823_135502",
+        false,
+        "40mm"
+      ],
+      [
+        "20260823_152356",
+        false,
+        "60mm"
+      ]
+    ],
+    "gripper_close_timing": [
+      [
+        "20260823_150616",
+        false,
+        "10-20mm upward delay"
+      ],
+      [
+        "20260823_150915",
+        false,
+        "30-40mm upward delay"
+      ],
+      [
+        "20260823_152637",
+        false,
+        "50-60mm upward delay"
+      ]
+    ],
+    "trajectory_execution_deviation": [
+      [
+        "20260823_112555",
+        false,
+        "20-30mm"
+      ],
+      [
+        "20260823_140230",
+        false,
+        "40-60mm"
+      ],
+      [
+        "20260823_152854",
+        false,
+        "60-80mm"
+      ]
+    ]
+  }
+}

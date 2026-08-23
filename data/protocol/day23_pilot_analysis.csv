@@ -1,0 +1,13 @@
+episode_id,intervention_type,success,parameter_value
+20260822_195505,clean,true,0
+20260823_135129,clean,true,0
+20260823_151933,clean,true,0
+20260822_201544,target_offset_or_perception,false,20mm
+20260823_135502,target_offset_or_perception,false,40mm
+20260823_152356,target_offset_or_perception,false,60mm
+20260823_150616,gripper_close_timing,false,10-20mm
+20260823_150915,gripper_close_timing,false,30-40mm
+20260823_152637,gripper_close_timing,false,50-60mm
+20260823_112555,trajectory_execution_deviation,false,20-30mm
+20260823_140230,trajectory_execution_deviation,false,40-60mm
+20260823_152854,trajectory_execution_deviation,false,60-80mm

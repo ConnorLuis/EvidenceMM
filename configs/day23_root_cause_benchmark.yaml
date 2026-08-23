@@ -1,0 +1,9 @@
+benchmark: day23_root_cause_benchmark_v2
+episode_count: 12
+clean: 3
+target_offset_or_perception: 3
+gripper_close_timing: 3
+trajectory_execution_deviation: 3
+excluded_exploratory:
+  - 20260822_210402
+  - 20260823_135951

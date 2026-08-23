@@ -1,0 +1,150 @@
+\
+schema_version: evidencemm_day23_root_cause_pilot_config_v1
+
+provenance:
+  frozen_after_day22_commit: 5fcbc60bda246604a8405354320a23704a8cf70d
+  day22_protocol_path: data/protocol/day22_root_cause_benchmark_v2_protocol.json
+  day22_collection_plan_path: data/protocol/day22_root_cause_collection_plan.csv
+  expected_day22_collection_plan_sha256: 93345b1fd8330fa9e6076b95de018e423750788d91ccb26ac15258e92916e76d
+  day22_status: closed_frozen
+
+acquisition:
+  project: embodied-agent-arm
+  recorder_script: scripts/windows/record_episode_150_windows_v5.py
+  windows_project_root: 'C:\Users\Administrator\projects\embodied-agent-arm'
+  windows_output_dir: 'outputs\episodes_root_cause_v2_pilot_day23'
+  wsl_dataset_root: /mnt/c/Users/Administrator/projects/embodied-agent-arm/outputs/episodes_root_cause_v2_pilot_day23
+  task_text: 抓取无压纹红色方块并放入固定目标区
+  duration_sec: 60
+  hz: 15
+  expected_samples: 900
+  countdown_sec: 5
+  motion_speed_scale: 1.25
+  gripper_speed_scale: 1.0
+  follower_pose: configs\poses\follower_home_v2.json
+  leader_pose: configs\poses\leader_episode_home_v1.json
+  acquisition_code_change_required: false
+
+preflight:
+  required_before_12_pilot_episodes: true
+  excluded_from_pilot_and_final_benchmark: true
+  recorder_overall_pass_required: true
+  note: >-
+    A recorder invocation that completes but ends with OVERALL EPISODE: FAIL
+    is not a technically valid pilot. Fix the recorder/camera technical gate
+    before starting the twelve protocol rows.
+
+pilot:
+  excluded_from_final_benchmark: true
+  group_count: 3
+  episodes_per_group: 4
+  expected_episode_count: 12
+  intensity_labels:
+    1: mild
+    2: medium
+    3: strongest_safe
+  minimum_failure_induction_per_cause: 2
+  required_clean_control_success_count: 3
+  all_episode_recorder_overall_pass_required: true
+  no_safety_abort_allowed: true
+  no_hardware_fault_allowed: true
+  intervention_predeclared_required: true
+  single_primary_intervention_required: true
+  changed_factor_observable_required_for_selected_parameter: true
+
+pilot_plan:
+  path: data/protocol/day23_pilot_plan.csv
+  records_path: data/protocol/day23_pilot_records.csv
+
+analysis:
+  output_path: data/protocol/day23_pilot_analysis.json
+  stable_prefix_frames: 30
+  arm_motion_rms_threshold_deg: 2.0
+  gripper_major_transition_min_deg: 3.0
+  gripper_major_transition_fraction_of_range: 0.20
+  sustain_frames: 3
+  note: >-
+    Gripper timing uses a post-hoc model-visible action-stream proxy:
+    first major gripper command transition relative to first sustained arm motion.
+    The operator must visually verify that the detected transition is the grasp-close
+    event before it is accepted as the timing parameter.
+
+parameter_rules:
+  target_offset_or_perception:
+    parameter_name: object_target_pose_offset
+    manual_numeric_required: true
+    allowed_units:
+      - mm
+    direction_policy: one_safe_direction_fixed_across_all_three_pilot_groups
+    intensity_magnitude_must_increase_with_rank: true
+  gripper_close_timing:
+    parameter_name: grasp_close_shift_vs_pair_clean
+    manual_numeric_required: false
+    derived_unit: frames_vs_pair_clean_motion_aligned
+    allowed_directions:
+      - early
+      - late
+    direction_policy: one_direction_fixed_across_all_three_pilot_groups
+    intensity_magnitude_must_increase_with_rank: true
+    detected_transition_visual_confirmation_required: true
+  trajectory_execution_deviation:
+    parameter_name: marked_lateral_waypoint_offset
+    manual_numeric_required: true
+    allowed_units:
+      - mm
+    direction_policy: one_free_space_direction_fixed_across_all_three_pilot_groups
+    intensity_magnitude_must_increase_with_rank: true
+
+parameter_selection:
+  eligibility:
+    recorder_overall_pass: true
+    safety_abort: false
+    hardware_fault: false
+    intervention_predeclared: true
+    intervention_applied: true
+    single_primary_intervention: true
+    task_success: false
+    changed_factor_observable: true
+  per_cause_minimum_eligible_failure_count: 2
+  selected_row_rule: >-
+    Prefer the successful medium (intensity_rank=2) pilot. If medium is not
+    eligible, select the eligible row nearest to rank 2; ties choose the lower
+    intensity rank. The selected parameter must be a value actually tested in
+    the pilot and may not be interpolated.
+  freeze_output: data/protocol/day23_intervention_parameters.json
+
+technical_gate:
+  required_files:
+    - metadata.json
+    - samples.csv
+    - front
+    - wrist
+  expected_samples: 900
+  expected_front_images: 900
+  expected_wrist_images: 900
+  exact_zero_based_frame_indices: true
+  strictly_monotonic_elapsed_ns: true
+  nonfinite_values_forbidden: true
+  recorder_overall_pass_required: true
+  failed_checks_must_be_empty: true
+
+safety:
+  preserve_existing_safety_guards: true
+  no_safety_limit_bypass: true
+  no_deliberate_power_loss: true
+  no_hard_collision: true
+  choose_target_offset_direction_with_clearance: true
+  choose_trajectory_deviation_direction_into_free_space: true
+  unexpected_contact_requires_abort: true
+  hardware_fault_requires_abort: true
+
+acceptance:
+  expected_clean_successes: 3
+  minimum_target_offset_failures: 2
+  minimum_gripper_timing_failures: 2
+  minimum_trajectory_deviation_failures: 2
+  parameter_direction_consistent_per_cause: true
+  parameter_magnitude_ordered_by_intensity: true
+  selected_parameter_is_tested_successful_value: true
+  pilot_final_benchmark_eligible: false
+  day24_may_start_only_after_valid: true

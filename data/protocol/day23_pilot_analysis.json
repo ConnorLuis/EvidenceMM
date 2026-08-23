@@ -1,0 +1,7 @@
+{
+  "clean": "3/3 success",
+  "target_offset_or_perception": "3/3 failure",
+  "gripper_close_timing": "3/3 failure",
+  "trajectory_execution_deviation": "3/3 failure",
+  "recorder_validation": "12/12 PASS"
+}
