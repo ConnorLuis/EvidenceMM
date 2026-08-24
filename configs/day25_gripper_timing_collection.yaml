@@ -1,0 +1,75 @@
+schema_version: evidencemm_day25_gripper_collection_config_v1
+status: day25_final_gripper_timing_collection_pre_collection
+
+provenance:
+  frozen_day22_protocol_commit: 5fcbc60bda246604a8405354320a23704a8cf70d
+  frozen_day23_pilot_commit: 64901f7093e46d21104e65b845ace4c2c104ca83
+  frozen_day24_target_commit: 8c1035b6592488f6cf2a7cf4bbdddc86a62b6394
+  day22_collection_plan_path: data/protocol/day22_root_cause_collection_plan.csv
+  expected_day22_collection_plan_sha256: 93345b1fd8330fa9e6076b95de018e423750788d91ccb26ac15258e92916e76d
+  day23_parameter_path: data/protocol/day23_intervention_parameters.json
+  day24_clean_anchor_records: data/protocol/day24_target_collection_records.csv
+
+acquisition:
+  project: embodied-agent-arm
+  recorder_script: scripts/windows/record_episode_150_windows_v7.py
+  recorder_version_required: episode_recorder_v7
+  windows_output_dir: 'outputs\\episodes_root_cause_v2_final'
+  wsl_dataset_root: /mnt/c/Users/Administrator/projects/embodied-agent-arm/outputs/episodes_root_cause_v2_final
+  task_text: 抓取无压纹红色方块并放入固定目标区
+  duration_sec: 60
+  hz: 15
+  expected_samples: 900
+  expected_front_images: 900
+  expected_wrist_images: 900
+  source_representation: synchronized_front_wrist_image_sequences_plus_state_action
+  mp4_required: false
+
+day25_collection:
+  new_episode_count: 20
+  gripper_primary_count: 15
+  gripper_repeat_count: 5
+  clean_anchor_count: 15
+  clean_anchor_source_day: 24
+  collect_new_clean_controls: false
+  gripper_repeat_pair_groups: [rcv2_g02, rcv2_g05, rcv2_g08, rcv2_g11, rcv2_g14]
+
+frozen_gripper_intervention:
+  physical_cause: gripper_close_timing
+  intervention_type: manual_gripper_close_timing_shift
+  primary_changed_factor: gripper_close_phase
+  direction: late
+  operational_measurement: upward_progress_after_nominal_close_point_before_close
+  magnitude_range_mm: [30, 40]
+  measurement_precision: operator_estimated_range
+  rule_zh: >-
+    方块保持 nominal。正常接近和下降；到 clean 本应闭合点时保持夹爪打开，
+    不在原位等待，继续沿 nominal clean 抬升方向约30–40mm后再闭合；
+    之后继续 nominal 路径。不得移动方块，不得加入 target offset 或额外 trajectory deviation，
+    不得用墙钟等待时长替代该相位定义。
+
+experimental_eligibility:
+  technical_valid: true
+  task_success: false
+  intervention_applied: true
+  single_primary_intervention: true
+  changed_factor_observable: true
+  phase_proxy_met: true
+
+future_split:
+  materialize_on_day25: false
+  materialize_target_day: 30
+  split_unit: pair_group_id
+  seed: evidencemm-root-cause-v2-split-v3
+
+acceptance:
+  new_gripper_canonical_episode_count: 20
+  clean_anchor_count: 15
+  pair_group_count: 15
+  gripper_failure_count: 20
+  recorder_technical_pass_count_new: 20
+  new_clean_collection_required: false
+  future_split_not_materialized: true
+
+audit_note:
+  raw_attempt_retention_completeness: not_asserted_by_day25
