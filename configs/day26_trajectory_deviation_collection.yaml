@@ -1,0 +1,77 @@
+schema_version: evidencemm_day26_trajectory_collection_config_v1
+status: day26_final_trajectory_deviation_collection_pre_collection
+
+provenance:
+  frozen_day22_protocol_commit: 5fcbc60bda246604a8405354320a23704a8cf70d
+  frozen_day23_pilot_commit: 64901f7093e46d21104e65b845ace4c2c104ca83
+  frozen_day24_target_commit: 8c1035b6592488f6cf2a7cf4bbdddc86a62b6394
+  frozen_day25_gripper_commit: 2eb16ae1fb9418af0a7c712dc321b69fd3f0ed42
+  day22_collection_plan_path: data/protocol/day22_root_cause_collection_plan.csv
+  expected_day22_collection_plan_sha256: 93345b1fd8330fa9e6076b95de018e423750788d91ccb26ac15258e92916e76d
+  day23_parameter_path: data/protocol/day23_intervention_parameters.json
+  day24_clean_anchor_records: data/protocol/day24_target_collection_records.csv
+
+acquisition:
+  project: embodied-agent-arm
+  recorder_script: scripts/windows/record_episode_150_windows_v7.py
+  recorder_version_required: episode_recorder_v7
+  windows_output_dir: 'outputs\episodes_root_cause_v2_final'
+  wsl_dataset_root: /mnt/c/Users/Administrator/projects/embodied-agent-arm/outputs/episodes_root_cause_v2_final
+  task_text: 抓取无压纹红色方块并放入固定目标区
+  duration_sec: 60
+  hz: 15
+  expected_samples: 900
+  expected_front_images: 900
+  expected_wrist_images: 900
+  source_representation: synchronized_front_wrist_image_sequences_plus_state_action
+  mp4_required: false
+
+day26_collection:
+  new_episode_count: 20
+  trajectory_primary_count: 15
+  trajectory_repeat_count: 5
+  clean_anchor_count: 15
+  clean_anchor_source_day: 24
+  collect_new_clean_controls: false
+  trajectory_repeat_pair_groups: [rcv2_g03, rcv2_g06, rcv2_g09, rcv2_g12, rcv2_g15]
+
+frozen_trajectory_intervention:
+  physical_cause: trajectory_execution_deviation
+  intervention_type: manual_bounded_trajectory_deviation
+  primary_changed_factor: commanded_motion_path
+  direction: follower_forward
+  operational_measurement: marked_lateral_waypoint_offset
+  magnitude_range_mm: [40, 60]
+  measurement_precision: operator_estimated_range
+  rule_zh: >-
+    方块保持 nominal，夹爪时序保持 nominal。正常接近至方块正上方附近后，
+    仅通过 Leader 将末端 commanded path 沿 Follower 正前方偏移约 40–60 mm，
+    保持该偏移继续下降并按正常 clean 时序闭合夹爪；之后继续完成本轮动作。
+    不移动方块，不提前或延后夹爪闭合，不增加第二个 trajectory deviation，
+    不主动补偿回来抓取方块。要求任务失败。
+
+experimental_eligibility:
+  technical_valid: true
+  task_success: false
+  intervention_applied: true
+  single_primary_intervention: true
+  changed_factor_observable: true
+  deviation_proxy_met: true
+
+future_split:
+  materialize_on_day26: false
+  materialize_target_day: 30
+  split_unit: pair_group_id
+  seed: evidencemm-root-cause-v2-split-v3
+
+acceptance:
+  new_trajectory_canonical_episode_count: 20
+  clean_anchor_count: 15
+  pair_group_count: 15
+  trajectory_failure_count: 20
+  recorder_technical_pass_count_new: 20
+  new_clean_collection_required: false
+  future_split_not_materialized: true
+
+audit_note:
+  raw_attempt_retention_completeness: not_asserted_by_day26
