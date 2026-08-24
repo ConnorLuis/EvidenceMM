@@ -1,0 +1,16 @@
+plan_row_id,pair_group_id,episode_id,task_success,technical_valid,duration_seconds,max_tracking_error,recorder_script_version
+rcv2_g01_s06,rcv2_g01,20260824_200034,False,True,59.932977,10.1686,episode_recorder_v7
+rcv2_g02_s06,rcv2_g02,20260824_202357,False,True,59.933397,9.6781,episode_recorder_v7
+rcv2_g03_s06,rcv2_g03,20260824_204143,False,True,59.933073,9.1906,episode_recorder_v7
+rcv2_g04_s06,rcv2_g04,20260824_204726,False,True,59.935902,10.5168,episode_recorder_v7
+rcv2_g05_s06,rcv2_g05,20260824_205215,False,True,59.932426,10.0364,episode_recorder_v7
+rcv2_g06_s06,rcv2_g06,20260824_205729,False,True,59.932353,9.4429,episode_recorder_v7
+rcv2_g07_s06,rcv2_g07,20260824_210230,False,True,59.932557,9.7204,episode_recorder_v7
+rcv2_g08_s06,rcv2_g08,20260824_210553,False,True,59.931822,9.9171,episode_recorder_v7
+rcv2_g09_s06,rcv2_g09,20260824_212337,False,True,59.931795,10.7756,episode_recorder_v7
+rcv2_g10_s06,rcv2_g10,20260824_212824,False,True,59.934278,10.206,episode_recorder_v7
+rcv2_g11_s06,rcv2_g11,20260824_213311,False,True,59.931839,9.5472,episode_recorder_v7
+rcv2_g12_s06,rcv2_g12,20260824_213651,False,True,59.932302,10.0105,episode_recorder_v7
+rcv2_g13_s06,rcv2_g13,20260824_214000,False,True,59.933919,10.1476,episode_recorder_v7
+rcv2_g14_s06,rcv2_g14,20260824_214832,False,True,59.93281,9.9091,episode_recorder_v7
+rcv2_g15_s06,rcv2_g15,20260824_215136,False,True,59.933926,9.3932,episode_recorder_v7
