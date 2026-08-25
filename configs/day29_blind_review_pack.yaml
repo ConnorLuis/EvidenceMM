@@ -1,0 +1,59 @@
+schema_version: evidencemm_day29_blind_review_pack_config_v1
+status: pre_build
+
+provenance:
+  frozen_day29_protocol_commit: c230657d27c0837991a88b2df87f692734217e0c
+  frozen_day29_population_commit: 6fd7da99e0f75450effe2eb3ac0a854a03298e56
+  frozen_blank_records_sha256: 35feee30cae285c1ea9c0578638d63f8d55ba22d7e2a554af7e26d29b7f3f5b2
+
+inputs:
+  population_records: data/annotations/day29_blind_review_records.jsonl
+  source_manifest: data/protocol/day28_registered_source_manifest.csv
+  raw_audit_config: configs/day28_raw_audit.yaml
+  approved_manual_manifest: data/manifests/sources/sts3215_datasheet.json
+  approved_manual_page_dir: data/processed/vision/sts3215_pages
+  approved_manual_page_glob: sts3215_datasheet_page_*.png
+
+output:
+  root: reports/day29_blind_review_pack
+
+review_order:
+  method: sha256_seeded_sort
+  seed: evidencemm-day29-blind-review-order-v1
+
+selection:
+  uniform_count: 7
+  top_state_action: 5
+  top_tracking_gap: 3
+  top_gripper_change: 4
+  top_visual_motion_per_camera: 4
+  min_separation_frames: 12
+  visual_stride: 3
+  visual_width: 160
+  visual_height: 120
+  max_selected_frames: 24
+  thumbnail_width: 360
+
+camera_transforms:
+  front: none
+  wrist: ccw90
+
+full_review:
+  frame_access: all_900
+  camera_delivery: camera_directory_symlink
+  state_action_delivery: full_json_plus_embedded_explorer
+  expose_selection_heuristics: false
+
+expected:
+  canonical_episode_count: 90
+  frame_count_per_episode: 900
+  front_images_per_episode: 900
+  wrist_images_per_episode: 900
+
+boundaries:
+  blind_only: true
+  expose_admin_metadata: false
+  expose_ground_truth: false
+  expose_intervention_metadata: false
+  expose_future_split: false
+  human_review_started: false
