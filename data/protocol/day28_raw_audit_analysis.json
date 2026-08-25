@@ -1,0 +1,110 @@
+{
+  "schema_version": "evidencemm_day28_raw_audit_analysis_v1",
+  "status": "complete",
+  "provenance": {
+    "frozen_day22_collection_plan_sha256": "93345b1fd8330fa9e6076b95de018e423750788d91ccb26ac15258e92916e76d",
+    "observed_day22_collection_plan_sha256": "93345b1fd8330fa9e6076b95de018e423750788d91ccb26ac15258e92916e76d",
+    "frozen_day27_commit": "eaa29a3ebc9f41fa26ffa6de3291c6a28d93a4cd"
+  },
+  "registered_collection": {
+    "registered_attempt_count": 92,
+    "registered_unique_episode_id_count": 92,
+    "registered_unique_relpath_count": 92,
+    "registered_canonical_count": 90,
+    "registered_noncanonical_count": 2,
+    "registered_technical_exclusion_count": 0,
+    "registered_experimental_exclusion_count": 2,
+    "duplicate_episode_id_count": 0,
+    "duplicate_relpath_count": 0,
+    "registered_exclusion_reason_counts": {
+      "": 90,
+      "ambiguity_candidate_task_success": 2
+    }
+  },
+  "fresh_registered_source_audit": {
+    "audited_count": 92,
+    "fresh_technical_pass_count": 92,
+    "fresh_technical_fail_count": 0,
+    "record_vs_raw_mismatch_count": 0,
+    "file_count_distribution": {
+      "1802": 92
+    },
+    "csv_row_count_distribution": {
+      "900": 92
+    },
+    "front_image_count_distribution": {
+      "900": 92
+    },
+    "wrist_image_count_distribution": {
+      "900": 92
+    },
+    "recorder_script_version_distribution": {
+      "episode_recorder_v7": 92
+    }
+  },
+  "raw_root_inventory": {
+    "directory_count": 93,
+    "registered_directory_count": 92,
+    "missing_registered_directory_count": 0,
+    "anonymous_technical_exclusion_directory_count": 1,
+    "non_directory_root_entry_count": 0
+  },
+  "anonymous_technical_exclusion": {
+    "count": 1,
+    "identity_recorded": false,
+    "raw_relpath_recorded": false,
+    "technical_valid": false,
+    "recorder_overall_pass": false,
+    "recorder_script_version": "episode_recorder_v7",
+    "failed_checks": [
+      "recorder:cleanup_home",
+      "recorder:wrist_age",
+      "recorder:wrist_duplicate_ratio",
+      "recorder:wrist_fps",
+      "recorder_overall_pass"
+    ],
+    "csv_row_count": 900,
+    "front_image_count": 900,
+    "wrist_image_count": 900,
+    "file_count": 1802,
+    "total_bytes": 102247347,
+    "tree_sha256": "ecec47d923656166e26fbd5e46c0c3b54c91702cdc55142e917137fac4175191",
+    "tree_sha256_matches_expected": true,
+    "duplicates_registered_tree": false
+  },
+  "source_binding": {
+    "manifest_row_count": 92,
+    "manifest_fields": [
+      "schema_version",
+      "episode_id",
+      "raw_episode_relpath",
+      "recorder_script_version",
+      "technical_valid",
+      "recorder_overall_pass",
+      "failed_checks",
+      "sample_count",
+      "csv_row_count",
+      "front_image_count",
+      "wrist_image_count",
+      "duration_seconds",
+      "max_tracking_error",
+      "file_count",
+      "total_bytes",
+      "metadata_sha256",
+      "samples_sha256",
+      "episode_tree_sha256"
+    ],
+    "manifest_admin_labels_present": false,
+    "registered_raw_set_sha256": "5ec4c38b8c4653781b77b9237951fbfb330541cbd7d607159fcf52e90c621a81",
+    "registered_raw_set_sha256_matches_expected": true,
+    "anonymous_technical_exclusion_tree_sha256": "ecec47d923656166e26fbd5e46c0c3b54c91702cdc55142e917137fac4175191",
+    "raw_root_content_set_sha256": "ab3c4958f7785e531d72ab2c6b84874962640dd7d42f539c7e114b1ba61e5db0",
+    "binding_identity_rule": "episode_id+relative_path+file_names+file_sizes+file_bytes;anonymous technical exclusion bound by content hash only"
+  },
+  "raw_attempt_retention_completeness_asserted": true,
+  "eligible_target_episode_count": 90,
+  "ground_truth_materialized_on_day28": false,
+  "answerability_prejudged_on_day28": false,
+  "future_split_materialized": false,
+  "errors": []
+}

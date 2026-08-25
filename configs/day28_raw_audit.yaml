@@ -1,0 +1,48 @@
+schema_version: evidencemm_day28_raw_audit_config_v1
+status: day28_raw_audit_package_pre_run
+
+provenance:
+  frozen_day22_protocol_commit: 5fcbc60bda246604a8405354320a23704a8cf70d
+  frozen_day22_collection_plan_sha256: 93345b1fd8330fa9e6076b95de018e423750788d91ccb26ac15258e92916e76d
+  frozen_day23_pilot_commit: 64901f7093e46d21104e65b845ace4c2c104ca83
+  frozen_day24_target_commit: 8c1035b6592488f6cf2a7cf4bbdddc86a62b6394
+  frozen_day25_gripper_commit: 2eb16ae1fb9418af0a7c712dc321b69fd3f0ed42
+  frozen_day26_trajectory_commit: ba7669b5503cab13524c4ab1e4a5ad68c503abe2
+  frozen_day27_insufficient_candidate_commit: eaa29a3ebc9f41fa26ffa6de3291c6a28d93a4cd
+
+raw_source:
+  compatibility_wsl_root: /mnt/c/Users/Administrator/projects/embodied-agent-arm/outputs/episodes_root_cause_v2_final
+  compatibility_windows_root: C:\Users\Administrator\projects\embodied-agent-arm\outputs\episodes_root_cause_v2_final
+  junction_backed_storage_allowed: true
+  physical_storage_target_is_benchmark_identity: false
+  source_identity_rule: content_hash_plus_registered_episode_identity
+
+expected_counts:
+  registered_attempts: 92
+  registered_canonical: 90
+  registered_noncanonical: 2
+  registered_technical_exclusions: 0
+  registered_experimental_exclusions: 2
+  anonymous_technical_exclusions: 1
+  raw_root_directories: 93
+  registered_fresh_technical_pass: 92
+  eligible_target_episodes: 90
+  files_per_complete_episode: 1802
+  csv_rows_per_registered_episode: 900
+  front_images_per_registered_episode: 900
+  wrist_images_per_registered_episode: 900
+
+source_binding:
+  registered_raw_set_sha256: 5ec4c38b8c4653781b77b9237951fbfb330541cbd7d607159fcf52e90c621a81
+  anonymous_technical_exclusion_tree_sha256: ecec47d923656166e26fbd5e46c0c3b54c91702cdc55142e917137fac4175191
+  anonymous_technical_exclusion_identity_persisted: false
+  source_manifest_embeds_admin_labels: false
+
+day28_scope:
+  re_audit_registered_raw: true
+  certify_raw_attempt_retention: true
+  bind_registered_sources_by_sha256: true
+  account_anonymous_technical_exclusion_by_sha256: true
+  materialize_ground_truth: false
+  prejudge_answerability: false
+  materialize_future_split: false
