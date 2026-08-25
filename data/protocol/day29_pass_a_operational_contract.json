@@ -1,0 +1,57 @@
+{
+  "schema_version": "evidencemm_day29_pass_a_operational_contract_v1",
+  "status": "pre_review",
+  "frozen_dependencies": {
+    "causal_review_protocol_commit": "c230657d27c0837991a88b2df87f692734217e0c",
+    "blind_population_commit": "6fd7da99e0f75450effe2eb3ac0a854a03298e56",
+    "blind_pack_builder_commit": "e1d5ff9ea3d3d061f57725e0e3dcdf5b44f5298c",
+    "materialization_receipt_commit": "bfcdd51d9742945cbed44150a4f5d697be79e04c",
+    "manual_policy_commit": "4ad2e772a04af817e4b208fea22d945dbb55bc03",
+    "blank_population_sha256": "35feee30cae285c1ea9c0578638d63f8d55ba22d7e2a554af7e26d29b7f3f5b2",
+    "pack_tree_sha256": "4b82b471d90c1aafbca5b7e0b0a74af4319a2a1dd69a8fbcca0097d556bf47da",
+    "review_order_sha256": "774db5bd1ef831f4223c91fd6822cbc0165f586920498c886cf4a9de05ee09a5",
+    "manual_coverage_sha256": "1582822e5839bb1ccfbf28b8f0614205940fe579a32fb4a9a6d1f978211e50e5",
+    "manual_policy_amendment_sha256": "ada064b3bd06b2d0642814ba9e3a10f5d5e94128bfef0f67a0fce841a15c36f9"
+  },
+  "input": {
+    "blank_population": "data/annotations/day29_blind_review_records.jsonl",
+    "official_pack": "reports/day29_blind_review_pack",
+    "materialization_receipt": "data/protocol/day29_blind_review_pack_materialization.json",
+    "manual_coverage": "data/protocol/day29_manual_evidence_coverage.json",
+    "manual_policy_amendment": "docs/day29_manual_evidence_policy_amendment_v1.md"
+  },
+  "output": {
+    "pass_a_records": "data/annotations/day29_pass_a_records.jsonl",
+    "pass_a_freeze_receipt": "data/protocol/day29_pass_a_freeze_receipt.json"
+  },
+  "allowed_evidence": [
+    "front_images",
+    "wrist_images",
+    "observation",
+    "action",
+    "tracking_error",
+    "approved_manual_corpus"
+  ],
+  "audit_only_fields": [
+    "review_position",
+    "blind_cause_hypothesis"
+  ],
+  "allowed_blind_causes": [
+    "target_offset_or_perception",
+    "gripper_close_timing",
+    "trajectory_execution_deviation"
+  ],
+  "review_rules": {
+    "answerable_requires_unique_blind_cause_hypothesis": true,
+    "insufficient_evidence_requires_null_blind_cause_hypothesis": true,
+    "clean_requires_null_blind_cause_hypothesis": true,
+    "manual_reference_must_be_claim_relevant": true,
+    "target_perception_manual_support_must_be_empty": true,
+    "manual_not_applicable_note": "manual_support_not_applicable_to_claim",
+    "all_pass_a_complete_before_admin_reveal": true
+  },
+  "human_review_started": false,
+  "admin_reveal_started": false,
+  "ground_truth_frozen": false,
+  "future_split_materialized": false
+}
