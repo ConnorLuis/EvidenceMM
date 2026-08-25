@@ -1,0 +1,88 @@
+{
+  "schema_version": "evidencemm_day29_manual_evidence_coverage_v1",
+  "status": "pre_review_frozen_candidate",
+  "applies_before_human_review": true,
+  "approved_manual_source": {
+    "source_id": "sts3215_datasheet",
+    "sha256": "707da810d6443597bb7877fc191251915bf01a3d3594ee77b1e0f8ef8b45d017",
+    "page_count": 8
+  },
+  "evidence_policy": {
+    "manual_reference_must_support_claimed_mechanism": true,
+    "retrieval_rank_is_not_causal_support": true,
+    "irrelevant_manual_reference_is_prohibited": true,
+    "manual_reference_is_not_automatic_category_proof": true
+  },
+  "page_coverage": {
+    "3": {
+      "usable_claims": [
+        "servo no-load speed specification",
+        "servo torque and current specification"
+      ],
+      "limitations": [
+        "no-load speed is not loaded task-level timing",
+        "does not define grasp timing",
+        "does not define arm trajectory-failure threshold"
+      ]
+    },
+    "4": {
+      "usable_claims": [
+        "12-bit magnetic angle sensing",
+        "position feedback availability",
+        "PID control algorithm",
+        "position resolution",
+        "absolute position control"
+      ],
+      "limitations": [
+        "does not define camera or perception behavior",
+        "does not define task-level grasp timing",
+        "does not define benchmark tracking-error threshold"
+      ]
+    },
+    "5": {
+      "usable_claims": [
+        "servo operating modes",
+        "servo electronic protection behavior"
+      ],
+      "limitations": [
+        "protection telemetry is not part of the frozen Day29 model-visible robot evidence",
+        "must not be used to infer an unobserved protection event"
+      ]
+    },
+    "8": {
+      "usable_claims": [
+        "maximum position update rate"
+      ],
+      "limitations": [
+        "does not establish task-level causal diagnosis",
+        "does not define grasp-contact timing",
+        "does not define trajectory-failure threshold"
+      ]
+    }
+  },
+  "cause_coverage": {
+    "target_offset_or_perception": {
+      "coverage": "not_supported",
+      "relevant_pages": [],
+      "reason": "The approved STS3215 component datasheet contains no camera, visual perception, target localization, target-coordinate, or target-offset specification."
+    },
+    "gripper_close_timing": {
+      "coverage": "partially_supported",
+      "relevant_pages": [
+        3,
+        4,
+        8
+      ],
+      "reason": "The datasheet supports actuator speed, position-control, feedback, resolution, and update-rate facts, but does not define task-relative gripper closure timing or object-contact timing."
+    },
+    "trajectory_execution_deviation": {
+      "coverage": "partially_supported",
+      "relevant_pages": [
+        3,
+        4,
+        8
+      ],
+      "reason": "The datasheet supports actuator control and feedback semantics, but does not define robot-level desired trajectory, acceptable tracking error, or the benchmark trajectory-deviation threshold."
+    }
+  }
+}
