@@ -1,0 +1,16 @@
+{
+  "canonical_episode_count": 90,
+  "frozen_day29_protocol_commit": "c230657d27c0837991a88b2df87f692734217e0c",
+  "future_split_materialized": false,
+  "ground_truth_frozen": false,
+  "human_review_started": false,
+  "ordered_episode_ids_sha256": "5b4102f17b641f923e2773ddee024b96012aae5d08827b3ceaec9b092e836e3e",
+  "records_are_blank": true,
+  "records_path": "data/annotations/day29_blind_review_records.jsonl",
+  "records_sha256": "35feee30cae285c1ea9c0578638d63f8d55ba22d7e2a554af7e26d29b7f3f5b2",
+  "registered_episode_count": 92,
+  "registered_noncanonical_excluded_count": 2,
+  "schema_version": "evidencemm_day29_blind_review_population_v1",
+  "source_day28_manifest": "data/protocol/day28_registered_source_manifest.csv",
+  "source_day28_manifest_sha256": "a6174c06a66ec7cccec73e76de34de27fef2d26a2f82eb94d9048d8af9a62f6d"
+}
