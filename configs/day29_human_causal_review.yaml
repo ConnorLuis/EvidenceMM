@@ -1,0 +1,45 @@
+schema_version: evidencemm_day29_human_causal_review_config_v1
+status: pre_review_protocol
+
+provenance:
+  frozen_day28_commit: 48ee78f7ba07f6e053e1581edff3d271e964c581
+  registered_raw_set_sha256: 5ec4c38b8c4653781b77b9237951fbfb330541cbd7d607159fcf52e90c621a81
+
+review_population:
+  canonical_episode_count: 90
+  technical_invalid_count: 0
+  experimental_invalid_count: 0
+
+approved_manual_sources:
+  - source_id: sts3215_datasheet
+    sha256: 707da810d6443597bb7877fc191251915bf01a3d3594ee77b1e0f8ef8b45d017
+
+review_process:
+  pass_a: blind_evidence_review
+  pass_b: admin_causal_verification
+  pass_a_must_complete_before_pass_b: true
+  admin_reveal_must_not_rewrite_answerability: true
+
+model_visible_evidence:
+  - front_images
+  - wrist_images
+  - observation
+  - action
+  - tracking_error
+  - approved_manual_corpus
+
+blind_review_forbidden:
+  - pair_group_id
+  - plan_row_id
+  - planned_physical_cause
+  - intervention_type
+  - intervention_parameters
+  - intervention_applied
+  - physical_cause_gt
+  - diagnostic_decision_gt
+
+day29_boundaries:
+  materialize_ground_truth_freeze: false
+  materialize_future_split: false
+  train_diagnostic_model: false
+  calibrate_model: false

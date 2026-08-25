@@ -1,0 +1,90 @@
+{
+  "schema_version": "evidencemm_root_cause_review_record_v2",
+  "day29_status": "pre_review_schema",
+  "review_population": "day28_frozen_90_canonical_episodes",
+  "passes": {
+    "blind_evidence_review": {
+      "completed_before_admin_reveal": true,
+      "fields": [
+        "episode_id",
+        "observed_symptom",
+        "failure_interval",
+        "supporting_robot_refs",
+        "counterevidence_robot_refs",
+        "supporting_manual_refs",
+        "counterevidence_manual_refs",
+        "evidence_answerability_gt",
+        "explicit_uncertainty_reason",
+        "blind_confidence",
+        "blind_review_notes"
+      ],
+      "forbidden_inputs": [
+        "pair_group_id",
+        "plan_row_id",
+        "planned_physical_cause",
+        "intervention_type",
+        "intervention_parameters",
+        "intervention_applied",
+        "physical_cause_gt",
+        "diagnostic_decision_gt"
+      ]
+    },
+    "admin_causal_verification": {
+      "begins_after_blind_review": true,
+      "fields": [
+        "pair_group_id",
+        "technical_valid",
+        "experimental_valid",
+        "task_success",
+        "intervention_verified",
+        "physical_cause_gt",
+        "diagnostic_decision_gt",
+        "confidence",
+        "review_notes"
+      ]
+    }
+  },
+  "allowed_values": {
+    "physical_cause_gt": [
+      "target_offset_or_perception",
+      "gripper_close_timing",
+      "trajectory_execution_deviation",
+      "unknown",
+      "none_clean"
+    ],
+    "evidence_answerability_gt": [
+      "answerable",
+      "insufficient_evidence",
+      "not_applicable_clean"
+    ],
+    "diagnostic_decision_gt": [
+      "target_offset_or_perception",
+      "gripper_close_timing",
+      "trajectory_execution_deviation",
+      "insufficient_evidence",
+      "clean_success"
+    ]
+  },
+  "decision_rule": {
+    "clean": "diagnostic_decision_gt=clean_success",
+    "failed_insufficient": "diagnostic_decision_gt=insufficient_evidence",
+    "failed_answerable": "diagnostic_decision_gt=physical_cause_gt"
+  },
+  "requirements": {
+    "answerable_failure": [
+      "failure_interval",
+      "supporting_robot_refs",
+      "supporting_manual_refs"
+    ],
+    "insufficient_evidence_failure": [
+      "failure_interval",
+      "explicit_uncertainty_reason"
+    ],
+    "clean_success": {
+      "failure_interval": null,
+      "evidence_answerability_gt": "not_applicable_clean",
+      "diagnostic_decision_gt": "clean_success"
+    }
+  },
+  "future_split_materialized": false
+}
