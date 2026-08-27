@@ -1,0 +1,94 @@
+{
+  "schema_version": "evidencemm_day29_pass_b_operational_contract_v1",
+  "status": "pre_admin_reveal_ground_truth_tooling_contract",
+  "pass_a_freeze_commit": "1ae4556d73c8dd409ee4e25d0025fce8a3064a1a",
+  "pass_a_records_sha256": "ebc8630e98ba409088e93e088230d60be6f4082c95a9f0cef45014049a3ddd7c",
+  "required_ancestor_commits": {
+    "day24": "8c1035b6592488f6cf2a7cf4bbdddc86a62b6394",
+    "day25": "2eb16ae1fb9418af0a7c712dc321b69fd3f0ed42",
+    "day26": "ba7669b5503cab13524c4ab1e4a5ad68c503abe2",
+    "day27": "eaa29a3ebc9f41fa26ffa6de3291c6a28d93a4cd",
+    "day28": "48ee78f7ba07f6e053e1581edff3d271e964c581",
+    "pass_a": "1ae4556d73c8dd409ee4e25d0025fce8a3064a1a"
+  },
+  "frozen_git_blobs": {
+    "data/protocol/day22_root_cause_benchmark_v2_protocol.json": "388ecb388375046b208e85eb9617e79961a5bf52",
+    "data/protocol/day24_target_collection_records.csv": "81b2cfb2f2a6c0cd113cd46f32c31b4d32684b44",
+    "data/protocol/day25_gripper_collection_records.csv": "ed2efc2b04859c5bf06f217880b319688a51419b",
+    "data/protocol/day26_trajectory_collection_records.csv": "0685f1078fcbff9e2e3232e3e66f3879d9c807c1",
+    "data/protocol/day27_insufficient_evidence_collection_plan.csv": "cbd196b887cb061d4c803cf10fe805760507e0e4",
+    "data/protocol/day27_insufficient_evidence_collection_records.csv": "574ae1d2da744dd7707adf30d37634f6bb5bb494",
+    "data/protocol/day28_raw_audit_analysis.json": "60a2760740d59fe9fb5e0434e47387de17cd286d",
+    "data/protocol/day29_review_record_schema.json": "63ea6fa79179cd6abbcd1e9b135b5767e7d007b7",
+    "configs/day29_human_causal_review.yaml": "e164e7775819bb5b77e078ccb517a5a90349651b",
+    "data/annotations/day29_pass_a_records.jsonl": "526f15a0e70cb5e46109b05c27e234ec3163314a",
+    "data/protocol/day29_pass_a_freeze_receipt.json": "98546da5901aea8f1aba8495ff6ab9fc3c04580c"
+  },
+  "source_record_counts": {
+    "day24_canonical": 37,
+    "day25_canonical": 20,
+    "day26_canonical": 18,
+    "day27_registered_attempts": 17,
+    "day27_canonical": 15,
+    "canonical_total": 90,
+    "pair_group_count": 15,
+    "episodes_per_pair_group": 6
+  },
+  "ground_truth_rules": {
+    "clean_control": {
+      "physical_cause_gt": "none_clean",
+      "intervention_verified": false,
+      "diagnostic_decision_gt": "clean_success"
+    },
+    "day24_nonclean": "target_offset_or_perception",
+    "day25": "gripper_close_timing",
+    "day26": "trajectory_execution_deviation",
+    "day27_variant_map": {
+      "blinded_single_cause_challenge_v2:target_mild_20mm_forward": "target_offset_or_perception",
+      "blinded_single_cause_challenge_v2:gripper_late_30_40mm_upward_progress": "gripper_close_timing",
+      "blinded_single_cause_challenge_v2:trajectory_mild_25mm_forward": "trajectory_execution_deviation"
+    },
+    "failed_answerable": "diagnostic_decision_gt = physical_cause_gt",
+    "failed_insufficient": "diagnostic_decision_gt = insufficient_evidence",
+    "no_circularity": "physical_cause_gt MUST be derived only from frozen admin collection evidence; blind_cause_hypothesis is never used to create or validate physical_cause_gt"
+  },
+  "expected_ground_truth_counts": {
+    "technical_valid_true": 90,
+    "experimental_valid_true": 90,
+    "task_success_true": 15,
+    "task_success_false": 75,
+    "intervention_verified_true": 75,
+    "intervention_verified_false": 15,
+    "physical_cause_gt": {
+      "none_clean": 15,
+      "target_offset_or_perception": 27,
+      "gripper_close_timing": 25,
+      "trajectory_execution_deviation": 23,
+      "unknown": 0
+    },
+    "diagnostic_decision_gt": {
+      "clean_success": 15,
+      "target_offset_or_perception": 27,
+      "gripper_close_timing": 25,
+      "trajectory_execution_deviation": 23,
+      "insufficient_evidence": 0
+    },
+    "evidence_answerability_gt": {
+      "answerable": 75,
+      "not_applicable_clean": 15,
+      "insufficient_evidence": 0
+    }
+  },
+  "outputs": {
+    "records": "data/annotations/day29_ground_truth_records.jsonl",
+    "freeze_receipt": "data/protocol/day29_ground_truth_freeze_receipt.json"
+  },
+  "boundaries": {
+    "admin_reveal_allowed_after_pass_a_freeze": true,
+    "rewrite_pass_a_forbidden": true,
+    "future_split_materialized": false,
+    "day30_split_forbidden_in_day29": true,
+    "model_training_forbidden_in_day29": true,
+    "model_calibration_forbidden_in_day29": true
+  }
+}
