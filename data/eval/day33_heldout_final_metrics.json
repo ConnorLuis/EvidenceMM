@@ -1,0 +1,38 @@
+{
+  "schema_version": "evidencemm_day33_heldout_final_metrics_v1",
+  "status": "single_frozen_heldout_evaluation_complete",
+  "held_out_episode_count": 30,
+  "held_out_final_evaluation_count_consumed": 1,
+  "frozen_inference_config_sha256": "15a11ebebf06edf10ba6cc8e015f1b04da4693a57800692025322ad69c63685d",
+  "score_predictions_sha256": "787dd204275c0f453d3700e95d165b607ad91946e38f866a7f0250a1bc8fde06",
+  "score_parse_ok_count": 25,
+  "score_parse_failure_count": 5,
+  "final_decision_counts": {
+    "clean_success": 2,
+    "insufficient_evidence": 5,
+    "target_offset_or_perception": 9,
+    "trajectory_execution_deviation": 14
+  },
+  "primary_metrics": {
+    "answerable_three_class_macro_f1": 0.16722408026755853,
+    "failed_case_four_way_diagnostic_macro_f1": 0.1254180602006689,
+    "abstention_accuracy": 0.88,
+    "false_answer_rate": null,
+    "false_abstention_rate": 0.12,
+    "clean_control_false_positive_cause_rate": 0.6
+  },
+  "secondary_metrics": {
+    "substantive_four_class_macro_f1": 0.11571428571428571,
+    "clean_control_accuracy": 0.0,
+    "heldout_decision_accuracy": 0.16666666666666666,
+    "prediction_parse_rate": 0.8333333333333334
+  },
+  "gt_support": {
+    "answerable_failure": 25,
+    "failed": 25,
+    "clean": 5,
+    "insufficient_evidence_failure": 0,
+    "substantive": 30
+  },
+  "tuning_after_heldout": false
+}
