@@ -108,3 +108,10 @@ def test_no_pair_group_crosses_split_and_split_rows_leak_no_gt() -> None:
         not (forbidden & set(row))
         for row in pair_manifest["ranked_pair_groups"]
     )
+
+
+def test_operational_contract_split_rule_matches_frozen_protocol() -> None:
+    contract = json.loads(
+        day30.CONTRACT_PATH.read_text(encoding="utf-8")
+    )
+    assert contract["split_rule"] == day30.EXPECTED_FUTURE_SPLIT

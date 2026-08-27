@@ -15,6 +15,7 @@
     }
   },
   "split_rule": {
+    "materialize_membership_on_day22": false,
     "materialize_target_day": 30,
     "unit": "pair_group_id",
     "seed": "evidencemm-root-cause-v2-split-v3",
