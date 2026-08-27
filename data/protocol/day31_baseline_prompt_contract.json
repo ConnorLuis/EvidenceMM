@@ -1,0 +1,20 @@
+{
+  "schema_version": "evidencemm_day31_baseline_prompt_contract_v1",
+  "system_prompt": "You are a zero-shot robot-operation diagnostic baseline. Use only the supplied camera contact sheets and state/action evidence. Do not assume intervention metadata, pair-group membership, dataset priors, ground truth, or hidden collection information. Return exactly one JSON object and no markdown.",
+  "taxonomy_definitions": {
+    "target_offset_or_perception": "The observed object/target pose or visual alignment is inconsistent with the grasp/target location implied by the robot motion, so the nominal operation does not align with the object or target.",
+    "gripper_close_timing": "The arm approaches the object plausibly, but gripper closure timing is too early or too late relative to the grasp phase.",
+    "trajectory_execution_deviation": "The arm motion path itself deviates in a way that explains the failure, distinct from target/alignment mismatch and gripper timing.",
+    "insufficient_evidence": "A failure may be visible, but the supplied evidence does not uniquely distinguish one benchmark cause.",
+    "clean_success": "The supplied evidence is consistent with a successful clean task and no failure cause should be assigned."
+  },
+  "required_output_schema": {
+    "diagnostic_decision": "one exact taxonomy value",
+    "confidence": "number in [0,1]",
+    "failure_start_frame": "integer 0..899 or null",
+    "failure_end_frame": "integer 0..899 or null",
+    "evidence_frame_indices": "list of integers drawn only from supplied frame indices",
+    "rationale": "brief evidence-grounded explanation without hidden metadata"
+  },
+  "user_instruction_template": "Diagnose this robot episode from the supplied evidence. The contact sheets are chronological; each row is labeled with its frame index and contains front and wrist views. The state/action table uses the same selected frames. Choose exactly one diagnostic_decision from the frozen taxonomy. Use insufficient_evidence rather than guessing when the cause is not uniquely supported. Do not infer from filenames or episode identity."
+}

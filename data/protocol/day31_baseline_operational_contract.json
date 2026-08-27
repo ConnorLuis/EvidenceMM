@@ -1,0 +1,76 @@
+{
+  "schema_version": "evidencemm_day31_baseline_operational_contract_v1",
+  "status": "pre_result_baseline_contract",
+  "day30_split_freeze_commit": "21a68f1df2a6f0770b3db4b5ad99fa6f16d481b1",
+  "frozen_inputs": {
+    "data/protocol/day22_root_cause_benchmark_v2_protocol.json": {
+      "git_blob_sha1": "388ecb388375046b208e85eb9617e79961a5bf52"
+    },
+    "data/protocol/day30_split_freeze_receipt.json": {
+      "sha256": "1523fd3fdfea33d2c5818ddee92c5fc161d73baa6acab5b56bf0c9c385f1465d"
+    },
+    "data/splits/day30_episode_split.jsonl": {
+      "sha256": "0b37a499904dcf8568ac39a9641097f7d73c952a01a79f00cbcda2b3b7793312"
+    },
+    "data/splits/day30_pair_group_split.json": {
+      "sha256": "d43937c60279bbddc71ff078334dda40c900ff3dabe53cc06164773f3f77f5d2"
+    },
+    "data/annotations/day29_ground_truth_records.jsonl": {
+      "sha256": "e03ec1ab443e4fb4dab606e16fbae8439411d7c3acbcf5f078ed5a0660d389bf",
+      "role": "evaluation_only_after_predictions_complete"
+    },
+    "data/protocol/day28_registered_source_manifest.csv": {
+      "git_blob_sha1": "46a8a5655c17ca20f5aae88c1be05c18092a02c6"
+    },
+    "configs/day28_raw_audit.yaml": {
+      "git_blob_sha1": "eaef86f7aa514845a1160aa85d4d25cc4a79f279"
+    }
+  },
+  "baseline": {
+    "mode": "direct_zero_shot_multimodal_no_retrieval",
+    "model_name": "Qwen/Qwen3-VL-4B-Instruct",
+    "development_only": true,
+    "development_episode_count": 60,
+    "held_out_prediction_count": 0,
+    "prompt_contract_sha256": "faee60d40b710005a265ef7c657a2b19921c8b40c41ddda8c3d69d4916dbd79f",
+    "selection_uses_ground_truth": false,
+    "inference_reads_ground_truth": false
+  },
+  "evaluation": {
+    "development_ground_truth_only": true,
+    "held_out_ground_truth_rows_used": 0,
+    "primary_metrics": [
+      "answerable_three_class_macro_f1",
+      "failed_case_four_way_diagnostic_macro_f1",
+      "abstention_accuracy",
+      "false_answer_rate",
+      "false_abstention_rate",
+      "clean_control_false_positive_cause_rate"
+    ],
+    "four_way_macro_f1_convention": "fixed four diagnostic labels; per-class zero-division=0; because the frozen development GT has zero insufficient_evidence support, the metric has a structural ceiling below 1.0; supported-label macro-F1 is also reported.",
+    "false_answer_rate_zero_denominator": "null_with_not_estimable_reason"
+  },
+  "anti_leakage": {
+    "pair_group_id_in_model_prompt": false,
+    "physical_cause_gt_in_model_prompt": false,
+    "diagnostic_decision_gt_in_model_prompt": false,
+    "human_review_notes_in_model_prompt": false,
+    "intervention_metadata_in_model_prompt": false,
+    "held_out_episode_inference": false,
+    "held_out_label_aggregation": false,
+    "held_out_aggregate_distribution_may_not_influence_day31_or_day32": true
+  },
+  "outputs": {
+    "predictions": "data/eval/day31_development_baseline_predictions.jsonl",
+    "metrics": "data/eval/day31_development_baseline_metrics.json",
+    "freeze_receipt": "data/protocol/day31_baseline_freeze_receipt.json",
+    "runtime_work_root": "reports/day31_baseline_work"
+  },
+  "day31_boundaries": {
+    "model_training_started": false,
+    "calibration_started": false,
+    "development_prompt_tuning_after_baseline": false,
+    "held_out_evaluation_started": false,
+    "held_out_final_evaluation_count_consumed": 0
+  }
+}
