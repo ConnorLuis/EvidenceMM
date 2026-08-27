@@ -1,0 +1,20 @@
+{
+  "schema_version": "evidencemm_day33_heldout_eval_start_receipt_v1",
+  "status": "single_heldout_final_evaluation_authorized_day33",
+  "tooling_commit": "0cd0448179d61d3a0c84829fc80fa04d35ac6082",
+  "day32_final_commit": "2b2b71c4489021f5637e8a4a5f6e6b3df36b0aa1",
+  "day32_frozen_inference_config_sha256": "15a11ebebf06edf10ba6cc8e015f1b04da4693a57800692025322ad69c63685d",
+  "day32_scoring_prompt_sha256": "f02290eb9fd0ad3de92363352fc921d13e9ce318de4d6db969149ec37fcd2cf7",
+  "held_out_episode_count": 30,
+  "held_out_pair_group_count": 5,
+  "held_out_final_evaluation_count_consumed": 1,
+  "held_out_prediction_count_before_authorization": 0,
+  "held_out_gt_rows_parsed_before_authorization": 0,
+  "prompt_changes_allowed_after_authorization": false,
+  "calibration_changes_allowed_after_authorization": false,
+  "evidence_selection_changes_allowed_after_authorization": false,
+  "retrieval_changes_allowed_after_authorization": false,
+  "result_conditioned_regeneration_allowed": false,
+  "parse_failure_retry_allowed": false,
+  "operational_interruption_resume_allowed": true
+}
