@@ -1,0 +1,74 @@
+{
+  "schema_version": "evidencemm_day29_ground_truth_freeze_receipt_v1",
+  "status": "ground_truth_frozen_day29_complete",
+  "tooling_commit": "44735e684ad32deecca28f5c6629b9795b484c91",
+  "pass_a_freeze_commit": "1ae4556d73c8dd409ee4e25d0025fce8a3064a1a",
+  "pass_a_records_sha256": "ebc8630e98ba409088e93e088230d60be6f4082c95a9f0cef45014049a3ddd7c",
+  "pass_b_operational_contract_sha256": "c89086fb79203238b628d7bcfc8e09776121f228e1373f1f59cb69cd201eddb9",
+  "ground_truth_records_path": "data/annotations/day29_ground_truth_records.jsonl",
+  "ground_truth_records_sha256": "e03ec1ab443e4fb4dab606e16fbae8439411d7c3acbcf5f078ed5a0660d389bf",
+  "source_git_blobs": {
+    "data/protocol/day22_root_cause_benchmark_v2_protocol.json": "388ecb388375046b208e85eb9617e79961a5bf52",
+    "data/protocol/day24_target_collection_records.csv": "81b2cfb2f2a6c0cd113cd46f32c31b4d32684b44",
+    "data/protocol/day25_gripper_collection_records.csv": "ed2efc2b04859c5bf06f217880b319688a51419b",
+    "data/protocol/day26_trajectory_collection_records.csv": "0685f1078fcbff9e2e3232e3e66f3879d9c807c1",
+    "data/protocol/day27_insufficient_evidence_collection_plan.csv": "cbd196b887cb061d4c803cf10fe805760507e0e4",
+    "data/protocol/day27_insufficient_evidence_collection_records.csv": "574ae1d2da744dd7707adf30d37634f6bb5bb494",
+    "data/protocol/day28_raw_audit_analysis.json": "60a2760740d59fe9fb5e0434e47387de17cd286d",
+    "data/protocol/day29_review_record_schema.json": "63ea6fa79179cd6abbcd1e9b135b5767e7d007b7",
+    "configs/day29_human_causal_review.yaml": "e164e7775819bb5b77e078ccb517a5a90349651b",
+    "data/annotations/day29_pass_a_records.jsonl": "526f15a0e70cb5e46109b05c27e234ec3163314a",
+    "data/protocol/day29_pass_a_freeze_receipt.json": "98546da5901aea8f1aba8495ff6ab9fc3c04580c"
+  },
+  "source_sha256": {
+    "data/protocol/day22_root_cause_benchmark_v2_protocol.json": "a1adc5473e32f1e62523f230e4ecda2945ef805ad266663cd027927cef3c75be",
+    "data/protocol/day24_target_collection_records.csv": "b639fff3662516bffde229f7255227043df38ae93bf81cf718005468f115274b",
+    "data/protocol/day25_gripper_collection_records.csv": "3b333dc74b8bf323d3e4f1dee650020522e6cf4c099af9367d2e5be6eff95da8",
+    "data/protocol/day26_trajectory_collection_records.csv": "f3e3f059d5d9ae4d21cb7c940cb22935bffe4be3f72bc4323a6aae65f78b4c11",
+    "data/protocol/day27_insufficient_evidence_collection_plan.csv": "cb9dabcef233f700555ccab400bf2c2457a89eb16278a1ee06bf51463b576375",
+    "data/protocol/day27_insufficient_evidence_collection_records.csv": "35d50ffabf103fe764b025103d73a94b2aa88f204ad8892cc87dc770627f51a6",
+    "data/protocol/day28_raw_audit_analysis.json": "43d52096a067e822a9e8366b6ca8e1d0cf73909bc84569fa44b6ccbb03ca2f0e",
+    "data/protocol/day29_review_record_schema.json": "ad7a4dc9eed4b0c90d441bd3b2f397854139143034fb71248d01a2b346ccd24c",
+    "configs/day29_human_causal_review.yaml": "2f07945ff4f51947a1ff4f3e036cdbf618ed1cf9f1ee8fb65bd0a89e2a43e979",
+    "data/annotations/day29_pass_a_records.jsonl": "ebc8630e98ba409088e93e088230d60be6f4082c95a9f0cef45014049a3ddd7c",
+    "data/protocol/day29_pass_a_freeze_receipt.json": "f5e97d27cb7c0131738d33016e6a90993c50d54f557f87e32f46e867bd77e6bf"
+  },
+  "case_count": 90,
+  "pair_group_count": 15,
+  "technical_valid_true": 90,
+  "experimental_valid_true": 90,
+  "task_success_counts": {
+    "false": 75,
+    "true": 15
+  },
+  "intervention_verified_counts": {
+    "false": 15,
+    "true": 75
+  },
+  "physical_cause_gt_counts": {
+    "none_clean": 15,
+    "target_offset_or_perception": 25,
+    "gripper_close_timing": 25,
+    "trajectory_execution_deviation": 25,
+    "unknown": 0
+  },
+  "diagnostic_decision_gt_counts": {
+    "clean_success": 15,
+    "target_offset_or_perception": 25,
+    "gripper_close_timing": 25,
+    "trajectory_execution_deviation": 25,
+    "insufficient_evidence": 0
+  },
+  "evidence_answerability_gt_counts": {
+    "answerable": 75,
+    "not_applicable_clean": 15,
+    "insufficient_evidence": 0
+  },
+  "human_review_completed": true,
+  "admin_reveal_started": true,
+  "ground_truth_frozen": true,
+  "future_split_materialized": false,
+  "pass_a_rewritten_after_reveal": false,
+  "ground_truth_derivation_used_blind_cause_hypothesis": false,
+  "day30_split_materialized": false
+}
