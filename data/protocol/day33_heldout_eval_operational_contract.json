@@ -1,0 +1,40 @@
+{
+  "schema_version": "evidencemm_day33_heldout_eval_operational_contract_v1",
+  "status": "pre_heldout_execution_contract",
+  "day32_final_commit": "2b2b71c4489021f5637e8a4a5f6e6b3df36b0aa1",
+  "frozen_inputs": {
+    "data/protocol/day32_frozen_diagnostic_config.json": {
+      "sha256": "15a11ebebf06edf10ba6cc8e015f1b04da4693a57800692025322ad69c63685d"
+    },
+    "data/protocol/day32_scoring_prompt_contract.json": {
+      "sha256": "f02290eb9fd0ad3de92363352fc921d13e9ce318de4d6db969149ec37fcd2cf7"
+    },
+    "scripts/day32_development_calibration.py": {
+      "git_blob_sha1": "c39df7aaa7d5dcb2daf9cd3f985d94e68aba7f6a"
+    },
+    "scripts/day31_root_cause_baseline.py": {
+      "git_blob_sha1": "afd55294495b6cb552a3484662072fb8d46c3ef9"
+    },
+    "configs/day31_root_cause_baseline.json": {
+      "sha256": "eef3ed506ce434c9df2aafd236d4c848cb640bbbce7646fa6d143ac4798eb63f"
+    },
+    "data/splits/day30_episode_split.jsonl": {
+      "sha256": "0b37a499904dcf8568ac39a9641097f7d73c952a01a79f00cbcda2b3b7793312"
+    },
+    "data/splits/day30_pair_group_split.json": {
+      "sha256": "d43937c60279bbddc71ff078334dda40c900ff3dabe53cc06164773f3f77f5d2"
+    },
+    "data/annotations/day29_ground_truth_records.jsonl": {
+      "sha256": "e03ec1ab443e4fb4dab606e16fbae8439411d7c3acbcf5f078ed5a0660d389bf",
+      "access_rule": "parse held-out label rows only after all 30 held-out predictions are complete"
+    }
+  },
+  "execution_order": [
+    "preflight_without_parsing_heldout_gt",
+    "commit_and_push_authorization_receipt",
+    "run_one_frozen_scoring_pass_over_30_heldout",
+    "validate_predictions_without_gt",
+    "parse_heldout_gt_and_compute_final_metrics",
+    "freeze_and_audit"
+  ]
+}
