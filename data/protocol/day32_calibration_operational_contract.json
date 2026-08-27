@@ -1,0 +1,53 @@
+{
+  "schema_version": "evidencemm_day32_calibration_operational_contract_v1",
+  "status": "pre_result_development_only_calibration_contract",
+  "day31_final_commit": "eb423b152555533e577315667e85067dd47069b7",
+  "day31_tooling_commit": "cb56846c2d41e510ce097704d754f1e3cc35562e",
+  "frozen_inputs": {
+    "data/eval/day31_development_baseline_predictions.jsonl": {
+      "sha256": "6c323f1432723e897306f20a8a0804c713b7f7b8c8d93a48b99492f9c394d768"
+    },
+    "data/eval/day31_development_baseline_metrics.json": {
+      "sha256": "2e57c70b91eda0cc385be63a218d0a4802ca3a3800953749919330ec098437cd"
+    },
+    "data/protocol/day31_baseline_freeze_receipt.json": {
+      "sha256": "8f5a2e5f714a175019835ae5aedcb8d0ca6b615f5c715e1a99f3ec97e98870ac"
+    },
+    "data/splits/day30_episode_split.jsonl": {
+      "sha256": "0b37a499904dcf8568ac39a9641097f7d73c952a01a79f00cbcda2b3b7793312"
+    },
+    "data/splits/day30_pair_group_split.json": {
+      "sha256": "d43937c60279bbddc71ff078334dda40c900ff3dabe53cc06164773f3f77f5d2"
+    },
+    "data/annotations/day29_ground_truth_records.jsonl": {
+      "sha256": "e03ec1ab443e4fb4dab606e16fbae8439411d7c3acbcf5f078ed5a0660d389bf",
+      "role": "development_only"
+    }
+  },
+  "scoring_prompt_sha256": "f02290eb9fd0ad3de92363352fc921d13e9ce318de4d6db969149ec37fcd2cf7",
+  "calibration_method": {
+    "raw_stage": "four_substantive_outcome_support_scores",
+    "score_normalization": "divide_by_sum_then_log",
+    "calibrated_transform": "additive_class_log_bias_then_softmax",
+    "clean_log_bias": 0.0,
+    "parameter_fit_population": "six development pair groups only",
+    "internal_validation_population": "four disjoint development pair groups",
+    "parameter_selection_uses_internal_validation": false,
+    "refit_on_all_development_after_validation": false
+  },
+  "anti_leakage": {
+    "day30_receipt_is_not_parsed": true,
+    "held_out_episode_scoring": false,
+    "held_out_gt_json_parsing": false,
+    "held_out_label_aggregation": false,
+    "pair_group_id_in_model_prompt": false,
+    "gt_fields_in_model_prompt": false
+  },
+  "day33_boundary": {
+    "held_out_evaluation_started": false,
+    "held_out_final_evaluation_count_consumed": 0,
+    "day33_must_use_exact_frozen_inference_config": true,
+    "day33_prompt_tuning_allowed": false,
+    "day33_calibration_refit_allowed": false
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "schema_version": "evidencemm_day32_scoring_prompt_contract_v1",
+  "status": "frozen_before_day32_scoring_run",
+  "purpose": "Separate substantive scoring from abstention after Day31 universal abstention.",
+  "system_prompt": "You are a robot-operation evidence scorer. Use only the supplied chronological front/wrist contact sheets and state/action evidence. Do not use filenames, episode identity, pair-group information, intervention metadata, dataset priors, ground truth, or hidden collection information. This is a NON-ABSTAINING scoring stage: score exactly four substantive outcomes and do not output insufficient_evidence. Return exactly one JSON object and no markdown.",
+  "substantive_outcomes": {
+    "target_offset_or_perception": "Evidence supports target/object pose or visual alignment mismatch.",
+    "gripper_close_timing": "The path is otherwise plausible, but gripper closure is too early or too late.",
+    "trajectory_execution_deviation": "The arm/end-effector path itself deviates and explains failure.",
+    "clean_success": "Evidence is most consistent with successful clean task execution."
+  },
+  "required_output_schema": {
+    "scores": {
+      "target_offset_or_perception": "0..100",
+      "gripper_close_timing": "0..100",
+      "trajectory_execution_deviation": "0..100",
+      "clean_success": "0..100"
+    },
+    "top_substantive_decision": "one exact substantive outcome",
+    "confidence": "number 0..1",
+    "evidence_frame_indices": "only supplied frame indices",
+    "rationale": "brief evidence-grounded explanation"
+  },
+  "user_instruction_template": "Score all four frozen substantive outcomes from 0 to 100. Scores need not sum to 100. You MUST rank the four outcomes even when uncertain; uncertainty belongs in score spread and confidence. The downstream calibrator, not you, decides insufficient_evidence."
+}

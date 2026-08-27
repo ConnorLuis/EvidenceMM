@@ -1,0 +1,90 @@
+{
+  "schema_version": "evidencemm_day32_development_calibration_config_v1",
+  "status": "pre_calibration_frozen_config",
+  "mode": "development_only_score_then_calibrate",
+  "model": {
+    "model_name": "Qwen/Qwen3-VL-4B-Instruct",
+    "image_patch_size": 16,
+    "max_new_tokens": 320,
+    "min_pixels": 50176,
+    "max_pixels": 786432,
+    "attn_implementation": "sdpa",
+    "do_sample": false,
+    "local_files_only": true
+  },
+  "population": {
+    "development_episode_count": 60,
+    "development_pair_group_count": 10,
+    "held_out_episode_count": 30,
+    "held_out_inference_allowed": false,
+    "held_out_ground_truth_use_allowed": false
+  },
+  "evidence_contract": {
+    "reuse_day31_selected_frame_indices": true,
+    "reuse_day31_contact_sheet_convention": true,
+    "reuse_day31_state_action_text": true,
+    "verify_day31_evidence_fingerprint_before_scoring": true,
+    "retrieval_used": false,
+    "manual_corpus_used": false
+  },
+  "internal_calibration_split": {
+    "unit": "pair_group_id",
+    "seed": "evidencemm-day32-internal-calibration-v1",
+    "ranking_rule": "sha256(seed|pair_group_id)_ascending",
+    "fit_pair_group_count": 6,
+    "validation_pair_group_count": 4,
+    "pair_group_cross_internal_split_allowed": false
+  },
+  "score_stage": {
+    "substantive_labels": [
+      "target_offset_or_perception",
+      "gripper_close_timing",
+      "trajectory_execution_deviation",
+      "clean_success"
+    ],
+    "raw_score_min": 0.0,
+    "raw_score_max": 100.0,
+    "insufficient_evidence_is_not_a_raw_score_label": true,
+    "parse_failure_final_decision": "insufficient_evidence"
+  },
+  "calibration_grid": {
+    "cause_log_bias_values": [
+      -1.0,
+      -0.5,
+      0.0,
+      0.5,
+      1.0
+    ],
+    "clean_log_bias_fixed": 0.0,
+    "confidence_threshold_values": [
+      0.0,
+      0.35,
+      0.45,
+      0.55,
+      0.65
+    ],
+    "margin_threshold_values": [
+      0.0,
+      0.05,
+      0.1,
+      0.15,
+      0.2,
+      0.3
+    ],
+    "candidate_count": 3750,
+    "fit_selection_metric": "substantive_four_class_macro_f1",
+    "selection_uses_internal_validation": false,
+    "refit_after_validation": false
+  },
+  "boundaries": {
+    "day31_artifacts_are_immutable": true,
+    "development_labels_allowed_for_calibration_fit": true,
+    "development_validation_labels_allowed_for_reporting_only": true,
+    "held_out_labels_allowed": false,
+    "held_out_inference_allowed": false,
+    "model_weights_modified": false,
+    "retrieval_tuning_performed": false,
+    "manual_retrieval_used": false,
+    "day33_final_config_frozen_on_day32": true
+  }
+}
