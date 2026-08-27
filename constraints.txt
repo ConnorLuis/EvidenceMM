@@ -1,0 +1,20 @@
+# EvidenceMM post-Day35 resolved environment constraints
+# Generated from the successful frozen benchmark environment.
+# CUDA-local package versions are intentionally preserved exactly.
+# GitHub Actions CPU CI installs only pytest under these constraints;
+# it does not install or load Qwen3-VL / torch runtime dependencies.
+
+accelerate==1.14.0
+colpali-engine @ git+https://github.com/illuin-tech/colpali.git@c23838d920a7c426ee297034211cff2f55da65dc
+numpy==2.4.6
+pillow==12.3.0
+pydantic==2.13.4
+pymupdf==1.28.2
+pytest==9.1.1
+pyyaml==6.0.3
+qwen-vl-utils==0.0.14
+setuptools==81.0.0
+torch==2.11.0
+torchvision==0.26.0
+transformers==5.15.0
+wheel==0.47.0

@@ -1,0 +1,135 @@
+{
+  "schema_version": "evidencemm_day35_environment_snapshot_v1",
+  "status": "successful_frozen_benchmark_environment_locked_post_day35",
+  "source_day35_commit": "4ad548dae04f965c7bf5d1becac1dabb63736cd3",
+  "captured_from_git_head": "4ad548dae04f965c7bf5d1becac1dabb63736cd3",
+  "python_version": "3.11.15",
+  "implementation": "CPython",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "cuda_runtime_version": "13.0",
+  "gpu_name": "NVIDIA GeForce RTX 4070 SUPER",
+  "packages": {
+    "accelerate": {
+      "name": "accelerate",
+      "installed_version": "1.14.0",
+      "constraint": "accelerate==1.14.0",
+      "source": "resolved_distribution_version"
+    },
+    "colpali-engine": {
+      "name": "colpali-engine",
+      "installed_version": "0.3.18.dev1+gc23838d92",
+      "constraint": "colpali-engine @ git+https://github.com/illuin-tech/colpali.git@c23838d920a7c426ee297034211cff2f55da65dc",
+      "source": "direct_url_requirement"
+    },
+    "numpy": {
+      "name": "numpy",
+      "installed_version": "2.4.6",
+      "constraint": "numpy==2.4.6",
+      "source": "resolved_distribution_version"
+    },
+    "pillow": {
+      "name": "pillow",
+      "installed_version": "12.3.0",
+      "constraint": "pillow==12.3.0",
+      "source": "resolved_distribution_version"
+    },
+    "pydantic": {
+      "name": "pydantic",
+      "installed_version": "2.13.4",
+      "constraint": "pydantic==2.13.4",
+      "source": "resolved_distribution_version"
+    },
+    "pymupdf": {
+      "name": "pymupdf",
+      "installed_version": "1.28.2",
+      "constraint": "pymupdf==1.28.2",
+      "source": "resolved_distribution_version"
+    },
+    "pytest": {
+      "name": "pytest",
+      "installed_version": "9.1.1",
+      "constraint": "pytest==9.1.1",
+      "source": "resolved_distribution_version"
+    },
+    "pyyaml": {
+      "name": "pyyaml",
+      "installed_version": "6.0.3",
+      "constraint": "pyyaml==6.0.3",
+      "source": "resolved_distribution_version"
+    },
+    "qwen-vl-utils": {
+      "name": "qwen-vl-utils",
+      "installed_version": "0.0.14",
+      "constraint": "qwen-vl-utils==0.0.14",
+      "source": "resolved_distribution_version"
+    },
+    "setuptools": {
+      "name": "setuptools",
+      "installed_version": "81.0.0",
+      "constraint": "setuptools==81.0.0",
+      "source": "resolved_distribution_version"
+    },
+    "torch": {
+      "name": "torch",
+      "installed_version": "2.11.0",
+      "constraint": "torch==2.11.0",
+      "source": "resolved_distribution_version"
+    },
+    "torchvision": {
+      "name": "torchvision",
+      "installed_version": "0.26.0",
+      "constraint": "torchvision==0.26.0",
+      "source": "resolved_distribution_version"
+    },
+    "transformers": {
+      "name": "transformers",
+      "installed_version": "5.15.0",
+      "constraint": "transformers==5.15.0",
+      "source": "resolved_distribution_version"
+    },
+    "wheel": {
+      "name": "wheel",
+      "installed_version": "0.47.0",
+      "constraint": "wheel==0.47.0",
+      "source": "resolved_distribution_version"
+    }
+  },
+  "runtime_builds": {
+    "torch_runtime_version": "2.11.0+cu130",
+    "torch_distribution_version": "2.11.0",
+    "torchvision_distribution_version": "0.26.0",
+    "transformers_distribution_version": "5.15.0"
+  },
+  "constraints_sha256": "3983faf1459f4c172d0fbeeed2a791dd96de9abb058bc6c6c2cb64ae3b7ed83d",
+  "scope": {
+    "runtime_direct_dependencies": [
+      "accelerate",
+      "colpali-engine",
+      "numpy",
+      "pillow",
+      "pydantic",
+      "pymupdf",
+      "pyyaml",
+      "qwen-vl-utils",
+      "torch",
+      "torchvision",
+      "transformers"
+    ],
+    "dev_direct_dependencies": [
+      "pytest"
+    ],
+    "build_direct_dependencies": [
+      "setuptools",
+      "wheel"
+    ],
+    "full_transitive_lock": false,
+    "purpose": "Freeze project-declared key dependency versions used by the successful Day31-Day35 environment."
+  },
+  "known_frozen_runtime_evidence": {
+    "day34_python_version": "3.11.15",
+    "day34_torch_version": "2.11.0+cu130",
+    "day34_transformers_version": "5.15.0",
+    "day34_cuda_runtime_version": "13.0",
+    "day34_gpu_name": "NVIDIA GeForce RTX 4070 SUPER"
+  }
+}
