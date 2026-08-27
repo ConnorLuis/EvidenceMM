@@ -1,0 +1,119 @@
+{
+  "schema_version": "evidencemm_day31_development_baseline_metrics_v1",
+  "status": "development_baseline_evaluated",
+  "baseline_mode": "direct_zero_shot_multimodal_no_retrieval",
+  "development_episode_count": 60,
+  "held_out_prediction_count": 0,
+  "held_out_gt_rows_used": 0,
+  "prediction_parse_ok_count": 60,
+  "prediction_parse_failure_count": 0,
+  "prediction_decision_counts": {
+    "insufficient_evidence": 60
+  },
+  "development_gt_support": {
+    "answerable_failure_count": 50,
+    "failed_case_count": 50,
+    "clean_control_count": 10,
+    "insufficient_evidence_failure_count": 0
+  },
+  "primary_metrics": {
+    "answerable_three_class_macro_f1": 0.0,
+    "failed_case_four_way_diagnostic_macro_f1": 0.0,
+    "abstention_accuracy": 0.0,
+    "false_answer_rate": null,
+    "false_abstention_rate": 1.0,
+    "clean_control_false_positive_cause_rate": 0.0
+  },
+  "secondary_metrics": {
+    "failed_case_supported_label_macro_f1": 0.0,
+    "clean_control_accuracy": 0.0,
+    "development_decision_accuracy": 0.0,
+    "prediction_parse_rate": 1.0
+  },
+  "per_class_three_way": {
+    "target_offset_or_perception": {
+      "support": 20,
+      "tp": 0,
+      "fp": 0,
+      "fn": 20,
+      "precision": null,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "gripper_close_timing": {
+      "support": 16,
+      "tp": 0,
+      "fp": 0,
+      "fn": 16,
+      "precision": null,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "trajectory_execution_deviation": {
+      "support": 14,
+      "tp": 0,
+      "fp": 0,
+      "fn": 14,
+      "precision": null,
+      "recall": 0.0,
+      "f1": 0.0
+    }
+  },
+  "per_class_four_way": {
+    "target_offset_or_perception": {
+      "support": 20,
+      "tp": 0,
+      "fp": 0,
+      "fn": 20,
+      "precision": null,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "gripper_close_timing": {
+      "support": 16,
+      "tp": 0,
+      "fp": 0,
+      "fn": 16,
+      "precision": null,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "trajectory_execution_deviation": {
+      "support": 14,
+      "tp": 0,
+      "fp": 0,
+      "fn": 14,
+      "precision": null,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "insufficient_evidence": {
+      "support": 0,
+      "tp": 0,
+      "fp": 50,
+      "fn": 0,
+      "precision": 0.0,
+      "recall": null,
+      "f1": 0.0
+    }
+  },
+  "four_way_class_support": {
+    "target_offset_or_perception": 20,
+    "gripper_close_timing": 16,
+    "trajectory_execution_deviation": 14,
+    "insufficient_evidence": 0
+  },
+  "metric_notes": {
+    "failed_case_four_way_diagnostic_macro_f1": "Fixed four-label macro-F1 with zero-division=0. The frozen development GT has zero insufficient_evidence support, so this literal four-way metric has a structural ceiling below 1.0.",
+    "false_answer_rate": "null when frozen development GT contains no insufficient-evidence failures; no held-out support is consulted."
+  },
+  "boundaries": {
+    "development_only": true,
+    "held_out_labels_aggregated": false,
+    "calibration_performed": false,
+    "prompt_tuning_after_results": false,
+    "model_selection_using_development_results": false,
+    "retrieval_used": false,
+    "manual_corpus_used": false
+  }
+}
