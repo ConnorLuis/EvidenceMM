@@ -1,0 +1,25 @@
+{
+  "schema_version": "evidencemm_day29_pass_a_freeze_receipt_v1",
+  "status": "blind_review_complete_admin_unrevealed",
+  "tooling_commit": "348ce2c4496a54cff88fbbb0ebdf3ed3e50e79d7",
+  "pass_a_operational_contract_sha256": "dffc1a74b3b0ddc817f2bf3c1a392b08e19cdf8f9722cd291b9646b15293a88b",
+  "pass_a_records_path": "data/annotations/day29_pass_a_records.jsonl",
+  "pass_a_records_sha256": "ebc8630e98ba409088e93e088230d60be6f4082c95a9f0cef45014049a3ddd7c",
+  "case_count": 90,
+  "review_order_sha256": "774db5bd1ef831f4223c91fd6822cbc0165f586920498c886cf4a9de05ee09a5",
+  "pack_tree_sha256": "4b82b471d90c1aafbca5b7e0b0a74af4319a2a1dd69a8fbcca0097d556bf47da",
+  "answerability_counts": {
+    "answerable": 75,
+    "insufficient_evidence": 0,
+    "not_applicable_clean": 15
+  },
+  "blind_cause_hypothesis_counts": {
+    "gripper_close_timing": 25,
+    "target_offset_or_perception": 27,
+    "trajectory_execution_deviation": 23
+  },
+  "human_review_completed": true,
+  "admin_reveal_started": false,
+  "ground_truth_frozen": false,
+  "future_split_materialized": false
+}
