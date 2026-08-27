@@ -69,3 +69,7 @@ def test_cpu_workflow_runs_static_recomputation_and_audits() -> None:
     assert "python scripts/day34_metrics_error_efficiency.py audit" in text
     assert "python scripts/day35_release_audit.py validate" in text
     assert "python scripts/release_hardening_audit.py validate" in text
+
+def test_cpu_workflow_fetches_full_history_for_ancestry_audits() -> None:
+    text = hardening.WORKFLOW.read_text(encoding="utf-8")
+    assert "fetch-depth: 0" in text

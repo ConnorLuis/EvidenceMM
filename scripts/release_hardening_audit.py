@@ -37,6 +37,7 @@ DAY35_RELEASE_FILES = (
 REQUIRED_WORKFLOW_TOKENS = (
     "runs-on: ubuntu-latest",
     'python-version: "3.11.15"',
+    "fetch-depth: 0",
     "python -m compileall -q src scripts tests",
     "python scripts/day35_release_audit.py validate",
     "python scripts/day34_metrics_error_efficiency.py audit",
