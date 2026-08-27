@@ -1,0 +1,56 @@
+{
+  "schema_version": "evidencemm_day34_metrics_error_efficiency_config_v1",
+  "status": "post_heldout_analysis_pre_result_config",
+  "mode": "frozen_result_analysis_and_development_only_efficiency_profile",
+  "frozen_day33_final_commit": "a8a8b796eecdab6118c9ad637c41f7c2b987304d",
+  "analysis": {
+    "heldout_result_modification_allowed": false,
+    "prompt_tuning_allowed": false,
+    "calibration_tuning_allowed": false,
+    "retrieval_tuning_allowed": false,
+    "model_selection_allowed": false,
+    "result_conditioned_regeneration_allowed": false,
+    "recompute_metrics_from_frozen_predictions": true,
+    "produce_confusion_matrix": true,
+    "produce_per_class_report": true,
+    "produce_pair_group_report": true,
+    "produce_parse_failure_analysis": true,
+    "produce_calibration_shift_analysis": true,
+    "produce_dev_to_heldout_gap": true
+  },
+  "efficiency_profile": {
+    "split": "development",
+    "episode_selection_seed": "evidencemm-day34-e2e-profile-v1",
+    "episode_selection_rule": "sha256(seed|episode_id)_ascending",
+    "episode_count": 5,
+    "ground_truth_access_allowed": false,
+    "reuse_frozen_day32_model_prompt_and_calibration": true,
+    "reuse_exact_day31_selected_frames_for_profiled_development_episodes": true,
+    "model_load_reported_separately": true,
+    "warm_episode_e2e_excludes_model_load": true,
+    "stages": [
+      "evidence_preparation",
+      "processor_preparation",
+      "generation",
+      "parse_and_calibration",
+      "episode_end_to_end"
+    ]
+  },
+  "efficiency_reporting": {
+    "percentiles": [
+      50,
+      95
+    ],
+    "day31_day32_day33_logged_latency_semantics": "model_generation_only",
+    "day34_profile_latency_semantics": "raw_episode_to_calibrated_decision_excluding_model_load",
+    "evidence_frame_count": 12,
+    "source_frame_count": 900
+  },
+  "metric_coverage": {
+    "diagnosis": "measured_on_day33_frozen_heldout",
+    "efficiency": "logged_generation_latency_plus_day34_development_e2e_profile",
+    "temporal_localization": "not_emitted_by_day31_to_day33_root_cause_predictor",
+    "grounding": "not_applicable_to_day31_to_day33_no_retrieval_baseline",
+    "historical_temporal_result": "data/eval/day20_heldout_interval_eval.json"
+  }
+}
