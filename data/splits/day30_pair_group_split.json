@@ -1,0 +1,145 @@
+{
+  "schema_version": "evidencemm_day30_pair_group_split_v1",
+  "status": "deterministic_groupwise_split_materialized",
+  "source_ground_truth_records_sha256": "e03ec1ab443e4fb4dab606e16fbae8439411d7c3acbcf5f078ed5a0660d389bf",
+  "unit": "pair_group_id",
+  "seed": "evidencemm-root-cause-v2-split-v3",
+  "ranking_rule": "sha256(seed|pair_group_id)_ascending",
+  "development_pair_group_count": 10,
+  "held_out_pair_group_count": 5,
+  "expected_development_episode_count": 60,
+  "expected_held_out_episode_count": 30,
+  "pair_group_cross_split_allowed": false,
+  "ranked_pair_groups": [
+    {
+      "rank": 1,
+      "pair_group_id": "rcv2_g07",
+      "ranking_sha256": "02d7261b78b30ff384de33423002fe767e1b10abaaa7b78eba529c994b02020c",
+      "split": "development",
+      "episode_count": 6
+    },
+    {
+      "rank": 2,
+      "pair_group_id": "rcv2_g11",
+      "ranking_sha256": "2884ac16a06fe4ef29e8743eceaaa0e0fd4c820e5e8cf18f5cad05d836ab2a55",
+      "split": "development",
+      "episode_count": 6
+    },
+    {
+      "rank": 3,
+      "pair_group_id": "rcv2_g15",
+      "ranking_sha256": "31002567c45aa5f43f674bc32f815a9ec6e58e76484638ebe453f54ea2be9e12",
+      "split": "development",
+      "episode_count": 6
+    },
+    {
+      "rank": 4,
+      "pair_group_id": "rcv2_g05",
+      "ranking_sha256": "33fcedf2369e9c35fdc06ab06704bc82c32ae3630c92fc31a7d6a28f8c04d5bd",
+      "split": "development",
+      "episode_count": 6
+    },
+    {
+      "rank": 5,
+      "pair_group_id": "rcv2_g01",
+      "ranking_sha256": "486f844e1fc1e4486ee6228b72293a2c40078e73e6b818ee339855b98c00bc90",
+      "split": "development",
+      "episode_count": 6
+    },
+    {
+      "rank": 6,
+      "pair_group_id": "rcv2_g10",
+      "ranking_sha256": "4d7b09675d6be144a2d2e41a5d57f0a6de340fb57be7644cfc98d227397142df",
+      "split": "development",
+      "episode_count": 6
+    },
+    {
+      "rank": 7,
+      "pair_group_id": "rcv2_g14",
+      "ranking_sha256": "5032e9c452bb582571fe9fd02b5e179db19975527abfbe86109c24e7c87f551e",
+      "split": "development",
+      "episode_count": 6
+    },
+    {
+      "rank": 8,
+      "pair_group_id": "rcv2_g13",
+      "ranking_sha256": "50d4059dc42c451f7875a09bce9162a118abc6c729d5c704dbd91d6ba38e9406",
+      "split": "development",
+      "episode_count": 6
+    },
+    {
+      "rank": 9,
+      "pair_group_id": "rcv2_g06",
+      "ranking_sha256": "52c7de2d870f81cec826d5a1b673c6b9fa95fd1cbe758e07412ffb0ac32cc793",
+      "split": "development",
+      "episode_count": 6
+    },
+    {
+      "rank": 10,
+      "pair_group_id": "rcv2_g04",
+      "ranking_sha256": "6de06c8a010ca604ee6812982d129593a31d2000db11f3dc96864f1e2b6ce305",
+      "split": "development",
+      "episode_count": 6
+    },
+    {
+      "rank": 11,
+      "pair_group_id": "rcv2_g08",
+      "ranking_sha256": "72ff3a0251e1f3f3a8089b26676449b5fc2d9105a89370e4acd01390a4261c1e",
+      "split": "held_out",
+      "episode_count": 6
+    },
+    {
+      "rank": 12,
+      "pair_group_id": "rcv2_g09",
+      "ranking_sha256": "75fd43af61986e03e4766c5ffd667b527e03913c9b2dbb85357053c8914eccc9",
+      "split": "held_out",
+      "episode_count": 6
+    },
+    {
+      "rank": 13,
+      "pair_group_id": "rcv2_g12",
+      "ranking_sha256": "9ac3fc1d481de1b47e6e6d7619d4028897a0749f6f8f1c01f7a4f5344c38c015",
+      "split": "held_out",
+      "episode_count": 6
+    },
+    {
+      "rank": 14,
+      "pair_group_id": "rcv2_g02",
+      "ranking_sha256": "b1187bb1f9cbf1f0784546a918e31dcdfa845bd72b29086968462b3149cde395",
+      "split": "held_out",
+      "episode_count": 6
+    },
+    {
+      "rank": 15,
+      "pair_group_id": "rcv2_g03",
+      "ranking_sha256": "f33196350e1287b56beda3953cbc75f7c03eb9a86a09ff1d7191624ba8375ec3",
+      "split": "held_out",
+      "episode_count": 6
+    }
+  ],
+  "development_pair_groups": [
+    "rcv2_g07",
+    "rcv2_g11",
+    "rcv2_g15",
+    "rcv2_g05",
+    "rcv2_g01",
+    "rcv2_g10",
+    "rcv2_g14",
+    "rcv2_g13",
+    "rcv2_g06",
+    "rcv2_g04"
+  ],
+  "held_out_pair_groups": [
+    "rcv2_g08",
+    "rcv2_g09",
+    "rcv2_g12",
+    "rcv2_g02",
+    "rcv2_g03"
+  ],
+  "ranking_used_ground_truth_labels": false,
+  "ranking_inputs": [
+    "seed",
+    "pair_group_id"
+  ],
+  "contains_ground_truth_labels": false
+}

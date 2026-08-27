@@ -1,0 +1,109 @@
+{
+  "schema_version": "evidencemm_day30_split_freeze_receipt_v1",
+  "status": "groupwise_split_frozen_day30_complete",
+  "tooling_commit": "9bbca0dac910da99b2997a9c4bc7c6828736e0c1",
+  "day29_ground_truth_freeze_commit": "98dfa730ae87193b907a818d75e50020daf5e567",
+  "day22_protocol_sha256": "a1adc5473e32f1e62523f230e4ecda2945ef805ad266663cd027927cef3c75be",
+  "ground_truth_records_sha256": "e03ec1ab443e4fb4dab606e16fbae8439411d7c3acbcf5f078ed5a0660d389bf",
+  "ground_truth_freeze_receipt_sha256": "2c31413b8be2e3e755ca595b9ee410230df677da798ebb078f4b3537b5d0a680",
+  "operational_contract_sha256": "73096f4fc6fee9a34140a61f136cb5208bf7a046f36da72c4c811af5377d463e",
+  "tooling_git_blobs": {
+    "scripts/day30_split.py": "2aaefbf2e14b3edc9afcba8098189a66bc98c05d",
+    "data/protocol/day30_split_operational_contract.json": "833a3e57ccf22dc2fa631030415f36d69dbb332f",
+    "docs/day30_split_operator_guide.md": "7d618f14a2927323b475a8685a35d8d633aab453",
+    "tests/test_day30_split.py": "eccca8b4132ac621f6133592c7c3b462190e64b8"
+  },
+  "pair_group_split_path": "data/splits/day30_pair_group_split.json",
+  "pair_group_split_sha256": "d43937c60279bbddc71ff078334dda40c900ff3dabe53cc06164773f3f77f5d2",
+  "episode_split_path": "data/splits/day30_episode_split.jsonl",
+  "episode_split_sha256": "0b37a499904dcf8568ac39a9641097f7d73c952a01a79f00cbcda2b3b7793312",
+  "unit": "pair_group_id",
+  "seed": "evidencemm-root-cause-v2-split-v3",
+  "ranking_rule": "sha256(seed|pair_group_id)_ascending",
+  "development_pair_groups": [
+    "rcv2_g07",
+    "rcv2_g11",
+    "rcv2_g15",
+    "rcv2_g05",
+    "rcv2_g01",
+    "rcv2_g10",
+    "rcv2_g14",
+    "rcv2_g13",
+    "rcv2_g06",
+    "rcv2_g04"
+  ],
+  "held_out_pair_groups": [
+    "rcv2_g08",
+    "rcv2_g09",
+    "rcv2_g12",
+    "rcv2_g02",
+    "rcv2_g03"
+  ],
+  "development_pair_group_count": 10,
+  "held_out_pair_group_count": 5,
+  "development_episode_count": 60,
+  "held_out_episode_count": 30,
+  "pair_group_cross_split_count": 0,
+  "post_assignment_label_distribution_audit": {
+    "development": {
+      "episode_count": 60,
+      "pair_group_count": 10,
+      "physical_cause_gt_counts": {
+        "gripper_close_timing": 16,
+        "none_clean": 10,
+        "target_offset_or_perception": 20,
+        "trajectory_execution_deviation": 14
+      },
+      "diagnostic_decision_gt_counts": {
+        "clean_success": 10,
+        "gripper_close_timing": 16,
+        "target_offset_or_perception": 20,
+        "trajectory_execution_deviation": 14
+      },
+      "evidence_answerability_gt_counts": {
+        "answerable": 50,
+        "not_applicable_clean": 10
+      },
+      "task_success_counts": {
+        "false": 50,
+        "true": 10
+      }
+    },
+    "held_out": {
+      "episode_count": 30,
+      "pair_group_count": 5,
+      "physical_cause_gt_counts": {
+        "gripper_close_timing": 9,
+        "none_clean": 5,
+        "target_offset_or_perception": 5,
+        "trajectory_execution_deviation": 11
+      },
+      "diagnostic_decision_gt_counts": {
+        "clean_success": 5,
+        "gripper_close_timing": 9,
+        "target_offset_or_perception": 5,
+        "trajectory_execution_deviation": 11
+      },
+      "evidence_answerability_gt_counts": {
+        "answerable": 25,
+        "not_applicable_clean": 5
+      },
+      "task_success_counts": {
+        "false": 25,
+        "true": 5
+      }
+    }
+  },
+  "ranking_used_ground_truth_labels": false,
+  "split_artifacts_contain_ground_truth_labels": false,
+  "future_split_materialized": true,
+  "held_out_model_selection_allowed": false,
+  "held_out_prompt_tuning_allowed": false,
+  "held_out_retrieval_tuning_allowed": false,
+  "held_out_calibration_allowed": false,
+  "held_out_final_evaluation_target_day": 33,
+  "held_out_final_evaluation_started": false,
+  "held_out_final_evaluation_count_consumed": 0,
+  "model_training_started_on_day30": false,
+  "calibration_started_on_day30": false
+}
