@@ -1,0 +1,66 @@
+{
+  "schema_version": "evidencemm_day32_frozen_diagnostic_config_v1",
+  "status": "frozen_for_single_day33_heldout_evaluation",
+  "source_day32_tooling_commit": "51bfaf506cebbdebc3b70a7a791c869e2129f7a5",
+  "model_name": "Qwen/Qwen3-VL-4B-Instruct",
+  "model_loading": {
+    "do_sample": false,
+    "local_files_only": true,
+    "attn_implementation": "sdpa",
+    "max_new_tokens": 320
+  },
+  "evidence_contract": {
+    "day31_selected_frame_indices_reused": true,
+    "day31_contact_sheet_convention_reused": true,
+    "day31_state_action_text_reused": true,
+    "frame_count_per_episode": 12,
+    "retrieval_used": false,
+    "manual_corpus_used": false
+  },
+  "scoring_prompt_sha256": "f02290eb9fd0ad3de92363352fc921d13e9ce318de4d6db969149ec37fcd2cf7",
+  "score_labels": [
+    "target_offset_or_perception",
+    "gripper_close_timing",
+    "trajectory_execution_deviation",
+    "clean_success"
+  ],
+  "score_normalization": "divide_by_sum_then_log",
+  "calibration_transform": "additive_class_log_bias_then_softmax",
+  "selected_log_biases": {
+    "target_offset_or_perception": 1.0,
+    "gripper_close_timing": -0.5,
+    "trajectory_execution_deviation": 1.0,
+    "clean_success": 0.0
+  },
+  "confidence_threshold": 0.0,
+  "margin_threshold": 0.0,
+  "parse_failure_decision": "insufficient_evidence",
+  "fit_population": {
+    "pair_groups": [
+      "rcv2_g10",
+      "rcv2_g11",
+      "rcv2_g15",
+      "rcv2_g07",
+      "rcv2_g05",
+      "rcv2_g14"
+    ],
+    "episode_count": 36
+  },
+  "internal_validation_population": {
+    "pair_groups": [
+      "rcv2_g13",
+      "rcv2_g04",
+      "rcv2_g01",
+      "rcv2_g06"
+    ],
+    "episode_count": 24,
+    "used_for_selection": false
+  },
+  "held_out_boundary": {
+    "held_out_inference_count_on_day32": 0,
+    "held_out_gt_rows_used_on_day32": 0,
+    "held_out_prompt_tuning_allowed": false,
+    "held_out_calibration_refit_allowed": false,
+    "day33_final_evaluation_count_consumed": 0
+  }
+}
