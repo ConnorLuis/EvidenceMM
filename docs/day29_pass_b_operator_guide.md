@@ -98,15 +98,15 @@ Expected final counts:
 - 75 controlled/challenge failures
 - physical causes:
   - `none_clean`: 15
-  - `target_offset_or_perception`: 27
+  - `target_offset_or_perception`: 25
   - `gripper_close_timing`: 25
-  - `trajectory_execution_deviation`: 23
+  - `trajectory_execution_deviation`: 25
   - `unknown`: 0
 - diagnostic decisions:
   - `clean_success`: 15
-  - target: 27
+  - target: 25
   - gripper: 25
-  - trajectory: 23
+  - trajectory: 25
   - `insufficient_evidence`: 0
 
 ### `freeze`

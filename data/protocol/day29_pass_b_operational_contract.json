@@ -25,9 +25,9 @@
     "data/protocol/day29_pass_a_freeze_receipt.json": "98546da5901aea8f1aba8495ff6ab9fc3c04580c"
   },
   "source_record_counts": {
-    "day24_canonical": 37,
+    "day24_canonical": 35,
     "day25_canonical": 20,
-    "day26_canonical": 18,
+    "day26_canonical": 20,
     "day27_registered_attempts": 17,
     "day27_canonical": 15,
     "canonical_total": 90,
@@ -61,16 +61,16 @@
     "intervention_verified_false": 15,
     "physical_cause_gt": {
       "none_clean": 15,
-      "target_offset_or_perception": 27,
+      "target_offset_or_perception": 25,
       "gripper_close_timing": 25,
-      "trajectory_execution_deviation": 23,
+      "trajectory_execution_deviation": 25,
       "unknown": 0
     },
     "diagnostic_decision_gt": {
       "clean_success": 15,
-      "target_offset_or_perception": 27,
+      "target_offset_or_perception": 25,
       "gripper_close_timing": 25,
-      "trajectory_execution_deviation": 23,
+      "trajectory_execution_deviation": 25,
       "insufficient_evidence": 0
     },
     "evidence_answerability_gt": {

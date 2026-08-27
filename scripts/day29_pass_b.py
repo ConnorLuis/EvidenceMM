@@ -57,9 +57,9 @@ EXPECTED_FROZEN_BLOBS = {
 }
 
 EXPECTED_COUNTS = {
-    "day24_canonical": 37,
+    "day24_canonical": 35,
     "day25_canonical": 20,
-    "day26_canonical": 18,
+    "day26_canonical": 20,
     "day27_registered_attempts": 17,
     "day27_canonical": 15,
     "canonical_total": 90,
@@ -69,17 +69,17 @@ EXPECTED_COUNTS = {
 
 EXPECTED_PHYSICAL_COUNTS = {
     "none_clean": 15,
-    "target_offset_or_perception": 27,
+    "target_offset_or_perception": 25,
     "gripper_close_timing": 25,
-    "trajectory_execution_deviation": 23,
+    "trajectory_execution_deviation": 25,
     "unknown": 0,
 }
 
 EXPECTED_DECISION_COUNTS = {
     "clean_success": 15,
-    "target_offset_or_perception": 27,
+    "target_offset_or_perception": 25,
     "gripper_close_timing": 25,
-    "trajectory_execution_deviation": 23,
+    "trajectory_execution_deviation": 25,
     "insufficient_evidence": 0,
 }
 
