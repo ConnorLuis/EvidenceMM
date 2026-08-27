@@ -1,0 +1,33 @@
+{
+  "schema_version": "evidencemm_day34_metrics_freeze_receipt_v1",
+  "status": "metrics_error_efficiency_frozen_day34_complete",
+  "tooling_commit": "53fe049c5b66ee3dfb8cd7e29111ef63ab5b1168",
+  "day33_final_commit": "a8a8b796eecdab6118c9ad637c41f7c2b987304d",
+  "day33_final_metrics_sha256": "4165d639e9ff31bec09f76d133e45ba344d462cba04f0c72b1d97e1c65958369",
+  "day33_final_predictions_sha256": "c6046cc34de98cf0ab892236028a96d78a990145dfdbdd98fe68f90a53ea3289",
+  "day33_score_predictions_sha256": "787dd204275c0f453d3700e95d165b607ad91946e38f866a7f0250a1bc8fde06",
+  "day33_freeze_receipt_sha256": "18663b49577187c305be349aa733d4697976142036b81de8457b9dfeb2f9c711",
+  "tooling_git_blobs": {
+    "configs/day34_metrics_error_efficiency.json": "339171347967ae1e775fdc58b376c9605e67f8e7",
+    "data/protocol/day34_metrics_error_efficiency_operational_contract.json": "20701acfa528ed46eb3c98785143f93a12a05ec0",
+    "docs/day34_metrics_error_efficiency.md": "b82c3de25bfb36ef4a65985f8d66473b6749ea60",
+    "scripts/day34_metrics_error_efficiency.py": "eaca26e25896268268ad5a21de347c764dac87f4",
+    "tests/test_day34_metrics_error_efficiency.py": "2ecbf330025c09a67fe21d6972d13be1c2a484a9"
+  },
+  "final_metrics_report_sha256": "536d49aff909545310867294a2cdd2f2626498f6d0220a459d07d873e31845e9",
+  "error_analysis_sha256": "f32f44492d26cf344e7e056a4d8edef94a3af7f85743dd0dc959e8e323cd4e55",
+  "per_case_analysis_sha256": "130beb67cd9df54faa7b621338c60c5575d26df619d9f55b41dd7184c5853bf6",
+  "development_e2e_profile_sha256": "a97d4d3e3a8c709c9b9d11999fd221cba91446438daeb2cf7e470d35b07fa208",
+  "efficiency_report_sha256": "2002015a54afc95d8aa181dcc2c14ed394b193d4d45586b5673d7a7d35c6873d",
+  "heldout_final_evaluation_count_consumed": 1,
+  "day34_heldout_inference_count": 0,
+  "day34_heldout_regeneration_count": 0,
+  "development_e2e_profile_episode_count": 5,
+  "development_e2e_profile_ground_truth_accessed": false,
+  "prompt_tuning_after_day33": false,
+  "calibration_tuning_after_day33": false,
+  "retrieval_tuning_after_day33": false,
+  "model_selection_after_day33": false,
+  "result_conditioned_regeneration_after_day33": false,
+  "day33_predictions_modified": false
+}

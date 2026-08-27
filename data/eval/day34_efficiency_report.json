@@ -1,0 +1,182 @@
+{
+  "schema_version": "evidencemm_day34_efficiency_report_v1",
+  "status": "efficiency_summary_complete",
+  "immutable_logged_measurements": {
+    "day31_development_baseline": {
+      "episode_count": 60,
+      "generation_latency_sec": {
+        "count": 60,
+        "mean": 4.649292798549975,
+        "min": 3.721326892000434,
+        "p50": 4.649384189999637,
+        "p95": 5.251701671349883,
+        "max": 5.599408890000632
+      },
+      "peak_gpu_memory_mb": {
+        "count": 60,
+        "mean": 9439.53134765625,
+        "min": 9433.7421875,
+        "p50": 9439.1123046875,
+        "p95": 9444.757617187499,
+        "max": 9445.2080078125
+      },
+      "latency_semantics": "model_generation_only"
+    },
+    "day32_development_scoring": {
+      "episode_count": 60,
+      "generation_latency_sec": {
+        "count": 60,
+        "mean": 9.931865188283366,
+        "min": 6.421037132000492,
+        "p50": 9.903347211999062,
+        "p95": 13.437711049949758,
+        "max": 13.44751089499914
+      },
+      "peak_gpu_memory_mb": {
+        "count": 60,
+        "mean": 9428.407096354167,
+        "min": 9426.05615234375,
+        "p50": 9428.05859375,
+        "p95": 9431.39208984375,
+        "max": 9432.02490234375
+      },
+      "latency_semantics": "model_generation_only"
+    },
+    "day33_frozen_heldout_scoring": {
+      "episode_count": 30,
+      "generation_latency_sec": {
+        "count": 30,
+        "mean": 10.04021909209981,
+        "min": 7.636170393998327,
+        "p50": 9.738268903499375,
+        "p95": 13.366214045849484,
+        "max": 13.446033993999663
+      },
+      "peak_gpu_memory_mb": {
+        "count": 30,
+        "mean": 9427.901155598958,
+        "min": 9424.82373046875,
+        "p50": 9427.84423828125,
+        "p95": 9430.352929687499,
+        "max": 9430.73876953125
+      },
+      "latency_semantics": "model_generation_only"
+    }
+  },
+  "development_only_e2e_profile": {
+    "selection_seed": "evidencemm-day34-e2e-profile-v1",
+    "selected_episode_ids": [
+      "20260824_173930",
+      "20260823_201622",
+      "20260823_180125",
+      "20260824_215136",
+      "20260823_163223"
+    ],
+    "profile_episode_count": 5,
+    "startup": {
+      "model_name": "Qwen/Qwen3-VL-4B-Instruct",
+      "model_load_sec": 7.892759107999154,
+      "processor_load_sec": 0.21109951099788304,
+      "python_version": "3.11.15",
+      "torch_version": "2.11.0+cu130",
+      "transformers_version": "5.15.0",
+      "cuda_available": true,
+      "cuda_runtime_version": "13.0",
+      "gpu_name": "NVIDIA GeForce RTX 4070 SUPER",
+      "model_resident_gpu_memory_mb": 8465.10595703125
+    },
+    "stage_summaries": {
+      "evidence_preparation_sec": {
+        "count": 5,
+        "mean": 0.24628845239931252,
+        "min": 0.231788011999015,
+        "p50": 0.2393807119988196,
+        "p95": 0.2741913935991761,
+        "max": 0.2822194139989733
+      },
+      "processor_preparation_sec": {
+        "count": 5,
+        "mean": 0.06533802339909016,
+        "min": 0.05402440299803857,
+        "p50": 0.058350702998723136,
+        "p95": 0.09104584459928446,
+        "max": 0.09870260499883443
+      },
+      "generation_sec": {
+        "count": 5,
+        "mean": 8.881461958600266,
+        "min": 7.107570767002471,
+        "p50": 9.526524992001214,
+        "p95": 9.831189167799312,
+        "max": 9.871822109998902
+      },
+      "parse_and_calibration_sec": {
+        "count": 5,
+        "mean": 0.0003104600000369828,
+        "min": 0.0002626000023155939,
+        "p50": 0.00029439999707392417,
+        "p95": 0.0003764800014323555,
+        "max": 0.0003863000019919127
+      },
+      "episode_end_to_end_sec": {
+        "count": 5,
+        "mean": 9.19354197440116,
+        "min": 7.410463782001898,
+        "p50": 9.907912511000177,
+        "p95": 10.121729202800633,
+        "max": 10.16234542500024
+      },
+      "peak_gpu_memory_mb": {
+        "count": 5,
+        "mean": 9429.36435546875,
+        "min": 9427.1552734375,
+        "p50": 9429.66650390625,
+        "p95": 9431.36748046875,
+        "max": 9431.59619140625
+      },
+      "peak_incremental_gpu_memory_mb": {
+        "count": 5,
+        "mean": 908.8681640625,
+        "min": 904.833984375,
+        "p50": 907.34521484375,
+        "p95": 915.66044921875,
+        "max": 917.2568359375
+      }
+    },
+    "warm_episode_e2e_sec": {
+      "count": 5,
+      "mean": 9.19354197440116,
+      "min": 7.410463782001898,
+      "p50": 9.907912511000177,
+      "p95": 10.121729202800633,
+      "max": 10.16234542500024
+    },
+    "generation_sec": {
+      "count": 5,
+      "mean": 8.881461958600266,
+      "min": 7.107570767002471,
+      "p50": 9.526524992001214,
+      "p95": 9.831189167799312,
+      "max": 9.871822109998902
+    },
+    "throughput_episodes_per_minute_based_on_warm_e2e_mean": 6.526320341720985,
+    "cold_start_first_episode_estimate_sec": 18.011771129997214,
+    "ground_truth_accessed": false,
+    "heldout_inference_count": 0,
+    "latency_semantics": "raw_episode_to_calibrated_decision_excluding_model_load"
+  },
+  "evidence_density": {
+    "source_frame_count": 900,
+    "selected_frame_count": 12,
+    "density": 0.013333333333333334,
+    "frame_reduction_ratio": 0.9866666666666667,
+    "frame_count_compression_ratio": 75.0
+  },
+  "measurement_scope_notes": {
+    "day31_day32_day33_latency": "generation-only measurements recorded during frozen runs",
+    "day34_e2e_profile": "development-only performance profile; no held-out rerun",
+    "model_load": "reported separately and excluded from warm per-episode E2E",
+    "latency_is_hardware_specific": true
+  },
+  "post_heldout_tuning_performed": false
+}

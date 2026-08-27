@@ -1,0 +1,260 @@
+{
+  "schema_version": "evidencemm_day34_error_analysis_v1",
+  "status": "post_heldout_error_analysis_complete",
+  "held_out_episode_count": 30,
+  "confusion_matrix": {
+    "target_offset_or_perception": {
+      "target_offset_or_perception": 1,
+      "gripper_close_timing": 0,
+      "trajectory_execution_deviation": 4,
+      "insufficient_evidence": 0,
+      "clean_success": 0
+    },
+    "gripper_close_timing": {
+      "target_offset_or_perception": 3,
+      "gripper_close_timing": 0,
+      "trajectory_execution_deviation": 4,
+      "insufficient_evidence": 2,
+      "clean_success": 0
+    },
+    "trajectory_execution_deviation": {
+      "target_offset_or_perception": 4,
+      "gripper_close_timing": 0,
+      "trajectory_execution_deviation": 4,
+      "insufficient_evidence": 1,
+      "clean_success": 2
+    },
+    "insufficient_evidence": {
+      "target_offset_or_perception": 0,
+      "gripper_close_timing": 0,
+      "trajectory_execution_deviation": 0,
+      "insufficient_evidence": 0,
+      "clean_success": 0
+    },
+    "clean_success": {
+      "target_offset_or_perception": 1,
+      "gripper_close_timing": 0,
+      "trajectory_execution_deviation": 2,
+      "insufficient_evidence": 2,
+      "clean_success": 0
+    }
+  },
+  "per_class_report": {
+    "target_offset_or_perception": {
+      "support": 5,
+      "predicted_count": 9,
+      "tp": 1,
+      "fp": 8,
+      "fn": 4,
+      "precision": 0.1111111111111111,
+      "recall": 0.2,
+      "f1": 0.14285714285714285
+    },
+    "gripper_close_timing": {
+      "support": 9,
+      "predicted_count": 0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 9,
+      "precision": null,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "trajectory_execution_deviation": {
+      "support": 11,
+      "predicted_count": 14,
+      "tp": 4,
+      "fp": 10,
+      "fn": 7,
+      "precision": 0.2857142857142857,
+      "recall": 0.36363636363636365,
+      "f1": 0.32
+    },
+    "insufficient_evidence": {
+      "support": 0,
+      "predicted_count": 5,
+      "tp": 0,
+      "fp": 5,
+      "fn": 0,
+      "precision": 0.0,
+      "recall": null,
+      "f1": 0.0
+    },
+    "clean_success": {
+      "support": 5,
+      "predicted_count": 2,
+      "tp": 0,
+      "fp": 2,
+      "fn": 5,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    }
+  },
+  "error_category_counts": {
+    "cause_confusion": 15,
+    "clean_false_positive_cause": 3,
+    "correct": 5,
+    "failure_predicted_clean": 2,
+    "parse_failure_abstention": 5
+  },
+  "parse_failure_analysis": {
+    "count": 5,
+    "rate": 0.16666666666666666,
+    "error_family_counts": {
+      "JSONDecodeError": 5
+    },
+    "gt_label_counts": {
+      "clean_success": 2,
+      "gripper_close_timing": 2,
+      "trajectory_execution_deviation": 1
+    },
+    "all_finalized_as_insufficient_evidence": true
+  },
+  "clean_control_analysis": {
+    "gt_clean_count": 5,
+    "prediction_counts": {
+      "insufficient_evidence": 2,
+      "target_offset_or_perception": 1,
+      "trajectory_execution_deviation": 2
+    },
+    "correct_clean_count": 0,
+    "cause_false_positive_count": 3
+  },
+  "calibration_shift_analysis": {
+    "frozen_log_biases": {
+      "target_offset_or_perception": 1.0,
+      "gripper_close_timing": -0.5,
+      "trajectory_execution_deviation": 1.0,
+      "clean_success": 0.0
+    },
+    "confidence_threshold": 0.0,
+    "margin_threshold": 0.0,
+    "raw_top_counts_parse_ok": {
+      "clean_success": 10,
+      "gripper_close_timing": 14,
+      "trajectory_execution_deviation": 1
+    },
+    "final_decision_counts": {
+      "clean_success": 2,
+      "insufficient_evidence": 5,
+      "target_offset_or_perception": 9,
+      "trajectory_execution_deviation": 14
+    },
+    "raw_top_to_final_transition_counts": {
+      "clean_success": {
+        "clean_success": 2,
+        "trajectory_execution_deviation": 8
+      },
+      "gripper_close_timing": {
+        "target_offset_or_perception": 9,
+        "trajectory_execution_deviation": 5
+      },
+      "parse_failure": {
+        "insufficient_evidence": 5
+      },
+      "trajectory_execution_deviation": {
+        "trajectory_execution_deviation": 1
+      }
+    }
+  },
+  "gripper_class_analysis": {
+    "gt_support": 9,
+    "final_prediction_count": 0,
+    "final_recall": 0.0,
+    "raw_top_gripper_count": 14,
+    "raw_top_gripper_final_transitions": {
+      "target_offset_or_perception": 9,
+      "trajectory_execution_deviation": 5
+    }
+  },
+  "pair_group_report": {
+    "rcv2_g02": {
+      "episode_count": 6,
+      "accuracy": 0.16666666666666666,
+      "parse_rate": 0.8333333333333334,
+      "gt_counts": {
+        "clean_success": 1,
+        "gripper_close_timing": 3,
+        "target_offset_or_perception": 1,
+        "trajectory_execution_deviation": 1
+      },
+      "prediction_counts": {
+        "insufficient_evidence": 1,
+        "target_offset_or_perception": 1,
+        "trajectory_execution_deviation": 4
+      }
+    },
+    "rcv2_g03": {
+      "episode_count": 6,
+      "accuracy": 0.16666666666666666,
+      "parse_rate": 0.8333333333333334,
+      "gt_counts": {
+        "clean_success": 1,
+        "gripper_close_timing": 1,
+        "target_offset_or_perception": 1,
+        "trajectory_execution_deviation": 3
+      },
+      "prediction_counts": {
+        "insufficient_evidence": 1,
+        "target_offset_or_perception": 4,
+        "trajectory_execution_deviation": 1
+      }
+    },
+    "rcv2_g08": {
+      "episode_count": 6,
+      "accuracy": 0.0,
+      "parse_rate": 0.8333333333333334,
+      "gt_counts": {
+        "clean_success": 1,
+        "gripper_close_timing": 3,
+        "target_offset_or_perception": 1,
+        "trajectory_execution_deviation": 1
+      },
+      "prediction_counts": {
+        "clean_success": 1,
+        "insufficient_evidence": 1,
+        "target_offset_or_perception": 1,
+        "trajectory_execution_deviation": 3
+      }
+    },
+    "rcv2_g09": {
+      "episode_count": 6,
+      "accuracy": 0.16666666666666666,
+      "parse_rate": 0.8333333333333334,
+      "gt_counts": {
+        "clean_success": 1,
+        "gripper_close_timing": 1,
+        "target_offset_or_perception": 1,
+        "trajectory_execution_deviation": 3
+      },
+      "prediction_counts": {
+        "clean_success": 1,
+        "insufficient_evidence": 1,
+        "target_offset_or_perception": 1,
+        "trajectory_execution_deviation": 3
+      }
+    },
+    "rcv2_g12": {
+      "episode_count": 6,
+      "accuracy": 0.3333333333333333,
+      "parse_rate": 0.8333333333333334,
+      "gt_counts": {
+        "clean_success": 1,
+        "gripper_close_timing": 1,
+        "target_offset_or_perception": 1,
+        "trajectory_execution_deviation": 3
+      },
+      "prediction_counts": {
+        "insufficient_evidence": 1,
+        "target_offset_or_perception": 2,
+        "trajectory_execution_deviation": 3
+      }
+    }
+  },
+  "development_vs_heldout_parse_rate": {
+    "development_day32": 0.8333333333333334,
+    "heldout_day33": 0.8333333333333334
+  },
+  "analysis_only_no_tuning": true
+}

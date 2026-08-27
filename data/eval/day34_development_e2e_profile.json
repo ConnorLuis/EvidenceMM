@@ -1,0 +1,492 @@
+{
+  "schema_version": "evidencemm_day34_development_e2e_profile_v1",
+  "status": "development_only_e2e_profile_complete",
+  "selection_seed": "evidencemm-day34-e2e-profile-v1",
+  "selection_rule": "sha256(seed|episode_id)_ascending",
+  "selected_episode_ids": [
+    "20260824_173930",
+    "20260823_201622",
+    "20260823_180125",
+    "20260824_215136",
+    "20260823_163223"
+  ],
+  "ranked_development_episode_ids": [
+    {
+      "episode_id": "20260824_173930",
+      "sha256": "04c3c2ef5dbf83d3bb5b66ba90ed6dbf9d3dff4dbbe5e509f6c18b562059edd1"
+    },
+    {
+      "episode_id": "20260823_201622",
+      "sha256": "117828344ceaed6a0bd194ebc9e70035552b5bf8544e2a2bdc5ee37d08ce38e6"
+    },
+    {
+      "episode_id": "20260823_180125",
+      "sha256": "12e241d479fb1da7373ab865a31e702ff0e5313a70ee8d3be1d60b2759bab038"
+    },
+    {
+      "episode_id": "20260824_215136",
+      "sha256": "1d58c77f68901a912fd58961690626db3e2499ed3115fbe4faca8dcd02655ec9"
+    },
+    {
+      "episode_id": "20260823_163223",
+      "sha256": "1ff66c5bf560ab3f7458758d0945a73be330682b9c6b08beed1ac65558688a13"
+    },
+    {
+      "episode_id": "20260824_150526",
+      "sha256": "24e21bc31a036efdb710f1887023424ecabb6c84eff336594677115ce79e602e"
+    },
+    {
+      "episode_id": "20260824_113016",
+      "sha256": "2768bf195255b746992c68d5ba3fd62e84f4c413cca6c4fe0cfec94d6e2ffbb7"
+    },
+    {
+      "episode_id": "20260824_164039",
+      "sha256": "294e079bcbf570ca459cf04c0e33f5c81d43d99f8b2267d5a7a3cebeaf1c99cd"
+    },
+    {
+      "episode_id": "20260824_104319",
+      "sha256": "2b84a6cd9f38c2a513070daf9b29b7927a88779e8d6a96bb5f4a0e4cde944850"
+    },
+    {
+      "episode_id": "20260824_204726",
+      "sha256": "33253649ddd5dbb71ee7380a57d1d7ad82a807f5980a064de90a83a71ca2ed4c"
+    },
+    {
+      "episode_id": "20260823_210152",
+      "sha256": "400ba7c581e00636ab23b7a1ae38c8f11dab50889e20ff111703eab76079a0a7"
+    },
+    {
+      "episode_id": "20260824_213311",
+      "sha256": "40ff6a276b4eeec8510db2a7d2aa6b2b8190e4f2170bef1dbeed571453f3d396"
+    },
+    {
+      "episode_id": "20260823_163843",
+      "sha256": "41094938a8fb51d8248a790a302a9ca0a5b51ad3c33952c85c2a4618aa7fc7d8"
+    },
+    {
+      "episode_id": "20260823_202206",
+      "sha256": "444d2c5cf2a14594b52a11ac88d7bdd19f728ed377c1c7686d72c9883e8f939c"
+    },
+    {
+      "episode_id": "20260823_211641",
+      "sha256": "46f20826ca3c43c9a167cdde4a17f48008e29307433c76ad11e52e39f45c710e"
+    },
+    {
+      "episode_id": "20260824_104110",
+      "sha256": "48cb9c7a4361e8abd7a2aa7ed85880954104327d482b469b4dd6e2aa684aaa42"
+    },
+    {
+      "episode_id": "20260823_212056",
+      "sha256": "49a84ef08653f57119cc568f9ddd502b0dbd64080e144eeb64f27470c1d9c533"
+    },
+    {
+      "episode_id": "20260824_104722",
+      "sha256": "4cc9c32b1c52430712f9ef20ed85eb1d814ecba1dc9a6febc92603690899ed87"
+    },
+    {
+      "episode_id": "20260823_173422",
+      "sha256": "540e34970bcc7d8f45f9a9f010d971c0001086eadf9742195dad310856368589"
+    },
+    {
+      "episode_id": "20260823_211411",
+      "sha256": "577491dc2c2c00c9a03edbd2252ac8e6deaec72fe14a5ab7750b9588305da5bc"
+    },
+    {
+      "episode_id": "20260824_162548",
+      "sha256": "58e36c709e9c05aa7287a8abae49c4d61b5f870d0595ee5f2f2cdb9ad8376c37"
+    },
+    {
+      "episode_id": "20260824_173439",
+      "sha256": "58e9104f72f5a4f05c2c3f23800de4019e2006002e990798bee1e01ad2c970c0"
+    },
+    {
+      "episode_id": "20260824_165648",
+      "sha256": "654182a76defe08891067641b8eb4769d8382769e0d3ea53d92ace3bd3bfa05f"
+    },
+    {
+      "episode_id": "20260823_202726",
+      "sha256": "6892bc0f1df77e5e0d0fe8a9a34ae0c7eadf461378aae4779564fa5c9a04e988"
+    },
+    {
+      "episode_id": "20260823_203003",
+      "sha256": "6a7f34a0b8a36b5cb76d595d3fe22167a731d70ea2c8b14d9813cf58dd8d0a55"
+    },
+    {
+      "episode_id": "20260824_172151",
+      "sha256": "6be710e656fc556d93f6815eb25831a814da6dbc6f7a698f40e76f54a9343ece"
+    },
+    {
+      "episode_id": "20260824_103601",
+      "sha256": "6e1fd62ea278ffca25810d28cc5910c6a95ee5d803daebadc8b1b24f0806b0b6"
+    },
+    {
+      "episode_id": "20260823_193258",
+      "sha256": "73d09e6d5cde510a94a8fcf70fc889bbeb73eacd6f9358e46956f9ea8240f262"
+    },
+    {
+      "episode_id": "20260824_153036",
+      "sha256": "7768a30ae368c54909747213b3f092cb180b0bec5b3e6ddc8630fefae63cc636"
+    },
+    {
+      "episode_id": "20260824_210230",
+      "sha256": "790a4cdfaa4e46e2b76c8c481589253bdc46caad56bea8c01f318307d584fac7"
+    },
+    {
+      "episode_id": "20260824_165855",
+      "sha256": "7b0eb289aaddd68e999188ad84c76217c338fffb520f619204f6096c789dd00c"
+    },
+    {
+      "episode_id": "20260824_152217",
+      "sha256": "7bbb48d0f35a9b19e52072c25dcbe6c76cfc9691df0cc21604d5c2d8f775df9a"
+    },
+    {
+      "episode_id": "20260824_110557",
+      "sha256": "7dee0b0f040b98d1d85b2300723fa685148660e0da02a09e709c8e41f567fd91"
+    },
+    {
+      "episode_id": "20260823_201357",
+      "sha256": "8066871b6a656ae9c8dd0a57658f7803f5684dd9ea41a313f310c2128e20bcd8"
+    },
+    {
+      "episode_id": "20260823_205808",
+      "sha256": "82ab6a938b487100d970d1cf2ccc4888f745338012d12d55d60637a9d34295be"
+    },
+    {
+      "episode_id": "20260824_165347",
+      "sha256": "84ddfbe8785477bf8cf29f93e1fa1d4a033ed121cf4e2097043c819f74ef631c"
+    },
+    {
+      "episode_id": "20260823_215408",
+      "sha256": "8d8fadeb0989f3f23eceec8674af956411d6ef04017a13fdb05591f36f675f03"
+    },
+    {
+      "episode_id": "20260823_205550",
+      "sha256": "95f4a84d5f6a5dbb2e22ec2627895b204dc52816571b16905974e6e32966017f"
+    },
+    {
+      "episode_id": "20260823_193517",
+      "sha256": "a29d971074a6ada031193a921499b390b2f6b0ef9c2a0dff99fd5eefeb78c204"
+    },
+    {
+      "episode_id": "20260823_175237",
+      "sha256": "a648ca05279e35665d5683c1e325bb94c152d94d1ae1ce27ba2bee94fb43e4f9"
+    },
+    {
+      "episode_id": "20260823_163557",
+      "sha256": "a6b79a03ae09bcdc77abc7056fd9454deb5f588674bccc639d763c47214c5b94"
+    },
+    {
+      "episode_id": "20260824_205215",
+      "sha256": "a71669a7868c04ab4d674c5de56651f7ebf5c1afed331ce5d60c575bb2e61a5e"
+    },
+    {
+      "episode_id": "20260823_212501",
+      "sha256": "aaa898730a8fdbe94c2b6d9f2c043d933d56161bb81d07c3f66641342cbd5e4a"
+    },
+    {
+      "episode_id": "20260824_150810",
+      "sha256": "b1a55d500a5bd5858eca25d1d8b627efb537ca0c618552def800ce8d5e2528cd"
+    },
+    {
+      "episode_id": "20260823_193023",
+      "sha256": "b29ebd0fb00cc08101833b04e065cd1b1239216349ad6a73761f9bb2114920f8"
+    },
+    {
+      "episode_id": "20260824_152701",
+      "sha256": "b4bcf0fce3eea74a8b881a9af29add5ddcc1684ddf3bf6e6b730881ec220014c"
+    },
+    {
+      "episode_id": "20260824_174135",
+      "sha256": "b74da8c8a586c7550a523d4017444dc90c9ecdea703f70378e88a5919c768098"
+    },
+    {
+      "episode_id": "20260824_205729",
+      "sha256": "d3d00b5639c48e55c26246a481ef859f6f3271011a1fdf141712950162aa456f"
+    },
+    {
+      "episode_id": "20260824_214832",
+      "sha256": "d4bd5dbbcb2a4ac17ca66e6f3ffb3891dc9bf0d8a4950c3daa180f0f55622e9d"
+    },
+    {
+      "episode_id": "20260824_153650",
+      "sha256": "d80cd550cdaa4f0e4ece34e416e07b308de9bf17ea2ed58fb2dd6896838e6b1a"
+    },
+    {
+      "episode_id": "20260824_214000",
+      "sha256": "ddaef30ccf0eb1f42b7283001780c1736248f6cb3ca21c1fea818748abd5361a"
+    },
+    {
+      "episode_id": "20260824_173656",
+      "sha256": "e2624a09131522788aaa1d1e6840cf63e4f7fcf5ef7fe9881b7e95c5dbf7dfa9"
+    },
+    {
+      "episode_id": "20260824_170209",
+      "sha256": "e4a46eebaff29f09891fdfd3a16663104d2ff753980aed3476b2919277b737f6"
+    },
+    {
+      "episode_id": "20260823_175817",
+      "sha256": "efa6036088964f10b4efe2fa303c721bca6ec3b2a1fa2ddfe07f1f31639c44fd"
+    },
+    {
+      "episode_id": "20260823_172518",
+      "sha256": "f0094d5a2f2762a411f9b7932afa46cf7b6fba2b5b73e8a68bd1634531b7173a"
+    },
+    {
+      "episode_id": "20260824_171949",
+      "sha256": "f126f9399175156da0756a18b2e8c3fef663428a3710c112cd9593f7c9322720"
+    },
+    {
+      "episode_id": "20260824_212824",
+      "sha256": "f98a893470a4b4af29d9fd8ee552793c54331070ea9b9af5f54d02924c779ff0"
+    },
+    {
+      "episode_id": "20260823_172235",
+      "sha256": "fbfc539368562fae5d6fbc8ee18413efddfaa246c7ba23165d6ea3776def3b6c"
+    },
+    {
+      "episode_id": "20260824_200034",
+      "sha256": "fc3f92ab44541e18430e49f2eb47afb2cb716da370b6ce22189d914449568eef"
+    },
+    {
+      "episode_id": "20260823_174955",
+      "sha256": "ff6898f1ef97040d6f47aad2c2dd8c9606365d180c09948d06741b6b798f10c5"
+    }
+  ],
+  "profile_episode_count": 5,
+  "ground_truth_accessed": false,
+  "heldout_inference_count": 0,
+  "startup": {
+    "model_name": "Qwen/Qwen3-VL-4B-Instruct",
+    "model_load_sec": 7.892759107999154,
+    "processor_load_sec": 0.21109951099788304,
+    "python_version": "3.11.15",
+    "torch_version": "2.11.0+cu130",
+    "transformers_version": "5.15.0",
+    "cuda_available": true,
+    "cuda_runtime_version": "13.0",
+    "gpu_name": "NVIDIA GeForce RTX 4070 SUPER",
+    "model_resident_gpu_memory_mb": 8465.10595703125
+  },
+  "episodes": [
+    {
+      "schema_version": "evidencemm_day34_development_e2e_profile_row_v1",
+      "episode_id": "20260824_173930",
+      "split": "development",
+      "selected_frame_indices": [
+        0,
+        33,
+        150,
+        260,
+        300,
+        328,
+        450,
+        569,
+        599,
+        652,
+        749,
+        899
+      ],
+      "day31_evidence_input_sha256": "cd7037b72fd88f9409eb08c15e011ec57ee3cd5dd2b19946acc274cf7182a9ff",
+      "score_prompt_sha256": "f02290eb9fd0ad3de92363352fc921d13e9ce318de4d6db969149ec37fcd2cf7",
+      "score_parse_ok": true,
+      "calibrated_decision": "trajectory_execution_deviation",
+      "generated_token_count": 249,
+      "evidence_preparation_sec": 0.2822194139989733,
+      "processor_preparation_sec": 0.09870260499883443,
+      "generation_sec": 9.526524992001214,
+      "parse_and_calibration_sec": 0.00029439999707392417,
+      "episode_end_to_end_sec": 9.907912511000177,
+      "baseline_gpu_memory_mb": 8513.19580078125,
+      "peak_gpu_memory_mb": 9430.45263671875,
+      "peak_incremental_gpu_memory_mb": 917.2568359375
+    },
+    {
+      "schema_version": "evidencemm_day34_development_e2e_profile_row_v1",
+      "episode_id": "20260823_201622",
+      "split": "development",
+      "selected_frame_indices": [
+        0,
+        57,
+        77,
+        150,
+        300,
+        450,
+        599,
+        669,
+        690,
+        710,
+        749,
+        899
+      ],
+      "day31_evidence_input_sha256": "8cca909acc2eb352581d62dfe46a462d7c9c43e6560638d68109e2fb5c91c467",
+      "score_prompt_sha256": "f02290eb9fd0ad3de92363352fc921d13e9ce318de4d6db969149ec37fcd2cf7",
+      "score_parse_ok": true,
+      "calibrated_decision": "target_offset_or_perception",
+      "generated_token_count": 228,
+      "evidence_preparation_sec": 0.2420793119999871,
+      "processor_preparation_sec": 0.0604188030010846,
+      "generation_sec": 7.107570767002471,
+      "parse_and_calibration_sec": 0.0002626000023155939,
+      "episode_end_to_end_sec": 7.410463782001898,
+      "baseline_gpu_memory_mb": 8522.3212890625,
+      "peak_gpu_memory_mb": 9429.66650390625,
+      "peak_incremental_gpu_memory_mb": 907.34521484375
+    },
+    {
+      "schema_version": "evidencemm_day34_development_e2e_profile_row_v1",
+      "episode_id": "20260823_180125",
+      "split": "development",
+      "selected_frame_indices": [
+        0,
+        71,
+        150,
+        215,
+        300,
+        450,
+        560,
+        599,
+        689,
+        749,
+        778,
+        899
+      ],
+      "day31_evidence_input_sha256": "9331111c5282ed1f706bd9da635ed60d8d60a247d5b0a17c8970183e5f557164",
+      "score_prompt_sha256": "f02290eb9fd0ad3de92363352fc921d13e9ce318de4d6db969149ec37fcd2cf7",
+      "score_parse_ok": false,
+      "calibrated_decision": "insufficient_evidence",
+      "generated_token_count": 320,
+      "evidence_preparation_sec": 0.231788011999015,
+      "processor_preparation_sec": 0.058350702998723136,
+      "generation_sec": 9.66865739900095,
+      "parse_and_calibration_sec": 0.0003371999991941266,
+      "episode_end_to_end_sec": 9.959264314002212,
+      "baseline_gpu_memory_mb": 8522.3212890625,
+      "peak_gpu_memory_mb": 9431.59619140625,
+      "peak_incremental_gpu_memory_mb": 909.27490234375
+    },
+    {
+      "schema_version": "evidencemm_day34_development_e2e_profile_row_v1",
+      "episode_id": "20260824_215136",
+      "split": "development",
+      "selected_frame_indices": [
+        0,
+        36,
+        78,
+        150,
+        300,
+        412,
+        450,
+        535,
+        599,
+        639,
+        749,
+        899
+      ],
+      "day31_evidence_input_sha256": "56c54d3b17ac719bc9bb2ef4b94aeed023baddf2ee41c6ff45b00026f5e02d62",
+      "score_prompt_sha256": "f02290eb9fd0ad3de92363352fc921d13e9ce318de4d6db969149ec37fcd2cf7",
+      "score_parse_ok": true,
+      "calibrated_decision": "trajectory_execution_deviation",
+      "generated_token_count": 270,
+      "evidence_preparation_sec": 0.2393807119988196,
+      "processor_preparation_sec": 0.055193602998770075,
+      "generation_sec": 8.232734524997795,
+      "parse_and_calibration_sec": 0.00027179999960935675,
+      "episode_end_to_end_sec": 8.527723840001272,
+      "baseline_gpu_memory_mb": 8522.3212890625,
+      "peak_gpu_memory_mb": 9427.951171875,
+      "peak_incremental_gpu_memory_mb": 905.6298828125
+    },
+    {
+      "schema_version": "evidencemm_day34_development_e2e_profile_row_v1",
+      "episode_id": "20260823_163223",
+      "split": "development",
+      "selected_frame_indices": [
+        0,
+        47,
+        67,
+        150,
+        300,
+        450,
+        599,
+        634,
+        749,
+        779,
+        802,
+        899
+      ],
+      "day31_evidence_input_sha256": "5c7daba1b1296eb3909111de120986d2f096bf08ae8f670d35f055ca89f648e4",
+      "score_prompt_sha256": "f02290eb9fd0ad3de92363352fc921d13e9ce318de4d6db969149ec37fcd2cf7",
+      "score_parse_ok": false,
+      "calibrated_decision": "insufficient_evidence",
+      "generated_token_count": 320,
+      "evidence_preparation_sec": 0.23597481199976755,
+      "processor_preparation_sec": 0.05402440299803857,
+      "generation_sec": 9.871822109998902,
+      "parse_and_calibration_sec": 0.0003863000019919127,
+      "episode_end_to_end_sec": 10.16234542500024,
+      "baseline_gpu_memory_mb": 8522.3212890625,
+      "peak_gpu_memory_mb": 9427.1552734375,
+      "peak_incremental_gpu_memory_mb": 904.833984375
+    }
+  ],
+  "stage_summaries": {
+    "evidence_preparation_sec": {
+      "count": 5,
+      "mean": 0.24628845239931252,
+      "min": 0.231788011999015,
+      "p50": 0.2393807119988196,
+      "p95": 0.2741913935991761,
+      "max": 0.2822194139989733
+    },
+    "processor_preparation_sec": {
+      "count": 5,
+      "mean": 0.06533802339909016,
+      "min": 0.05402440299803857,
+      "p50": 0.058350702998723136,
+      "p95": 0.09104584459928446,
+      "max": 0.09870260499883443
+    },
+    "generation_sec": {
+      "count": 5,
+      "mean": 8.881461958600266,
+      "min": 7.107570767002471,
+      "p50": 9.526524992001214,
+      "p95": 9.831189167799312,
+      "max": 9.871822109998902
+    },
+    "parse_and_calibration_sec": {
+      "count": 5,
+      "mean": 0.0003104600000369828,
+      "min": 0.0002626000023155939,
+      "p50": 0.00029439999707392417,
+      "p95": 0.0003764800014323555,
+      "max": 0.0003863000019919127
+    },
+    "episode_end_to_end_sec": {
+      "count": 5,
+      "mean": 9.19354197440116,
+      "min": 7.410463782001898,
+      "p50": 9.907912511000177,
+      "p95": 10.121729202800633,
+      "max": 10.16234542500024
+    },
+    "peak_gpu_memory_mb": {
+      "count": 5,
+      "mean": 9429.36435546875,
+      "min": 9427.1552734375,
+      "p50": 9429.66650390625,
+      "p95": 9431.36748046875,
+      "max": 9431.59619140625
+    },
+    "peak_incremental_gpu_memory_mb": {
+      "count": 5,
+      "mean": 908.8681640625,
+      "min": 904.833984375,
+      "p50": 907.34521484375,
+      "p95": 915.66044921875,
+      "max": 917.2568359375
+    }
+  },
+  "profile_is_accuracy_neutral": true,
+  "post_heldout_tuning_performed": false
+}

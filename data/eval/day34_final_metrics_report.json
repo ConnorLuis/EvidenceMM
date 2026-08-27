@@ -1,0 +1,174 @@
+{
+  "schema_version": "evidencemm_day34_final_metrics_report_v1",
+  "status": "post_day33_final_metrics_recomputed",
+  "day33_final_commit": "a8a8b796eecdab6118c9ad637c41f7c2b987304d",
+  "day31_development_baseline": {
+    "primary_metrics": {
+      "answerable_three_class_macro_f1": 0.0,
+      "failed_case_four_way_diagnostic_macro_f1": 0.0,
+      "abstention_accuracy": 0.0,
+      "false_answer_rate": null,
+      "false_abstention_rate": 1.0,
+      "clean_control_false_positive_cause_rate": 0.0
+    },
+    "secondary_metrics": {
+      "failed_case_supported_label_macro_f1": 0.0,
+      "clean_control_accuracy": 0.0,
+      "development_decision_accuracy": 0.0,
+      "prediction_parse_rate": 1.0
+    },
+    "prediction_parse_ok_count": 60,
+    "prediction_parse_failure_count": 0
+  },
+  "day32_development_calibrated": {
+    "internal_fit_metrics": {
+      "episode_count": 36,
+      "substantive_four_class_macro_f1": 0.27846577227382185,
+      "answerable_three_class_macro_f1": 0.3148148148148148,
+      "failed_case_four_way_diagnostic_macro_f1": 0.2361111111111111,
+      "abstention_accuracy": 0.8666666666666667,
+      "false_answer_rate": null,
+      "false_abstention_rate": 0.13333333333333333,
+      "clean_control_false_positive_cause_rate": 0.3333333333333333,
+      "clean_control_accuracy": 0.3333333333333333,
+      "development_decision_accuracy": 0.2777777777777778,
+      "gt_support": {
+        "answerable_failure": 30,
+        "failed": 30,
+        "clean": 6,
+        "insufficient_evidence_failure": 0,
+        "substantive": 36
+      }
+    },
+    "internal_validation_metrics": {
+      "episode_count": 24,
+      "substantive_four_class_macro_f1": 0.30311355311355304,
+      "answerable_three_class_macro_f1": 0.3111111111111111,
+      "failed_case_four_way_diagnostic_macro_f1": 0.23333333333333334,
+      "abstention_accuracy": 0.85,
+      "false_answer_rate": null,
+      "false_abstention_rate": 0.15,
+      "clean_control_false_positive_cause_rate": 0.5,
+      "clean_control_accuracy": 0.25,
+      "development_decision_accuracy": 0.375,
+      "gt_support": {
+        "answerable_failure": 20,
+        "failed": 20,
+        "clean": 4,
+        "insufficient_evidence_failure": 0,
+        "substantive": 24
+      }
+    },
+    "full_development_metrics": {
+      "episode_count": 60,
+      "substantive_four_class_macro_f1": 0.287828947368421,
+      "answerable_three_class_macro_f1": 0.3185185185185185,
+      "failed_case_four_way_diagnostic_macro_f1": 0.23888888888888887,
+      "abstention_accuracy": 0.86,
+      "false_answer_rate": null,
+      "false_abstention_rate": 0.14,
+      "clean_control_false_positive_cause_rate": 0.4,
+      "clean_control_accuracy": 0.3,
+      "development_decision_accuracy": 0.31666666666666665,
+      "gt_support": {
+        "answerable_failure": 50,
+        "failed": 50,
+        "clean": 10,
+        "insufficient_evidence_failure": 0,
+        "substantive": 60
+      }
+    },
+    "score_parse_ok_count": 50,
+    "score_parse_failure_count": 10
+  },
+  "day33_single_frozen_heldout": {
+    "primary_metrics": {
+      "answerable_three_class_macro_f1": 0.16722408026755853,
+      "failed_case_four_way_diagnostic_macro_f1": 0.1254180602006689,
+      "abstention_accuracy": 0.88,
+      "false_answer_rate": null,
+      "false_abstention_rate": 0.12,
+      "clean_control_false_positive_cause_rate": 0.6
+    },
+    "secondary_metrics": {
+      "substantive_four_class_macro_f1": 0.11571428571428571,
+      "clean_control_accuracy": 0.0,
+      "heldout_decision_accuracy": 0.16666666666666666,
+      "prediction_parse_rate": 0.8333333333333334
+    },
+    "gt_support": {
+      "answerable_failure": 25,
+      "failed": 25,
+      "clean": 5,
+      "insufficient_evidence_failure": 0,
+      "substantive": 30
+    },
+    "score_parse_ok_count": 25,
+    "score_parse_failure_count": 5,
+    "final_decision_counts": {
+      "clean_success": 2,
+      "insufficient_evidence": 5,
+      "target_offset_or_perception": 9,
+      "trajectory_execution_deviation": 14
+    },
+    "held_out_final_evaluation_count_consumed": 1
+  },
+  "development_to_heldout_generalization_gap": {
+    "answerable_three_class_macro_f1": {
+      "development": 0.3185185185185185,
+      "held_out": 0.16722408026755853,
+      "heldout_minus_development": -0.15129443825095995
+    },
+    "failed_case_four_way_diagnostic_macro_f1": {
+      "development": 0.23888888888888887,
+      "held_out": 0.1254180602006689,
+      "heldout_minus_development": -0.11347082868821998
+    },
+    "substantive_four_class_macro_f1": {
+      "development": 0.287828947368421,
+      "held_out": 0.11571428571428571,
+      "heldout_minus_development": -0.1721146616541353
+    },
+    "abstention_accuracy": {
+      "development": 0.86,
+      "held_out": 0.88,
+      "heldout_minus_development": 0.020000000000000018
+    },
+    "false_abstention_rate": {
+      "development": 0.14,
+      "held_out": 0.12,
+      "heldout_minus_development": -0.020000000000000018
+    },
+    "clean_control_false_positive_cause_rate": {
+      "development": 0.4,
+      "held_out": 0.6,
+      "heldout_minus_development": 0.19999999999999996
+    },
+    "clean_control_accuracy": {
+      "development": 0.3,
+      "held_out": 0.0,
+      "heldout_minus_development": -0.3
+    }
+  },
+  "metric_family_coverage": {
+    "diagnosis": {
+      "status": "measured",
+      "source": "Day33 single frozen held-out evaluation"
+    },
+    "efficiency": {
+      "status": "measured",
+      "source": "frozen Day31-Day33 generation logs plus Day34 development-only E2E profile"
+    },
+    "temporal_localization": {
+      "status": "not_emitted_by_root_cause_v2_predictor",
+      "historical_separate_result": "data/eval/day20_heldout_interval_eval.json",
+      "merged_into_day33_final_metrics": false
+    },
+    "grounding": {
+      "status": "not_applicable_to_day31_day33_no_retrieval_baseline",
+      "retrieval_used": false,
+      "manual_corpus_used": false
+    }
+  },
+  "post_heldout_tuning_performed": false
+}
