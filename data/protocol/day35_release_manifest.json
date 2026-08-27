@@ -1,0 +1,56 @@
+{
+  "schema_version": "evidencemm_day35_release_manifest_v1",
+  "status": "interview_ready_research_prototype_frozen_day35",
+  "parent_day34_commit": "c80525f18062ada2613518f16f47868552ede0ea",
+  "closure_scope": [
+    "public_readme",
+    "benchmark_card",
+    "reproducibility_guide",
+    "limitations",
+    "project_closure",
+    "release_notes",
+    "release_audit"
+  ],
+  "benchmark_summary": {
+    "canonical_episode_count": 90,
+    "pair_group_count": 15,
+    "development_episode_count": 60,
+    "held_out_episode_count": 30,
+    "held_out_final_evaluation_count_consumed": 1
+  },
+  "final_heldout_headline": {
+    "answerable_three_class_macro_f1": 0.16722408026755853,
+    "failed_case_four_way_diagnostic_macro_f1": 0.1254180602006689,
+    "substantive_four_class_macro_f1": 0.11571428571428571,
+    "overall_decision_accuracy": 0.16666666666666666,
+    "prediction_parse_rate": 0.8333333333333334,
+    "clean_control_accuracy": 0.0,
+    "gripper_recall": 0.0
+  },
+  "release_files": {
+    "README.md": "6048fd6db66c6e7070af1b6668f4fee94166e6f95ee8000f6bdf6da1e5f20f0a",
+    "docs/day35_benchmark_card.md": "329015dcf9c97a3d1bab65a8c38ac76b53b881a3b12692a8bbda30f8c282eb56",
+    "docs/day35_reproducibility.md": "dd637e006fbb17b695452740e0c2d5cdb87dce9cc69d430c8a9271d6d7713c5a",
+    "docs/day35_limitations.md": "813273d62f2e6393991a43bbeda85af911a44982961784bf372e6965c62de616",
+    "docs/day35_project_closure.md": "94f3c80e48eabaf4f1b7e32e5b9b311d92927c72681f15f7cd09bcd3806f9676",
+    "docs/day35_release_notes.md": "94240b92c404693c457f637891d3f87761dd19a03596851232072f690bed1a20",
+    "scripts/day35_release_audit.py": "6edfe805e968330f4e1361ce7d6879c12b89bf89477730738edfcddc0047dd13",
+    "tests/test_day35_release.py": "97037542318e9f41e597a91b7654a6466742fe9cca65f68149dad00b76617fbf"
+  },
+  "frozen_day34_artifacts": {
+    "data/eval/day34_final_metrics_report.json": "536d49aff909545310867294a2cdd2f2626498f6d0220a459d07d873e31845e9",
+    "data/eval/day34_error_analysis.json": "f32f44492d26cf344e7e056a4d8edef94a3af7f85743dd0dc959e8e323cd4e55",
+    "data/eval/day34_per_case_analysis.jsonl": "130beb67cd9df54faa7b621338c60c5575d26df619d9f55b41dd7184c5853bf6",
+    "data/eval/day34_development_e2e_profile.json": "a97d4d3e3a8c709c9b9d11999fd221cba91446438daeb2cf7e470d35b07fa208",
+    "data/eval/day34_efficiency_report.json": "2002015a54afc95d8aa181dcc2c14ed394b193d4d45586b5673d7a7d35c6873d",
+    "data/protocol/day34_metrics_freeze_receipt.json": "0c7fe40e62a4086b7de8d86b4c13ebc273cf82e6f69963dee2da3bff558b9c2b"
+  },
+  "claims": {
+    "project_stage_complete": true,
+    "interview_ready": true,
+    "production_ready": false,
+    "high_accuracy_root_cause_classifier": false,
+    "post_heldout_tuning_performed": false,
+    "future_work_requires_new_experimental_phase": true
+  }
+}
